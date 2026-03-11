@@ -808,6 +808,7 @@
     <div class="upload-section">
       <div class="upload-title">Import Weekly Template</div>
       <div class="upload-desc">Fill in the weekly XLSX template and drop it below. Rank, adjusted scores, and all bonuses are read directly from the file — no manual entry needed here.</div>
+      <div id="storage-status" style="font-size:10px;color:var(--dk-muted);letter-spacing:1px;margin-bottom:12px"></div>
 
       <div style="display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-bottom:18px">
         <div style="flex:2;min-width:200px">
@@ -1361,6 +1362,7 @@ function applyResults() {
   if(segOpen) renderSegments();
   renderSeasonBar();
   switchTab('standings');
+  saveToStorage();
   showToast('✓ Standings updated for ' + pendingResults.name);
 
   // Reset state
@@ -1440,6 +1442,7 @@ function confirmUndo() {
   renderStats();
   renderSeasonBar();
   if(segOpen) renderSegments();
+  saveToStorage();
   showToast(`↩ "${last.event}" removed — standings restored`);
 }
 
@@ -1513,6 +1516,7 @@ function toggleShotgun(player) {
     shotgunDebts.add(player);
     showToast(`🍺 ${player} owes a shotgun!`);
   }
+  saveToStorage();
   renderBeer();
   renderStandings();
 }
@@ -1537,6 +1541,7 @@ function addMoney() {
   document.getElementById('money-amount').value = '';
   document.getElementById('money-note').value = '';
 
+  saveToStorage();
   renderMoneyLog();
   renderStandings();
   showToast(`💰 $${amount} added to ${player}`);
@@ -1546,6 +1551,7 @@ function removeMoney(idx) {
   const entry = moneyLog[idx];
   playerMoney[entry.player] = Math.max(0, (playerMoney[entry.player] || 0) - entry.amount);
   moneyLog.splice(idx, 1);
+  saveToStorage();
   renderMoneyLog();
   renderStandings();
   showToast(`↩ Removed $${entry.amount} from ${entry.player}`);
@@ -1753,8 +1759,60 @@ function renderStats() {
 }
 
 // ============================================================
+// LOCAL STORAGE — AUTO SAVE / LOAD
+// ============================================================
+const STORAGE_KEY = 'heyse_golf_2026';
+
+function saveToStorage() {
+  try {
+    const data = {
+      standings:    standings,
+      weekHistory:  weekHistory,
+      shotgunDebts: [...shotgunDebts],
+      playerMoney:  playerMoney,
+      moneyLog:     moneyLog,
+      savedAt:      new Date().toISOString()
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  } catch(e) { console.warn('Save failed:', e); }
+}
+
+function loadFromStorage() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw) return false;
+    const data = JSON.parse(raw);
+    if(data.standings) data.standings.forEach(saved => {
+      const p = standings.find(s => s.player === saved.player);
+      if(p) Object.assign(p, saved);
+    });
+    if(data.weekHistory)  weekHistory.push(...data.weekHistory);
+    if(data.shotgunDebts) data.shotgunDebts.forEach(p => shotgunDebts.add(p));
+    if(data.playerMoney)  Object.assign(playerMoney, data.playerMoney);
+    if(data.moneyLog)     moneyLog.push(...data.moneyLog);
+    return data.savedAt;
+  } catch(e) { console.warn('Load failed:', e); return false; }
+}
+
+function clearStorage() {
+  if(confirm('Clear all saved data and reset to zero? This cannot be undone.')) {
+    localStorage.removeItem(STORAGE_KEY);
+    location.reload();
+  }
+}
+
+// ============================================================
 // INIT
 // ============================================================
+const _savedAt = loadFromStorage();
+const _statusEl = document.getElementById('storage-status');
+if(_statusEl) {
+  if(_savedAt) {
+    _statusEl.innerHTML = `✓ Data loaded · Last saved: ${new Date(_savedAt).toLocaleString()} · <span style="cursor:pointer;color:var(--dk-red);text-decoration:underline" onclick="clearStorage()">Clear all data</span>`;
+  } else {
+    _statusEl.textContent = '💾 Auto-save active — data will persist between sessions';
+  }
+}
 renderStandings();
 renderHistory();
 renderStats();
