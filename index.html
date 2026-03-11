@@ -745,71 +745,71 @@
     <h1>Heyse Golf League</h1>
     <div class="subtitle">Fantasy Golf · 2026 Season</div>
     <button onclick="exportDashboard()" style="margin-top:10px;background:transparent;border:1px solid var(--dk-green);color:var(--dk-green);padding:6px 18px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;cursor:pointer;text-transform:uppercase" title="Download as index.html ready for GitHub">📥 Export &amp; Download</button>
-    <div class="season-badge" id="season-badge">31 Players · 2 Events · Amex Complete</div>
+    <div class="season-badge" id="season-badge">31 Players · 4 Events · PHX Complete</div>
   </header>
 
   <div class="divider">Season Overview</div>
 
   <!-- Segment progress bar — dynamic -->
-  <div class="seg-bar" id="seg-bar"><div class="seg-item done">Sony</div><div class="seg-item done">Amex</div><div class="seg-item current">Next ▶</div></div>
+  <div class="seg-bar" id="seg-bar"><div class="seg-item done">Sony</div><div class="seg-item done">Amex</div><div class="seg-item done">Farmers</div><div class="seg-item done">PHX</div><div class="seg-item current">Next ▶</div></div>
 
   <!-- Stats Row -->
   <div class="stats-grid" id="stats-grid">
     <div class="stat-card" style="animation-delay:0.05s">
       <div class="stat-label">Season Leader</div>
       <div class="stat-value">taylorhiemenz</div>
-      <div class="stat-sub">58 pts · #1</div>
+      <div class="stat-sub">107 pts · #1</div>
     </div>
   
     <div class="stat-card" style="animation-delay:0.1s">
       <div class="stat-label">Events Played</div>
-      <div class="stat-value">2</div>
+      <div class="stat-value">4</div>
       <div class="stat-sub">of 9 in Segment 1</div>
     </div>
   
     <div class="stat-card" style="animation-delay:0.15000000000000002s">
       <div class="stat-label">Biggest Mover</div>
-      <div class="stat-value">ziggysmalls1224</div>
-      <div class="stat-sub">↑ 20 spots</div>
+      <div class="stat-value">heysebc</div>
+      <div class="stat-sub">↑ 12 spots</div>
     </div>
   
     <div class="stat-card" style="animation-delay:0.2s">
       <div class="stat-label">Playoff Cutline</div>
-      <div class="stat-value">31.5</div>
-      <div class="stat-sub">lcrose22 · 18th safe spot</div>
+      <div class="stat-value">66</div>
+      <div class="stat-sub">EasyChris · 18th safe spot</div>
     </div>
   </div>
 
   <!-- TABS -->
   <div class="tabs">
-    <button class="tab-btn active" onclick="switchTab('standings')">Standings</button>
+    <button class="tab-btn" onclick="switchTab('standings')">Standings</button>
     <button class="tab-btn" onclick="switchTab('update')">⬆ Update Week</button>
     <button class="tab-btn" onclick="switchTab('history')">Week History</button>
-    <button class="tab-btn" onclick="switchTab('beer')">🏦 Tracker</button>
+    <button class="tab-btn active" onclick="switchTab('beer')">🏦 Tracker</button>
   </div>
 
   <!-- TAB: STANDINGS -->
-  <div class="tab-panel active" id="tab-standings">
+  <div class="tab-panel" id="tab-standings">
 
     <div class="podium" id="podium">
     <div class="podium-card p2">
       <div class="podium-rank">2</div>
-      <div class="podium-name">wheelhousestl</div>
-      <div class="podium-pts">57</div>
+      <div class="podium-name">lcrose22</div>
+      <div class="podium-pts">102.5</div>
       <div class="podium-pts-label">League Points</div>
     </div>
   
     <div class="podium-card p1">
       <div class="podium-rank">1</div>
       <div class="podium-name">taylorhiemenz</div>
-      <div class="podium-pts">58</div>
+      <div class="podium-pts">107</div>
       <div class="podium-pts-label">League Points</div>
     </div>
   
     <div class="podium-card p3">
       <div class="podium-rank">3</div>
-      <div class="podium-name">scottdold</div>
-      <div class="podium-pts">52</div>
+      <div class="podium-name">JottieBucs</div>
+      <div class="podium-pts">91.5</div>
       <div class="podium-pts-label">League Points</div>
     </div>
   </div>
@@ -831,12 +831,12 @@
       <tbody id="standings-body">
       <tr class="" style="animation-delay:0s">
         <td class="rank-cell rank1">1</td>
-        <td class="num" style="width:40px"><span class="trend-up">▲1</span></td>
-        <td class="player-name" style="color:inherit">taylorhiemenz</td>
-        <td class="num points-cell">58</td>
+        <td class="num" style="width:40px"><span class="trend-same">—</span></td>
+        <td class="player-name" style="color:inherit">taylorhiemenz<span class="badge badge-win">🏆 1W</span></td>
+        <td class="num points-cell">107</td>
         <td class="num" style="color:var(--gold);font-size:13px">+6</td>
-        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
-        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+6</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+9</td>
         <td class="num" style="color:var(--muted);font-size:12px">—</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
       </tr>
@@ -844,20 +844,20 @@
       <tr class="" style="animation-delay:0.025s">
         <td class="rank-cell top3">2</td>
         <td class="num" style="width:40px"><span class="trend-up">▲6</span></td>
-        <td class="player-name" style="color:inherit">wheelhousestl</td>
-        <td class="num points-cell">57</td>
+        <td class="player-name" style="color:inherit">lcrose22<span class="badge badge-win">🏆 1W</span></td>
+        <td class="num points-cell">102.5</td>
         <td class="num" style="color:var(--gold);font-size:13px">+3</td>
-        <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
-        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+6</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">+6</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+9</td>
         <td class="num" style="color:var(--muted);font-size:12px">—</td>
-        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">$100</td>
       </tr>
     
       <tr class="" style="animation-delay:0.05s">
         <td class="rank-cell top3">3</td>
-        <td class="num" style="width:40px"><span class="trend-down">▼2</span></td>
-        <td class="player-name" style="color:inherit">scottdold<span class="badge badge-win">🏆 1W</span></td>
-        <td class="num points-cell">52</td>
+        <td class="num" style="width:40px"><span class="trend-up">▲2</span></td>
+        <td class="player-name" style="color:inherit">JottieBucs</td>
+        <td class="num points-cell">91.5</td>
         <td class="num" style="color:var(--gold);font-size:13px">+3</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+6</td>
@@ -867,45 +867,9 @@
     
       <tr class="" style="animation-delay:0.07500000000000001s">
         <td class="rank-cell ">4</td>
-        <td class="num" style="width:40px"><span class="trend-up">▲12</span></td>
-        <td class="player-name" style="color:inherit">kenji2323</td>
-        <td class="num points-cell">50.5</td>
-        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
-        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
-        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
-        <td class="num" style="color:var(--muted);font-size:12px">—</td>
-        <td class="num" style="color:var(--gold);font-size:13px">—</td>
-      </tr>
-    
-      <tr class="" style="animation-delay:0.1s">
-        <td class="rank-cell ">5</td>
-        <td class="num" style="width:40px"><span class="trend-up">▲5</span></td>
-        <td class="player-name" style="color:inherit">meathighway</td>
-        <td class="num points-cell">49.5</td>
-        <td class="num" style="color:var(--gold);font-size:13px">—</td>
-        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
-        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
-        <td class="num" style="color:var(--muted);font-size:12px">—</td>
-        <td class="num" style="color:var(--gold);font-size:13px">—</td>
-      </tr>
-    
-      <tr class="" style="animation-delay:0.125s">
-        <td class="rank-cell ">6</td>
-        <td class="num" style="width:40px"><span class="trend-up">▲2</span></td>
-        <td class="player-name" style="color:inherit">nvance69420</td>
-        <td class="num points-cell">49</td>
-        <td class="num" style="color:var(--gold);font-size:13px">—</td>
-        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
-        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
-        <td class="num" style="color:var(--muted);font-size:12px">—</td>
-        <td class="num" style="color:var(--gold);font-size:13px">—</td>
-      </tr>
-    
-      <tr class="" style="animation-delay:0.15000000000000002s">
-        <td class="rank-cell ">7</td>
         <td class="num" style="width:40px"><span class="trend-down">▼2</span></td>
-        <td class="player-name" style="color:inherit">Sheetwood24</td>
-        <td class="num points-cell">45</td>
+        <td class="player-name" style="color:inherit">jpevans05</td>
+        <td class="num points-cell">91</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
@@ -913,11 +877,35 @@
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
       </tr>
     
-      <tr class="" style="animation-delay:0.17500000000000002s">
-        <td class="rank-cell ">8</td>
+      <tr class="" style="animation-delay:0.1s">
+        <td class="rank-cell ">5</td>
         <td class="num" style="width:40px"><span class="trend-up">▲4</span></td>
-        <td class="player-name" style="color:inherit">dowens25</td>
-        <td class="num points-cell">42</td>
+        <td class="player-name" style="color:inherit">vader.av</td>
+        <td class="num points-cell">90</td>
+        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.125s">
+        <td class="rank-cell ">6</td>
+        <td class="num" style="width:40px"><span class="trend-up">▲12</span></td>
+        <td class="player-name" style="color:inherit">heysebc</td>
+        <td class="num points-cell">86.5</td>
+        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+6</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.15000000000000002s">
+        <td class="rank-cell ">7</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼1</span></td>
+        <td class="player-name" style="color:inherit">meathighway</td>
+        <td class="num points-cell">85.5</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
@@ -925,11 +913,23 @@
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
       </tr>
     
+      <tr class="" style="animation-delay:0.17500000000000002s">
+        <td class="rank-cell ">8</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼6</span></td>
+        <td class="player-name" style="color:inherit">scottdold<span class="badge badge-win">🏆 1W</span></td>
+        <td class="num points-cell">81</td>
+        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+6</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
       <tr class="" style="animation-delay:0.2s">
         <td class="rank-cell ">9</td>
         <td class="num" style="width:40px"><span class="trend-down">▼2</span></td>
-        <td class="player-name" style="color:inherit">jpevans05</td>
-        <td class="num points-cell">41</td>
+        <td class="player-name" style="color:inherit">tgroff24</td>
+        <td class="num points-cell">80</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
@@ -938,34 +938,46 @@
       </tr>
     
       <tr class="" style="animation-delay:0.225s">
-        <td class="rank-cell ">9</td>
-        <td class="num" style="width:40px"><span class="trend-up">▲10</span></td>
-        <td class="player-name" style="color:inherit">tgroff24</td>
-        <td class="num points-cell">41</td>
-        <td class="num" style="color:var(--gold);font-size:13px">—</td>
-        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
-        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="rank-cell ">10</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼6</span></td>
+        <td class="player-name" style="color:inherit">wheelhousestl</td>
+        <td class="num points-cell">75</td>
+        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+6</td>
         <td class="num" style="color:var(--muted);font-size:12px">—</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
       </tr>
     
       <tr class="" style="animation-delay:0.25s">
         <td class="rank-cell ">11</td>
-        <td class="num" style="width:40px"><span class="trend-up">▲20</span></td>
-        <td class="player-name" style="color:inherit">ziggysmalls1224<span class="badge badge-win">🏆 1W</span></td>
-        <td class="num points-cell">38</td>
-        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="width:40px"><span class="trend-same">—</span></td>
+        <td class="player-name" style="color:inherit">jaywmiller22</td>
+        <td class="num points-cell">74.5</td>
+        <td class="num" style="color:var(--gold);font-size:13px">+6</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
-        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+9</td>
         <td class="num" style="color:var(--muted);font-size:12px">—</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
       </tr>
     
       <tr class="" style="animation-delay:0.275s">
         <td class="rank-cell ">12</td>
-        <td class="num" style="width:40px"><span class="trend-down">▼8</span></td>
-        <td class="player-name" style="color:inherit">JottieBucs</td>
-        <td class="num points-cell">36.5</td>
+        <td class="num" style="width:40px"><span class="trend-up">▲9</span></td>
+        <td class="player-name" style="color:inherit">ColeMighty</td>
+        <td class="num points-cell">74</td>
+        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+6</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.30000000000000004s">
+        <td class="rank-cell ">13</td>
+        <td class="num" style="width:40px"><span class="trend-up">▲7</span></td>
+        <td class="player-name" style="color:inherit">cwoofter</td>
+        <td class="num points-cell">73.5</td>
         <td class="num" style="color:var(--gold);font-size:13px">+3</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
@@ -973,23 +985,11 @@
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
       </tr>
     
-      <tr class="" style="animation-delay:0.30000000000000004s">
-        <td class="rank-cell ">13</td>
-        <td class="num" style="width:40px"><span class="trend-up">▲9</span></td>
-        <td class="player-name" style="color:inherit">vader.av</td>
-        <td class="num points-cell">36</td>
-        <td class="num" style="color:var(--gold);font-size:13px">—</td>
-        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
-        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
-        <td class="num" style="color:var(--muted);font-size:12px">—</td>
-        <td class="num" style="color:var(--gold);font-size:13px">—</td>
-      </tr>
-    
       <tr class="" style="animation-delay:0.325s">
         <td class="rank-cell ">14</td>
-        <td class="num" style="width:40px"><span class="trend-down">▼11</span></td>
-        <td class="player-name" style="color:inherit">jlee45</td>
-        <td class="num points-cell">35</td>
+        <td class="num" style="width:40px"><span class="trend-up">▲7</span></td>
+        <td class="player-name" style="color:inherit">ziggysmalls1224<span class="badge badge-win">🏆 1W</span></td>
+        <td class="num points-cell">73</td>
         <td class="num" style="color:var(--gold);font-size:13px">+3</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+6</td>
@@ -998,34 +998,22 @@
       </tr>
     
       <tr class="" style="animation-delay:0.35000000000000003s">
-        <td class="rank-cell ">14</td>
-        <td class="num" style="width:40px"><span class="trend-same">—</span></td>
-        <td class="player-name" style="color:inherit">rolander32</td>
-        <td class="num points-cell">35</td>
-        <td class="num" style="color:var(--gold);font-size:13px">—</td>
-        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
-        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="rank-cell ">15</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼1</span></td>
+        <td class="player-name" style="color:inherit">jlee45</td>
+        <td class="num points-cell">71</td>
+        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+6</td>
         <td class="num" style="color:var(--muted);font-size:12px">—</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
       </tr>
     
       <tr class="" style="animation-delay:0.375s">
-        <td class="rank-cell ">16</td>
-        <td class="num" style="width:40px"><span class="trend-same">—</span></td>
-        <td class="player-name" style="color:inherit">cwoofter</td>
-        <td class="num points-cell">33.5</td>
-        <td class="num" style="color:var(--gold);font-size:13px">—</td>
-        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
-        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
-        <td class="num" style="color:var(--muted);font-size:12px">—</td>
-        <td class="num" style="color:var(--gold);font-size:13px">—</td>
-      </tr>
-    
-      <tr class="" style="animation-delay:0.4s">
-        <td class="rank-cell ">17</td>
-        <td class="num" style="width:40px"><span class="trend-down">▼11</span></td>
-        <td class="player-name" style="color:inherit">ColeMighty</td>
-        <td class="num points-cell">33</td>
+        <td class="rank-cell ">15</td>
+        <td class="num" style="width:40px"><span class="trend-up">▲1</span></td>
+        <td class="player-name" style="color:inherit">Sheetwood24</td>
+        <td class="num points-cell">71</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
@@ -1033,23 +1021,35 @@
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
       </tr>
     
-      <tr class="" style="animation-delay:0.42500000000000004s">
-        <td class="rank-cell ">18</td>
-        <td class="num" style="width:40px"><span class="trend-up">▲6</span></td>
-        <td class="player-name" style="color:inherit">lcrose22</td>
-        <td class="num points-cell">31.5</td>
+      <tr class="" style="animation-delay:0.4s">
+        <td class="rank-cell ">17</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼8</span></td>
+        <td class="player-name" style="color:inherit">nvance69420</td>
+        <td class="num points-cell">70</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
         <td class="num" style="color:var(--muted);font-size:12px">—</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
       </tr>
+    
+      <tr class="" style="animation-delay:0.42500000000000004s">
+        <td class="rank-cell ">18</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼2</span></td>
+        <td class="player-name" style="color:inherit">EasyChris</td>
+        <td class="num points-cell">66</td>
+        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
     <tr><td colspan="10" class="playoff-label">── Playoff Cutline (Top 18 Advance) ──</td></tr>
       <tr class="playoff-line" style="animation-delay:0.45s">
         <td class="rank-cell ">19</td>
-        <td class="num" style="width:40px"><span class="trend-up">▲2</span></td>
-        <td class="player-name" style="color:inherit">rmealy</td>
-        <td class="num points-cell">30</td>
+        <td class="num" style="width:40px"><span class="trend-same">—</span></td>
+        <td class="player-name" style="color:inherit">dedsdraft35</td>
+        <td class="num points-cell">64</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
@@ -1059,21 +1059,9 @@
     
       <tr class="" style="animation-delay:0.47500000000000003s">
         <td class="rank-cell ">20</td>
-        <td class="num" style="width:40px"><span class="trend-up">▲6</span></td>
-        <td class="player-name" style="color:inherit">kreybradley</td>
-        <td class="num points-cell">29.5</td>
-        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
-        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
-        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
-        <td class="num" style="color:var(--muted);font-size:12px">—</td>
-        <td class="num" style="color:var(--gold);font-size:13px">—</td>
-      </tr>
-    
-      <tr class="" style="animation-delay:0.5s">
-        <td class="rank-cell ">21</td>
-        <td class="num" style="width:40px"><span class="trend-down">▼11</span></td>
-        <td class="player-name" style="color:inherit">heysebc</td>
-        <td class="num points-cell">28.5</td>
+        <td class="num" style="width:40px"><span class="trend-up">▲4</span></td>
+        <td class="player-name" style="color:inherit">Bmacsupreme</td>
+        <td class="num points-cell">62</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
@@ -1081,13 +1069,25 @@
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
       </tr>
     
-      <tr class="" style="animation-delay:0.525s">
+      <tr class="" style="animation-delay:0.5s">
         <td class="rank-cell ">21</td>
         <td class="num" style="width:40px"><span class="trend-up">▲9</span></td>
-        <td class="player-name" style="color:inherit">jaywmiller22</td>
-        <td class="num points-cell">28.5</td>
-        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="player-name" style="color:inherit">utaherica</td>
+        <td class="num points-cell">59.5</td>
+        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+6</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.525s">
+        <td class="rank-cell ">22</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼9</span></td>
+        <td class="player-name" style="color:inherit">kenji2323</td>
+        <td class="num points-cell">56.5</td>
+        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
         <td class="num" style="color:var(--muted);font-size:12px">—</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
@@ -1095,21 +1095,9 @@
     
       <tr class="" style="animation-delay:0.55s">
         <td class="rank-cell ">23</td>
-        <td class="num" style="width:40px"><span class="trend-down">▼10</span></td>
-        <td class="player-name" style="color:inherit">Bmillertime3</td>
-        <td class="num points-cell">25.5</td>
-        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
-        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
-        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
-        <td class="num" style="color:var(--muted);font-size:12px">—</td>
-        <td class="num" style="color:var(--gold);font-size:13px">—</td>
-      </tr>
-    
-      <tr class="" style="animation-delay:0.5750000000000001s">
-        <td class="rank-cell ">24</td>
-        <td class="num" style="width:40px"><span class="trend-down">▼9</span></td>
-        <td class="player-name" style="color:inherit">EasyChris</td>
-        <td class="num points-cell">25</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼11</span></td>
+        <td class="player-name" style="color:inherit">dowens25</td>
+        <td class="num points-cell">55</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
@@ -1117,11 +1105,23 @@
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
       </tr>
     
+      <tr class="" style="animation-delay:0.5750000000000001s">
+        <td class="rank-cell ">24</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼9</span></td>
+        <td class="player-name" style="color:inherit">kreybradley</td>
+        <td class="num points-cell">52.5</td>
+        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
       <tr class="" style="animation-delay:0.6000000000000001s">
         <td class="rank-cell ">25</td>
-        <td class="num" style="width:40px"><span class="trend-down">▼2</span></td>
-        <td class="player-name" style="color:inherit">karibou5550</td>
-        <td class="num points-cell">22.5</td>
+        <td class="num" style="width:40px"><span class="trend-up">▲4</span></td>
+        <td class="player-name" style="color:inherit">Bmillertime3</td>
+        <td class="num points-cell">51.5</td>
         <td class="num" style="color:var(--gold);font-size:13px">+3</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
@@ -1131,9 +1131,9 @@
     
       <tr class="" style="animation-delay:0.625s">
         <td class="rank-cell ">26</td>
-        <td class="num" style="width:40px"><span class="trend-down">▼6</span></td>
-        <td class="player-name" style="color:inherit">dedsdraft35</td>
-        <td class="num points-cell">21</td>
+        <td class="num" style="width:40px"><span class="trend-up">▲1</span></td>
+        <td class="player-name" style="color:inherit">ewoofter</td>
+        <td class="num points-cell">51</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
@@ -1143,9 +1143,9 @@
     
       <tr class="" style="animation-delay:0.65s">
         <td class="rank-cell ">27</td>
-        <td class="num" style="width:40px"><span class="trend-down">▼2</span></td>
-        <td class="player-name" style="color:inherit">Bmacsupreme</td>
-        <td class="num points-cell">20</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼4</span></td>
+        <td class="player-name" style="color:inherit">rolander32</td>
+        <td class="num points-cell">50</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
@@ -1155,9 +1155,9 @@
     
       <tr class="" style="animation-delay:0.675s">
         <td class="rank-cell ">28</td>
-        <td class="num" style="width:40px"><span class="trend-up">▲1</span></td>
-        <td class="player-name" style="color:inherit">heysenwisen</td>
-        <td class="num points-cell">18</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼3</span></td>
+        <td class="player-name" style="color:inherit">rmealy</td>
+        <td class="num points-cell">42</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
@@ -1167,9 +1167,9 @@
     
       <tr class="" style="animation-delay:0.7000000000000001s">
         <td class="rank-cell ">29</td>
-        <td class="num" style="width:40px"><span class="trend-down">▼11</span></td>
-        <td class="player-name" style="color:inherit">ewoofter</td>
-        <td class="num points-cell">16</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼4</span></td>
+        <td class="player-name" style="color:inherit">heysenwisen</td>
+        <td class="num points-cell">40</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
@@ -1180,20 +1180,20 @@
       <tr class="" style="animation-delay:0.7250000000000001s">
         <td class="rank-cell ">30</td>
         <td class="num" style="width:40px"><span class="trend-down">▼2</span></td>
-        <td class="player-name" style="color:inherit">utaherica</td>
-        <td class="num points-cell">14.5</td>
-        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="player-name" style="color:inherit">karibou5550</td>
+        <td class="num points-cell">39.5</td>
+        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
-        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
         <td class="num" style="color:var(--muted);font-size:12px">—</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
       </tr>
     
       <tr class="" style="animation-delay:0.75s">
         <td class="rank-cell ">31</td>
-        <td class="num" style="width:40px"><span class="trend-down">▼5</span></td>
+        <td class="num" style="width:40px"><span class="trend-same">—</span></td>
         <td class="player-name" style="color:inherit">idlee23</td>
-        <td class="num points-cell">12.5</td>
+        <td class="num points-cell">23.5</td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
@@ -1224,7 +1224,7 @@
     <div class="upload-section">
       <div class="upload-title">Import Weekly Template</div>
       <div class="upload-desc">Fill in the weekly XLSX template and drop it below. Rank, adjusted scores, and all bonuses are read directly from the file — no manual entry needed here.</div>
-      <div id="storage-status" style="font-size:10px;color:var(--dk-muted);letter-spacing:1px;margin-bottom:12px">✓ Data loaded · Last saved: 3/11/2026, 11:17:08 AM · <span style="cursor:pointer;color:var(--dk-red);text-decoration:underline" onclick="clearStorage()">Clear all data</span></div>
+      <div id="storage-status" style="font-size:10px;color:var(--dk-muted);letter-spacing:1px;margin-bottom:12px">✓ Data loaded · Last saved: 3/11/2026, 11:52:31 AM · <span style="cursor:pointer;color:var(--dk-red);text-decoration:underline" onclick="clearStorage()">Clear all data</span></div>
 
       <div style="display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-bottom:18px">
         <div style="flex:2;min-width:200px">
@@ -1257,7 +1257,7 @@
 
     <div class="results-preview" id="results-preview" style="display: none;">
       <div class="results-header">
-        <div class="results-title" id="results-title">Amex — Preview</div>
+        <div class="results-title" id="results-title">PHX — Preview</div>
         <button class="btn" onclick="applyResults()">✓ Apply to Standings</button>
       </div>
       <table class="week-table">
@@ -1276,310 +1276,310 @@
         <tbody id="results-body">
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">1</td>
-      <td>ziggysmalls1224</td>
-      <td class="r">626.5</td>
+      <td>lcrose22</td>
+      <td class="r">619.5</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">626.5</td>
+      <td class="r" style="color:var(--muted)">619.5</td>
       <td class="r" style="color:var(--green-bright)">34</td>
-      <td class="r" style="color:var(--gold);font-size:11px">+3 no-cut</td>
-      <td class="r pts-earned">37</td>
+      <td class="r" style="color:var(--gold);font-size:11px">+3 no-cut, +3 winner</td>
+      <td class="r pts-earned">40</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">2</td>
-      <td>kenji2323</td>
-      <td class="r">614.5</td>
+      <td>heysebc</td>
+      <td class="r">568</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">614.5</td>
+      <td class="r" style="color:var(--muted)">568</td>
       <td class="r" style="color:var(--green-bright)">32</td>
-      <td class="r" style="color:var(--gold);font-size:11px">+3 winner</td>
-      <td class="r pts-earned">35</td>
+      <td class="r" style="color:var(--gold);font-size:11px">+3 no-cut, +3 winner</td>
+      <td class="r pts-earned">38</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">3</td>
-      <td>wheelhousestl</td>
-      <td class="r">608</td>
+      <td>utaherica</td>
+      <td class="r">539</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">608</td>
+      <td class="r" style="color:var(--muted)">539</td>
       <td class="r" style="color:var(--green-bright)">30</td>
-      <td class="r" style="color:var(--gold);font-size:11px">+3 winner</td>
-      <td class="r pts-earned">33</td>
+      <td class="r" style="color:var(--gold);font-size:11px">+3 no-cut, +3 winner</td>
+      <td class="r pts-earned">36</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">4</td>
-      <td>tgroff24</td>
-      <td class="r">607.5</td>
+      <td>vader.av</td>
+      <td class="r">511.5</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">607.5</td>
+      <td class="r" style="color:var(--muted)">511.5</td>
       <td class="r" style="color:var(--green-bright)">28</td>
-      <td class="r" style="color:var(--gold);font-size:11px">—</td>
-      <td class="r pts-earned">28</td>
+      <td class="r" style="color:var(--gold);font-size:11px">+3 winner</td>
+      <td class="r pts-earned">31</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">5</td>
-      <td>meathighway</td>
-      <td class="r">588.5</td>
+      <td>ColeMighty</td>
+      <td class="r">508.5</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">588.5</td>
+      <td class="r" style="color:var(--muted)">508.5</td>
       <td class="r" style="color:var(--green-bright)">27</td>
-      <td class="r" style="color:var(--gold);font-size:11px">—</td>
-      <td class="r pts-earned">27</td>
+      <td class="r" style="color:var(--gold);font-size:11px">+3 winner</td>
+      <td class="r pts-earned">30</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">6</td>
-      <td>vader.av</td>
-      <td class="r">587.5</td>
+      <td>ziggysmalls1224</td>
+      <td class="r">490</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">587.5</td>
+      <td class="r" style="color:var(--muted)">490</td>
       <td class="r" style="color:var(--green-bright)">26</td>
-      <td class="r" style="color:var(--gold);font-size:11px">—</td>
-      <td class="r pts-earned">26</td>
+      <td class="r" style="color:var(--gold);font-size:11px">+3 winner</td>
+      <td class="r pts-earned">29</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">7</td>
-      <td>nvance69420</td>
-      <td class="r">585.5</td>
+      <td>Bmillertime3</td>
+      <td class="r">470</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">585.5</td>
+      <td class="r" style="color:var(--muted)">470</td>
       <td class="r" style="color:var(--green-bright)">25</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
       <td class="r pts-earned">25</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">8</td>
-      <td>jaywmiller22</td>
-      <td class="r">584</td>
+      <td>cwoofter</td>
+      <td class="r">468</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">584</td>
-      <td class="r" style="color:var(--green-bright)">23.5</td>
-      <td class="r" style="color:var(--gold);font-size:11px">+3 no-cut</td>
-      <td class="r pts-earned">26.5</td>
+      <td class="r" style="color:var(--muted)">468</td>
+      <td class="r" style="color:var(--green-bright)">24</td>
+      <td class="r" style="color:var(--gold);font-size:11px">+3 winner</td>
+      <td class="r pts-earned">27</td>
     </tr>
     <tr>
-      <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">8</td>
-      <td>lcrose22</td>
-      <td class="r">584</td>
+      <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">9</td>
+      <td>Bmacsupreme</td>
+      <td class="r">460</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">584</td>
-      <td class="r" style="color:var(--green-bright)">23.5</td>
+      <td class="r" style="color:var(--muted)">460</td>
+      <td class="r" style="color:var(--green-bright)">23</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
-      <td class="r pts-earned">23.5</td>
+      <td class="r pts-earned">23</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">10</td>
-      <td>dowens25</td>
-      <td class="r">573.5</td>
+      <td>JottieBucs</td>
+      <td class="r">451.5</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">573.5</td>
+      <td class="r" style="color:var(--muted)">451.5</td>
       <td class="r" style="color:var(--green-bright)">22</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
       <td class="r pts-earned">22</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">11</td>
-      <td>kreybradley</td>
-      <td class="r">571.5</td>
+      <td>Sheetwood24</td>
+      <td class="r">448.5</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">571.5</td>
+      <td class="r" style="color:var(--muted)">448.5</td>
       <td class="r" style="color:var(--green-bright)">21</td>
-      <td class="r" style="color:var(--gold);font-size:11px">+3 winner</td>
-      <td class="r pts-earned">24</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r pts-earned">21</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">12</td>
-      <td>taylorhiemenz</td>
-      <td class="r">567.5</td>
+      <td>ewoofter</td>
+      <td class="r">446.5</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">567.5</td>
+      <td class="r" style="color:var(--muted)">446.5</td>
       <td class="r" style="color:var(--green-bright)">20</td>
-      <td class="r" style="color:var(--gold);font-size:11px">+3 winner</td>
-      <td class="r pts-earned">23</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r pts-earned">20</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">13</td>
-      <td>rmealy</td>
-      <td class="r">563</td>
+      <td>meathighway</td>
+      <td class="r">445.5</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">563</td>
+      <td class="r" style="color:var(--muted)">445.5</td>
       <td class="r" style="color:var(--green-bright)">19</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
       <td class="r pts-earned">19</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">14</td>
-      <td>cwoofter</td>
-      <td class="r">558</td>
+      <td>jlee45</td>
+      <td class="r">435</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">558</td>
+      <td class="r" style="color:var(--muted)">435</td>
       <td class="r" style="color:var(--green-bright)">18</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
       <td class="r pts-earned">18</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">15</td>
-      <td>rolander32</td>
-      <td class="r">551</td>
+      <td>dedsdraft35</td>
+      <td class="r">430</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">551</td>
+      <td class="r" style="color:var(--muted)">430</td>
       <td class="r" style="color:var(--green-bright)">17</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
       <td class="r pts-earned">17</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">16</td>
-      <td>Sheetwood24</td>
-      <td class="r">547</td>
+      <td>EasyChris</td>
+      <td class="r">427.5</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">547</td>
+      <td class="r" style="color:var(--muted)">427.5</td>
       <td class="r" style="color:var(--green-bright)">16</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
       <td class="r pts-earned">16</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">17</td>
-      <td>heysenwisen</td>
-      <td class="r">537</td>
+      <td>jpevans05</td>
+      <td class="r">426.5</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">537</td>
+      <td class="r" style="color:var(--muted)">426.5</td>
       <td class="r" style="color:var(--green-bright)">15</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
       <td class="r pts-earned">15</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">18</td>
-      <td>jpevans05</td>
-      <td class="r">527.5</td>
+      <td>tgroff24</td>
+      <td class="r">422</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">527.5</td>
+      <td class="r" style="color:var(--muted)">422</td>
       <td class="r" style="color:var(--green-bright)">14</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
       <td class="r pts-earned">14</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">19</td>
-      <td>Bmacsupreme</td>
-      <td class="r">526.5</td>
+      <td>jaywmiller22</td>
+      <td class="r">412</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">526.5</td>
+      <td class="r" style="color:var(--muted)">412</td>
       <td class="r" style="color:var(--green-bright)">13</td>
-      <td class="r" style="color:var(--gold);font-size:11px">—</td>
-      <td class="r pts-earned">13</td>
+      <td class="r" style="color:var(--gold);font-size:11px">+3 winner</td>
+      <td class="r pts-earned">16</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">20</td>
-      <td>scottdold</td>
-      <td class="r">523.5</td>
+      <td>taylorhiemenz</td>
+      <td class="r">407</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">523.5</td>
+      <td class="r" style="color:var(--muted)">407</td>
       <td class="r" style="color:var(--green-bright)">12</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
       <td class="r pts-earned">12</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">21</td>
-      <td>karibou5550</td>
-      <td class="r">516</td>
+      <td>nvance69420</td>
+      <td class="r">405.5</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">516</td>
-      <td class="r" style="color:var(--green-bright)">10.5</td>
-      <td class="r" style="color:var(--gold);font-size:11px">+3 winner</td>
-      <td class="r pts-earned">13.5</td>
+      <td class="r" style="color:var(--muted)">405.5</td>
+      <td class="r" style="color:var(--green-bright)">11</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r pts-earned">11</td>
     </tr>
     <tr>
-      <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">21</td>
-      <td>utaherica</td>
-      <td class="r">516</td>
+      <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">22</td>
+      <td>karibou5550</td>
+      <td class="r">401.5</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">516</td>
-      <td class="r" style="color:var(--green-bright)">10.5</td>
+      <td class="r" style="color:var(--muted)">401.5</td>
+      <td class="r" style="color:var(--green-bright)">10</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
-      <td class="r pts-earned">10.5</td>
+      <td class="r pts-earned">10</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">23</td>
-      <td>dedsdraft35</td>
-      <td class="r">500.5</td>
+      <td>idlee23</td>
+      <td class="r">401</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">500.5</td>
+      <td class="r" style="color:var(--muted)">401</td>
       <td class="r" style="color:var(--green-bright)">9</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
       <td class="r pts-earned">9</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">24</td>
-      <td>EasyChris</td>
-      <td class="r">497.5</td>
+      <td>rmealy</td>
+      <td class="r">387.5</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">497.5</td>
+      <td class="r" style="color:var(--muted)">387.5</td>
       <td class="r" style="color:var(--green-bright)">8</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
       <td class="r pts-earned">8</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">25</td>
-      <td>idlee23</td>
-      <td class="r">483</td>
+      <td>rolander32</td>
+      <td class="r">375</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">483</td>
+      <td class="r" style="color:var(--muted)">375</td>
       <td class="r" style="color:var(--green-bright)">7</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
       <td class="r pts-earned">7</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">26</td>
-      <td>heysebc</td>
-      <td class="r">475.5</td>
+      <td>heysenwisen</td>
+      <td class="r">364.5</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">475.5</td>
+      <td class="r" style="color:var(--muted)">364.5</td>
       <td class="r" style="color:var(--green-bright)">6</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
       <td class="r pts-earned">6</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">27</td>
-      <td>ColeMighty</td>
-      <td class="r">464.5</td>
+      <td>scottdold</td>
+      <td class="r">360.5</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">464.5</td>
+      <td class="r" style="color:var(--muted)">360.5</td>
       <td class="r" style="color:var(--green-bright)">5</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
       <td class="r pts-earned">5</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">28</td>
-      <td>Bmillertime3</td>
-      <td class="r">458</td>
+      <td>wheelhousestl</td>
+      <td class="r">346</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">458</td>
-      <td class="r" style="color:var(--green-bright)">3.5</td>
-      <td class="r" style="color:var(--gold);font-size:11px">+3 winner</td>
-      <td class="r pts-earned">6.5</td>
+      <td class="r" style="color:var(--muted)">346</td>
+      <td class="r" style="color:var(--green-bright)">4</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r pts-earned">4</td>
     </tr>
     <tr>
-      <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">28</td>
-      <td>JottieBucs</td>
-      <td class="r">458</td>
+      <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">29</td>
+      <td>kenji2323</td>
+      <td class="r">339.5</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">458</td>
-      <td class="r" style="color:var(--green-bright)">3.5</td>
+      <td class="r" style="color:var(--muted)">339.5</td>
+      <td class="r" style="color:var(--green-bright)">3</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
-      <td class="r pts-earned">3.5</td>
+      <td class="r pts-earned">3</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">30</td>
-      <td>ewoofter</td>
-      <td class="r">426.5</td>
+      <td>kreybradley</td>
+      <td class="r">292</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">426.5</td>
+      <td class="r" style="color:var(--muted)">292</td>
       <td class="r" style="color:var(--green-bright)">2</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
       <td class="r pts-earned">2</td>
     </tr>
     <tr>
       <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">31</td>
-      <td>jlee45</td>
-      <td class="r">423</td>
+      <td>dowens25</td>
+      <td class="r">262</td>
       <td class="r" style="color:var(--blue)">—</td>
-      <td class="r" style="color:var(--muted)">423</td>
+      <td class="r" style="color:var(--muted)">262</td>
       <td class="r" style="color:var(--green-bright)">1</td>
       <td class="r" style="color:var(--gold);font-size:11px">—</td>
       <td class="r pts-earned">1</td>
@@ -1615,13 +1615,294 @@
       <div class="hc-winner">ziggysmalls1224</div>
       <div class="hc-pts">Mar 11 · Completed</div>
     </div>
+  
+    <div class="history-card" onclick="showWeekDetail(2)" id="hcard-2">
+      <div class="hc-event">Farmers</div>
+      <div class="hc-winner-label">Winner</div>
+      <div class="hc-winner">taylorhiemenz</div>
+      <div class="hc-pts">Mar 11 · Completed</div>
+    </div>
+  
+    <div class="history-card" onclick="showWeekDetail(3)" id="hcard-3">
+      <div class="hc-event">PHX</div>
+      <div class="hc-winner-label">Winner</div>
+      <div class="hc-winner">lcrose22</div>
+      <div class="hc-pts">Mar 11 · Completed</div>
+    </div>
   </div>
-    <div class="week-detail-panel" id="week-detail"></div>
+    <div class="week-detail-panel open" id="week-detail">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;flex-wrap:wrap;gap:8px">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--gold-light);letter-spacing:2px">Amex</div>
+      <div style="font-size:11px;color:var(--muted);letter-spacing:2px">Mar 11 · Completed · 31 players</div>
+    </div>
+    <table class="week-table">
+      <thead>
+        <tr>
+          <th style="width:40px">Rank</th>
+          <th>Player</th>
+          <th class="r">DK Score</th>
+          
+          <th class="r">Lg Pts</th>
+          <th class="r">Bonuses</th>
+          <th class="r">Total</th>
+        </tr>
+      </thead>
+      <tbody><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">1</span></td>
+      <td style="font-weight:500">ziggysmalls1224</td>
+      <td class="r">626.5</td>
+      
+      <td class="r" style="color:var(--green-bright)">34</td>
+      <td class="r" style="color:var(--gold);font-size:11px">+3 nc</td>
+      <td class="r"><span class="pts-earned">37</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">2</span></td>
+      <td style="font-weight:500">kenji2323</td>
+      <td class="r">614.5</td>
+      
+      <td class="r" style="color:var(--green-bright)">32</td>
+      <td class="r" style="color:var(--gold);font-size:11px">+3 win</td>
+      <td class="r"><span class="pts-earned">35</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">3</span></td>
+      <td style="font-weight:500">wheelhousestl</td>
+      <td class="r">608</td>
+      
+      <td class="r" style="color:var(--green-bright)">30</td>
+      <td class="r" style="color:var(--gold);font-size:11px">+3 win</td>
+      <td class="r"><span class="pts-earned">33</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">4</span></td>
+      <td style="font-weight:500">tgroff24</td>
+      <td class="r">607.5</td>
+      
+      <td class="r" style="color:var(--green-bright)">28</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">28</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">5</span></td>
+      <td style="font-weight:500">meathighway</td>
+      <td class="r">588.5</td>
+      
+      <td class="r" style="color:var(--green-bright)">27</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">27</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">6</span></td>
+      <td style="font-weight:500">vader.av</td>
+      <td class="r">587.5</td>
+      
+      <td class="r" style="color:var(--green-bright)">26</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">26</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">7</span></td>
+      <td style="font-weight:500">nvance69420</td>
+      <td class="r">585.5</td>
+      
+      <td class="r" style="color:var(--green-bright)">25</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">25</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">8</span></td>
+      <td style="font-weight:500">jaywmiller22</td>
+      <td class="r">584</td>
+      
+      <td class="r" style="color:var(--green-bright)">23.5</td>
+      <td class="r" style="color:var(--gold);font-size:11px">+3 nc</td>
+      <td class="r"><span class="pts-earned">26.5</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">9</span></td>
+      <td style="font-weight:500">lcrose22</td>
+      <td class="r">584</td>
+      
+      <td class="r" style="color:var(--green-bright)">23.5</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">23.5</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">10</span></td>
+      <td style="font-weight:500">dowens25</td>
+      <td class="r">573.5</td>
+      
+      <td class="r" style="color:var(--green-bright)">22</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">22</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">11</span></td>
+      <td style="font-weight:500">kreybradley</td>
+      <td class="r">571.5</td>
+      
+      <td class="r" style="color:var(--green-bright)">21</td>
+      <td class="r" style="color:var(--gold);font-size:11px">+3 win</td>
+      <td class="r"><span class="pts-earned">24</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">12</span></td>
+      <td style="font-weight:500">taylorhiemenz</td>
+      <td class="r">567.5</td>
+      
+      <td class="r" style="color:var(--green-bright)">20</td>
+      <td class="r" style="color:var(--gold);font-size:11px">+3 win</td>
+      <td class="r"><span class="pts-earned">23</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">13</span></td>
+      <td style="font-weight:500">rmealy</td>
+      <td class="r">563</td>
+      
+      <td class="r" style="color:var(--green-bright)">19</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">19</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">14</span></td>
+      <td style="font-weight:500">cwoofter</td>
+      <td class="r">558</td>
+      
+      <td class="r" style="color:var(--green-bright)">18</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">18</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">15</span></td>
+      <td style="font-weight:500">rolander32</td>
+      <td class="r">551</td>
+      
+      <td class="r" style="color:var(--green-bright)">17</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">17</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">16</span></td>
+      <td style="font-weight:500">Sheetwood24</td>
+      <td class="r">547</td>
+      
+      <td class="r" style="color:var(--green-bright)">16</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">16</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">17</span></td>
+      <td style="font-weight:500">heysenwisen</td>
+      <td class="r">537</td>
+      
+      <td class="r" style="color:var(--green-bright)">15</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">15</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">18</span></td>
+      <td style="font-weight:500">jpevans05</td>
+      <td class="r">527.5</td>
+      
+      <td class="r" style="color:var(--green-bright)">14</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">14</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">19</span></td>
+      <td style="font-weight:500">Bmacsupreme</td>
+      <td class="r">526.5</td>
+      
+      <td class="r" style="color:var(--green-bright)">13</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">13</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">20</span></td>
+      <td style="font-weight:500">scottdold</td>
+      <td class="r">523.5</td>
+      
+      <td class="r" style="color:var(--green-bright)">12</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">12</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">21</span></td>
+      <td style="font-weight:500">karibou5550</td>
+      <td class="r">516</td>
+      
+      <td class="r" style="color:var(--green-bright)">10.5</td>
+      <td class="r" style="color:var(--gold);font-size:11px">+3 win</td>
+      <td class="r"><span class="pts-earned">13.5</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">22</span></td>
+      <td style="font-weight:500">utaherica</td>
+      <td class="r">516</td>
+      
+      <td class="r" style="color:var(--green-bright)">10.5</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">10.5</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">23</span></td>
+      <td style="font-weight:500">dedsdraft35</td>
+      <td class="r">500.5</td>
+      
+      <td class="r" style="color:var(--green-bright)">9</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">9</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">24</span></td>
+      <td style="font-weight:500">EasyChris</td>
+      <td class="r">497.5</td>
+      
+      <td class="r" style="color:var(--green-bright)">8</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">8</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">25</span></td>
+      <td style="font-weight:500">idlee23</td>
+      <td class="r">483</td>
+      
+      <td class="r" style="color:var(--green-bright)">7</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">7</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">26</span></td>
+      <td style="font-weight:500">heysebc</td>
+      <td class="r">475.5</td>
+      
+      <td class="r" style="color:var(--green-bright)">6</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">6</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">27</span></td>
+      <td style="font-weight:500">ColeMighty</td>
+      <td class="r">464.5</td>
+      
+      <td class="r" style="color:var(--green-bright)">5</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">5</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">28</span></td>
+      <td style="font-weight:500">Bmillertime3</td>
+      <td class="r">458</td>
+      
+      <td class="r" style="color:var(--green-bright)">3.5</td>
+      <td class="r" style="color:var(--gold);font-size:11px">+3 win</td>
+      <td class="r"><span class="pts-earned">6.5</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">29</span></td>
+      <td style="font-weight:500">JottieBucs</td>
+      <td class="r">458</td>
+      
+      <td class="r" style="color:var(--green-bright)">3.5</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">3.5</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">30</span></td>
+      <td style="font-weight:500">ewoofter</td>
+      <td class="r">426.5</td>
+      
+      <td class="r" style="color:var(--green-bright)">2</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">2</span></td>
+    </tr><tr>
+      <td><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">31</span></td>
+      <td style="font-weight:500">jlee45</td>
+      <td class="r">423</td>
+      
+      <td class="r" style="color:var(--green-bright)">1</td>
+      <td class="r" style="color:var(--gold);font-size:11px">—</td>
+      <td class="r"><span class="pts-earned">1</span></td>
+    </tr></tbody>
+    </table>
+  </div>
   </div>
 
 
     <!-- TAB: BEER / SHOTGUN TRACKER -->
-  <div class="tab-panel" id="tab-beer">
+  <div class="tab-panel active" id="tab-beer">
 
     <!-- SHOTGUN SECTION -->
     <div class="divider" style="margin-top:0">🍺 Shotgun Debts</div>
@@ -1894,18 +2175,37 @@
       </div>
       <button class="btn btn-gold" onclick="addMoney()">+ Add</button>
     </div>
-    <div id="money-log"><div style="font-size:12px;color:var(--muted);padding:10px 0">No prize money awarded yet this season.</div></div>
+    <div id="money-log">
+    <div style="margin-bottom:14px;padding:10px 14px;background:var(--dark2);border:1px solid var(--dark3)">
+      <div style="font-size:10px;color:var(--muted);letter-spacing:2px;margin-bottom:8px">TOTALS</div>
+      <span style="display:inline-block;margin-right:16px;margin-bottom:6px;font-size:12px;color:var(--gold)">
+      lcrose22 <strong>$100</strong>
+    </span>
+    </div>
+    
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 14px;margin-bottom:5px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--gold);">
+        <div>
+          <span style="font-size:13px;font-weight:500;color:var(--gold)">$100</span>
+          <span style="font-size:13px;color:var(--text);margin-left:10px">lcrose22</span>
+          <span style="font-size:11px;color:var(--muted);margin-left:8px">— PHX</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font-size:10px;color:var(--muted)">Mar 11</span>
+          <button onclick="removeMoney(0)" style="background:none;border:1px solid var(--dark3);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;padding:3px 8px;cursor:pointer;letter-spacing:1px;">✕</button>
+        </div>
+      </div>
+  </div>
 
   </div>
 
 </div>
 
 <!-- TOAST -->
-<div class="toast" id="toast">✓ Standings updated for Amex</div>
+<div class="toast" id="toast">💰 $100 added to lcrose22</div>
 
 
   <script id="snapshot-boot">
-  window.__SNAPSHOT__ = {"standings":[{"rank":1,"player":"taylorhiemenz","points":58,"wins":0,"noCut":0,"winner":6,"missed":0,"lastRank":2,"currentRank":1},{"rank":2,"player":"wheelhousestl","points":57,"wins":0,"noCut":3,"winner":3,"missed":0,"lastRank":8,"currentRank":2},{"rank":3,"player":"scottdold","points":52,"wins":1,"noCut":3,"winner":3,"missed":0,"lastRank":1,"currentRank":3},{"rank":4,"player":"kenji2323","points":50.5,"wins":0,"noCut":0,"winner":3,"missed":0,"lastRank":16,"currentRank":4},{"rank":5,"player":"meathighway","points":49.5,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":10,"currentRank":5},{"rank":6,"player":"nvance69420","points":49,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":8,"currentRank":6},{"rank":7,"player":"Sheetwood24","points":45,"wins":0,"noCut":3,"winner":0,"missed":0,"lastRank":5,"currentRank":7},{"rank":8,"player":"dowens25","points":42,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":12,"currentRank":8},{"rank":9,"player":"jpevans05","points":41,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":7,"currentRank":9},{"rank":9,"player":"tgroff24","points":41,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":19,"currentRank":9},{"rank":11,"player":"ziggysmalls1224","points":38,"wins":1,"noCut":3,"winner":0,"missed":0,"lastRank":31,"currentRank":11},{"rank":12,"player":"JottieBucs","points":36.5,"wins":0,"noCut":0,"winner":3,"missed":0,"lastRank":4,"currentRank":12},{"rank":13,"player":"vader.av","points":36,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":22,"currentRank":13},{"rank":14,"player":"jlee45","points":35,"wins":0,"noCut":3,"winner":3,"missed":0,"lastRank":3,"currentRank":14},{"rank":14,"player":"rolander32","points":35,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":14,"currentRank":14},{"rank":16,"player":"cwoofter","points":33.5,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":16,"currentRank":16},{"rank":17,"player":"ColeMighty","points":33,"wins":0,"noCut":3,"winner":0,"missed":0,"lastRank":6,"currentRank":17},{"rank":18,"player":"lcrose22","points":31.5,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":24,"currentRank":18},{"rank":19,"player":"rmealy","points":30,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":21,"currentRank":19},{"rank":20,"player":"kreybradley","points":29.5,"wins":0,"noCut":0,"winner":3,"missed":0,"lastRank":26,"currentRank":20},{"rank":21,"player":"heysebc","points":28.5,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":10,"currentRank":21},{"rank":21,"player":"jaywmiller22","points":28.5,"wins":0,"noCut":3,"winner":0,"missed":0,"lastRank":30,"currentRank":21},{"rank":23,"player":"Bmillertime3","points":25.5,"wins":0,"noCut":0,"winner":3,"missed":0,"lastRank":13,"currentRank":23},{"rank":24,"player":"EasyChris","points":25,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":15,"currentRank":24},{"rank":25,"player":"karibou5550","points":22.5,"wins":0,"noCut":0,"winner":3,"missed":0,"lastRank":23,"currentRank":25},{"rank":26,"player":"dedsdraft35","points":21,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":20,"currentRank":26},{"rank":27,"player":"Bmacsupreme","points":20,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":25,"currentRank":27},{"rank":28,"player":"heysenwisen","points":18,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":29,"currentRank":28},{"rank":29,"player":"ewoofter","points":16,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":18,"currentRank":29},{"rank":30,"player":"utaherica","points":14.5,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":28,"currentRank":30},{"rank":31,"player":"idlee23","points":12.5,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":26,"currentRank":31}],"weekHistory":[{"event":"Sony","segment":1,"date":"Mar 11","type":"Completed","winner":"scottdold","results":[{"player":"scottdold","dkScore":507,"wdPts":0,"leaguePts":34,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":40,"isDNS":false},{"player":"taylorhiemenz","dkScore":497,"wdPts":0,"leaguePts":32,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":35,"isDNS":false},{"player":"JottieBucs","dkScore":481,"wdPts":0,"leaguePts":30,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":33,"isDNS":false},{"player":"jlee45","dkScore":462,"wdPts":0,"leaguePts":28,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":34,"isDNS":false},{"player":"jpevans05","dkScore":447,"wdPts":0,"leaguePts":27,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":27,"isDNS":false},{"player":"Sheetwood24","dkScore":441.5,"wdPts":0,"leaguePts":26,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":29,"isDNS":false},{"player":"ColeMighty","dkScore":440,"wdPts":0,"leaguePts":25,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":28,"isDNS":false},{"player":"nvance69420","dkScore":437,"wdPts":0,"leaguePts":24,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":24,"isDNS":false},{"player":"heysebc","dkScore":424.5,"wdPts":0,"leaguePts":22.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22.5,"isDNS":false},{"player":"meathighway","dkScore":424.5,"wdPts":0,"leaguePts":22.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22.5,"isDNS":false},{"player":"wheelhousestl","dkScore":423,"wdPts":0,"leaguePts":21,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":24,"isDNS":false},{"player":"dowens25","dkScore":422.5,"wdPts":0,"leaguePts":20,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":20,"isDNS":false},{"player":"Bmillertime3","dkScore":419,"wdPts":0,"leaguePts":19,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":19,"isDNS":false},{"player":"rolander32","dkScore":416.5,"wdPts":0,"leaguePts":18,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":18,"isDNS":false},{"player":"EasyChris","dkScore":413.5,"wdPts":0,"leaguePts":17,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":17,"isDNS":false},{"player":"cwoofter","dkScore":412.5,"wdPts":0,"leaguePts":15.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15.5,"isDNS":false},{"player":"kenji2323","dkScore":412.5,"wdPts":0,"leaguePts":15.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15.5,"isDNS":false},{"player":"ewoofter","dkScore":408,"wdPts":0,"leaguePts":14,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":14,"isDNS":false},{"player":"tgroff24","dkScore":402,"wdPts":0,"leaguePts":13,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":13,"isDNS":false},{"player":"dedsdraft35","dkScore":395,"wdPts":0,"leaguePts":12,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":12,"isDNS":false},{"player":"rmealy","dkScore":394.5,"wdPts":0,"leaguePts":11,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":11,"isDNS":false},{"player":"vader.av","dkScore":390,"wdPts":0,"leaguePts":10,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":10,"isDNS":false},{"player":"karibou5550","dkScore":387.5,"wdPts":0,"leaguePts":9,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":9,"isDNS":false},{"player":"lcrose22","dkScore":384,"wdPts":0,"leaguePts":8,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":8,"isDNS":false},{"player":"Bmacsupreme","dkScore":365,"wdPts":0,"leaguePts":7,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":7,"isDNS":false},{"player":"idlee23","dkScore":362,"wdPts":0,"leaguePts":5.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5.5,"isDNS":false},{"player":"kreybradley","dkScore":362,"wdPts":0,"leaguePts":5.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5.5,"isDNS":false},{"player":"utaherica","dkScore":360,"wdPts":0,"leaguePts":4,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":4,"isDNS":false},{"player":"heysenwisen","dkScore":323,"wdPts":0,"leaguePts":3,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":3,"isDNS":false},{"player":"jaywmiller22","dkScore":293.5,"wdPts":0,"leaguePts":2,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":2,"isDNS":false},{"player":"ziggysmalls1224","dkScore":269,"wdPts":0,"leaguePts":1,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":1,"isDNS":false}],"fullResults":[{"rank":1,"player":"scottdold","dkScore":507,"wdPts":0,"adjScore":507,"leaguePts":34,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":40,"isDNS":false},{"rank":2,"player":"taylorhiemenz","dkScore":497,"wdPts":0,"adjScore":497,"leaguePts":32,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":35,"isDNS":false},{"rank":3,"player":"JottieBucs","dkScore":481,"wdPts":0,"adjScore":481,"leaguePts":30,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":33,"isDNS":false},{"rank":4,"player":"jlee45","dkScore":462,"wdPts":0,"adjScore":462,"leaguePts":28,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":34,"isDNS":false},{"rank":5,"player":"jpevans05","dkScore":447,"wdPts":0,"adjScore":447,"leaguePts":27,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":27,"isDNS":false},{"rank":6,"player":"Sheetwood24","dkScore":441.5,"wdPts":0,"adjScore":441.5,"leaguePts":26,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":29,"isDNS":false},{"rank":7,"player":"ColeMighty","dkScore":440,"wdPts":0,"adjScore":440,"leaguePts":25,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":28,"isDNS":false},{"rank":8,"player":"nvance69420","dkScore":437,"wdPts":0,"adjScore":437,"leaguePts":24,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":24,"isDNS":false},{"rank":9,"player":"heysebc","dkScore":424.5,"wdPts":0,"adjScore":424.5,"leaguePts":22.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22.5,"isDNS":false},{"rank":9,"player":"meathighway","dkScore":424.5,"wdPts":0,"adjScore":424.5,"leaguePts":22.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22.5,"isDNS":false},{"rank":11,"player":"wheelhousestl","dkScore":423,"wdPts":0,"adjScore":423,"leaguePts":21,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":24,"isDNS":false},{"rank":12,"player":"dowens25","dkScore":422.5,"wdPts":0,"adjScore":422.5,"leaguePts":20,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":20,"isDNS":false},{"rank":13,"player":"Bmillertime3","dkScore":419,"wdPts":0,"adjScore":419,"leaguePts":19,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":19,"isDNS":false},{"rank":14,"player":"rolander32","dkScore":416.5,"wdPts":0,"adjScore":416.5,"leaguePts":18,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":18,"isDNS":false},{"rank":15,"player":"EasyChris","dkScore":413.5,"wdPts":0,"adjScore":413.5,"leaguePts":17,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":17,"isDNS":false},{"rank":16,"player":"cwoofter","dkScore":412.5,"wdPts":0,"adjScore":412.5,"leaguePts":15.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15.5,"isDNS":false},{"rank":16,"player":"kenji2323","dkScore":412.5,"wdPts":0,"adjScore":412.5,"leaguePts":15.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15.5,"isDNS":false},{"rank":18,"player":"ewoofter","dkScore":408,"wdPts":0,"adjScore":408,"leaguePts":14,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":14,"isDNS":false},{"rank":19,"player":"tgroff24","dkScore":402,"wdPts":0,"adjScore":402,"leaguePts":13,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":13,"isDNS":false},{"rank":20,"player":"dedsdraft35","dkScore":395,"wdPts":0,"adjScore":395,"leaguePts":12,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":12,"isDNS":false},{"rank":21,"player":"rmealy","dkScore":394.5,"wdPts":0,"adjScore":394.5,"leaguePts":11,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":11,"isDNS":false},{"rank":22,"player":"vader.av","dkScore":390,"wdPts":0,"adjScore":390,"leaguePts":10,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":10,"isDNS":false},{"rank":23,"player":"karibou5550","dkScore":387.5,"wdPts":0,"adjScore":387.5,"leaguePts":9,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":9,"isDNS":false},{"rank":24,"player":"lcrose22","dkScore":384,"wdPts":0,"adjScore":384,"leaguePts":8,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":8,"isDNS":false},{"rank":25,"player":"Bmacsupreme","dkScore":365,"wdPts":0,"adjScore":365,"leaguePts":7,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":7,"isDNS":false},{"rank":26,"player":"idlee23","dkScore":362,"wdPts":0,"adjScore":362,"leaguePts":5.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5.5,"isDNS":false},{"rank":26,"player":"kreybradley","dkScore":362,"wdPts":0,"adjScore":362,"leaguePts":5.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5.5,"isDNS":false},{"rank":28,"player":"utaherica","dkScore":360,"wdPts":0,"adjScore":360,"leaguePts":4,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":4,"isDNS":false},{"rank":29,"player":"heysenwisen","dkScore":323,"wdPts":0,"adjScore":323,"leaguePts":3,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":3,"isDNS":false},{"rank":30,"player":"jaywmiller22","dkScore":293.5,"wdPts":0,"adjScore":293.5,"leaguePts":2,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":2,"isDNS":false},{"rank":31,"player":"ziggysmalls1224","dkScore":269,"wdPts":0,"adjScore":269,"leaguePts":1,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":1,"isDNS":false}],"prevRanks":[{"player":"JottieBucs","lastRank":1},{"player":"taylorhiemenz","lastRank":1},{"player":"heysebc","lastRank":1},{"player":"jpevans05","lastRank":1},{"player":"lcrose22","lastRank":1},{"player":"scottdold","lastRank":1},{"player":"tgroff24","lastRank":1},{"player":"ziggysmalls1224","lastRank":1},{"player":"Bmacsupreme","lastRank":1},{"player":"Bmillertime3","lastRank":1},{"player":"jaywmiller22","lastRank":1},{"player":"meathighway","lastRank":1},{"player":"EasyChris","lastRank":1},{"player":"heysenwisen","lastRank":1},{"player":"nvance69420","lastRank":1},{"player":"kenji2323","lastRank":1},{"player":"ColeMighty","lastRank":1},{"player":"karibou5550","lastRank":1},{"player":"jlee45","lastRank":1},{"player":"vader.av","lastRank":1},{"player":"ewoofter","lastRank":1},{"player":"utaherica","lastRank":1},{"player":"rolander32","lastRank":1},{"player":"dedsdraft35","lastRank":1},{"player":"Sheetwood24","lastRank":1},{"player":"wheelhousestl","lastRank":1},{"player":"kreybradley","lastRank":1},{"player":"cwoofter","lastRank":1},{"player":"dowens25","lastRank":1},{"player":"rmealy","lastRank":1},{"player":"idlee23","lastRank":1}]},{"event":"Amex","segment":1,"date":"Mar 11","type":"Completed","winner":"ziggysmalls1224","results":[{"player":"ziggysmalls1224","dkScore":626.5,"wdPts":0,"leaguePts":34,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":37,"isDNS":false},{"player":"kenji2323","dkScore":614.5,"wdPts":0,"leaguePts":32,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":35,"isDNS":false},{"player":"wheelhousestl","dkScore":608,"wdPts":0,"leaguePts":30,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":33,"isDNS":false},{"player":"tgroff24","dkScore":607.5,"wdPts":0,"leaguePts":28,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":28,"isDNS":false},{"player":"meathighway","dkScore":588.5,"wdPts":0,"leaguePts":27,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":27,"isDNS":false},{"player":"vader.av","dkScore":587.5,"wdPts":0,"leaguePts":26,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":26,"isDNS":false},{"player":"nvance69420","dkScore":585.5,"wdPts":0,"leaguePts":25,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":25,"isDNS":false},{"player":"jaywmiller22","dkScore":584,"wdPts":0,"leaguePts":23.5,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":26.5,"isDNS":false},{"player":"lcrose22","dkScore":584,"wdPts":0,"leaguePts":23.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":23.5,"isDNS":false},{"player":"dowens25","dkScore":573.5,"wdPts":0,"leaguePts":22,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22,"isDNS":false},{"player":"kreybradley","dkScore":571.5,"wdPts":0,"leaguePts":21,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":24,"isDNS":false},{"player":"taylorhiemenz","dkScore":567.5,"wdPts":0,"leaguePts":20,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":23,"isDNS":false},{"player":"rmealy","dkScore":563,"wdPts":0,"leaguePts":19,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":19,"isDNS":false},{"player":"cwoofter","dkScore":558,"wdPts":0,"leaguePts":18,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":18,"isDNS":false},{"player":"rolander32","dkScore":551,"wdPts":0,"leaguePts":17,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":17,"isDNS":false},{"player":"Sheetwood24","dkScore":547,"wdPts":0,"leaguePts":16,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":16,"isDNS":false},{"player":"heysenwisen","dkScore":537,"wdPts":0,"leaguePts":15,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15,"isDNS":false},{"player":"jpevans05","dkScore":527.5,"wdPts":0,"leaguePts":14,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":14,"isDNS":false},{"player":"Bmacsupreme","dkScore":526.5,"wdPts":0,"leaguePts":13,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":13,"isDNS":false},{"player":"scottdold","dkScore":523.5,"wdPts":0,"leaguePts":12,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":12,"isDNS":false},{"player":"karibou5550","dkScore":516,"wdPts":0,"leaguePts":10.5,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":13.5,"isDNS":false},{"player":"utaherica","dkScore":516,"wdPts":0,"leaguePts":10.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":10.5,"isDNS":false},{"player":"dedsdraft35","dkScore":500.5,"wdPts":0,"leaguePts":9,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":9,"isDNS":false},{"player":"EasyChris","dkScore":497.5,"wdPts":0,"leaguePts":8,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":8,"isDNS":false},{"player":"idlee23","dkScore":483,"wdPts":0,"leaguePts":7,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":7,"isDNS":false},{"player":"heysebc","dkScore":475.5,"wdPts":0,"leaguePts":6,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":6,"isDNS":false},{"player":"ColeMighty","dkScore":464.5,"wdPts":0,"leaguePts":5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5,"isDNS":false},{"player":"Bmillertime3","dkScore":458,"wdPts":0,"leaguePts":3.5,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":6.5,"isDNS":false},{"player":"JottieBucs","dkScore":458,"wdPts":0,"leaguePts":3.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":3.5,"isDNS":false},{"player":"ewoofter","dkScore":426.5,"wdPts":0,"leaguePts":2,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":2,"isDNS":false},{"player":"jlee45","dkScore":423,"wdPts":0,"leaguePts":1,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":1,"isDNS":false}],"fullResults":[{"rank":1,"player":"ziggysmalls1224","dkScore":626.5,"wdPts":0,"adjScore":626.5,"leaguePts":34,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":37,"isDNS":false},{"rank":2,"player":"kenji2323","dkScore":614.5,"wdPts":0,"adjScore":614.5,"leaguePts":32,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":35,"isDNS":false},{"rank":3,"player":"wheelhousestl","dkScore":608,"wdPts":0,"adjScore":608,"leaguePts":30,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":33,"isDNS":false},{"rank":4,"player":"tgroff24","dkScore":607.5,"wdPts":0,"adjScore":607.5,"leaguePts":28,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":28,"isDNS":false},{"rank":5,"player":"meathighway","dkScore":588.5,"wdPts":0,"adjScore":588.5,"leaguePts":27,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":27,"isDNS":false},{"rank":6,"player":"vader.av","dkScore":587.5,"wdPts":0,"adjScore":587.5,"leaguePts":26,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":26,"isDNS":false},{"rank":7,"player":"nvance69420","dkScore":585.5,"wdPts":0,"adjScore":585.5,"leaguePts":25,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":25,"isDNS":false},{"rank":8,"player":"jaywmiller22","dkScore":584,"wdPts":0,"adjScore":584,"leaguePts":23.5,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":26.5,"isDNS":false},{"rank":8,"player":"lcrose22","dkScore":584,"wdPts":0,"adjScore":584,"leaguePts":23.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":23.5,"isDNS":false},{"rank":10,"player":"dowens25","dkScore":573.5,"wdPts":0,"adjScore":573.5,"leaguePts":22,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22,"isDNS":false},{"rank":11,"player":"kreybradley","dkScore":571.5,"wdPts":0,"adjScore":571.5,"leaguePts":21,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":24,"isDNS":false},{"rank":12,"player":"taylorhiemenz","dkScore":567.5,"wdPts":0,"adjScore":567.5,"leaguePts":20,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":23,"isDNS":false},{"rank":13,"player":"rmealy","dkScore":563,"wdPts":0,"adjScore":563,"leaguePts":19,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":19,"isDNS":false},{"rank":14,"player":"cwoofter","dkScore":558,"wdPts":0,"adjScore":558,"leaguePts":18,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":18,"isDNS":false},{"rank":15,"player":"rolander32","dkScore":551,"wdPts":0,"adjScore":551,"leaguePts":17,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":17,"isDNS":false},{"rank":16,"player":"Sheetwood24","dkScore":547,"wdPts":0,"adjScore":547,"leaguePts":16,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":16,"isDNS":false},{"rank":17,"player":"heysenwisen","dkScore":537,"wdPts":0,"adjScore":537,"leaguePts":15,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15,"isDNS":false},{"rank":18,"player":"jpevans05","dkScore":527.5,"wdPts":0,"adjScore":527.5,"leaguePts":14,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":14,"isDNS":false},{"rank":19,"player":"Bmacsupreme","dkScore":526.5,"wdPts":0,"adjScore":526.5,"leaguePts":13,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":13,"isDNS":false},{"rank":20,"player":"scottdold","dkScore":523.5,"wdPts":0,"adjScore":523.5,"leaguePts":12,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":12,"isDNS":false},{"rank":21,"player":"karibou5550","dkScore":516,"wdPts":0,"adjScore":516,"leaguePts":10.5,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":13.5,"isDNS":false},{"rank":21,"player":"utaherica","dkScore":516,"wdPts":0,"adjScore":516,"leaguePts":10.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":10.5,"isDNS":false},{"rank":23,"player":"dedsdraft35","dkScore":500.5,"wdPts":0,"adjScore":500.5,"leaguePts":9,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":9,"isDNS":false},{"rank":24,"player":"EasyChris","dkScore":497.5,"wdPts":0,"adjScore":497.5,"leaguePts":8,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":8,"isDNS":false},{"rank":25,"player":"idlee23","dkScore":483,"wdPts":0,"adjScore":483,"leaguePts":7,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":7,"isDNS":false},{"rank":26,"player":"heysebc","dkScore":475.5,"wdPts":0,"adjScore":475.5,"leaguePts":6,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":6,"isDNS":false},{"rank":27,"player":"ColeMighty","dkScore":464.5,"wdPts":0,"adjScore":464.5,"leaguePts":5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5,"isDNS":false},{"rank":28,"player":"Bmillertime3","dkScore":458,"wdPts":0,"adjScore":458,"leaguePts":3.5,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":6.5,"isDNS":false},{"rank":28,"player":"JottieBucs","dkScore":458,"wdPts":0,"adjScore":458,"leaguePts":3.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":3.5,"isDNS":false},{"rank":30,"player":"ewoofter","dkScore":426.5,"wdPts":0,"adjScore":426.5,"leaguePts":2,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":2,"isDNS":false},{"rank":31,"player":"jlee45","dkScore":423,"wdPts":0,"adjScore":423,"leaguePts":1,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":1,"isDNS":false}],"prevRanks":[{"player":"JottieBucs","lastRank":4},{"player":"taylorhiemenz","lastRank":2},{"player":"heysebc","lastRank":10},{"player":"jpevans05","lastRank":7},{"player":"lcrose22","lastRank":24},{"player":"scottdold","lastRank":1},{"player":"tgroff24","lastRank":19},{"player":"ziggysmalls1224","lastRank":31},{"player":"Bmacsupreme","lastRank":25},{"player":"Bmillertime3","lastRank":13},{"player":"jaywmiller22","lastRank":30},{"player":"meathighway","lastRank":10},{"player":"EasyChris","lastRank":15},{"player":"heysenwisen","lastRank":29},{"player":"nvance69420","lastRank":8},{"player":"kenji2323","lastRank":16},{"player":"ColeMighty","lastRank":6},{"player":"karibou5550","lastRank":23},{"player":"jlee45","lastRank":3},{"player":"vader.av","lastRank":22},{"player":"ewoofter","lastRank":18},{"player":"utaherica","lastRank":28},{"player":"rolander32","lastRank":14},{"player":"dedsdraft35","lastRank":20},{"player":"Sheetwood24","lastRank":5},{"player":"wheelhousestl","lastRank":8},{"player":"kreybradley","lastRank":26},{"player":"cwoofter","lastRank":16},{"player":"dowens25","lastRank":12},{"player":"rmealy","lastRank":21},{"player":"idlee23","lastRank":26}]}],"shotgunDebts":[],"playerMoney":{},"moneyLog":[]};
+  window.__SNAPSHOT__ = {"standings":[{"rank":1,"player":"taylorhiemenz","points":107,"wins":1,"noCut":3,"winner":6,"missed":0,"lastRank":1,"currentRank":1},{"rank":2,"player":"lcrose22","points":102.5,"wins":1,"noCut":6,"winner":3,"missed":0,"lastRank":8,"currentRank":2},{"rank":3,"player":"JottieBucs","points":91.5,"wins":0,"noCut":3,"winner":3,"missed":0,"lastRank":5,"currentRank":3},{"rank":4,"player":"jpevans05","points":91,"wins":0,"noCut":3,"winner":0,"missed":0,"lastRank":2,"currentRank":4},{"rank":5,"player":"vader.av","points":90,"wins":0,"noCut":0,"winner":3,"missed":0,"lastRank":9,"currentRank":5},{"rank":6,"player":"heysebc","points":86.5,"wins":0,"noCut":3,"winner":3,"missed":0,"lastRank":18,"currentRank":6},{"rank":7,"player":"meathighway","points":85.5,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":6,"currentRank":7},{"rank":8,"player":"scottdold","points":81,"wins":1,"noCut":3,"winner":3,"missed":0,"lastRank":2,"currentRank":8},{"rank":9,"player":"tgroff24","points":80,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":7,"currentRank":9},{"rank":10,"player":"wheelhousestl","points":75,"wins":0,"noCut":3,"winner":3,"missed":0,"lastRank":4,"currentRank":10},{"rank":11,"player":"jaywmiller22","points":74.5,"wins":0,"noCut":3,"winner":6,"missed":0,"lastRank":11,"currentRank":11},{"rank":12,"player":"ColeMighty","points":74,"wins":0,"noCut":3,"winner":3,"missed":0,"lastRank":21,"currentRank":12},{"rank":13,"player":"cwoofter","points":73.5,"wins":0,"noCut":0,"winner":3,"missed":0,"lastRank":20,"currentRank":13},{"rank":14,"player":"ziggysmalls1224","points":73,"wins":1,"noCut":3,"winner":3,"missed":0,"lastRank":21,"currentRank":14},{"rank":15,"player":"jlee45","points":71,"wins":0,"noCut":3,"winner":3,"missed":0,"lastRank":14,"currentRank":15},{"rank":15,"player":"Sheetwood24","points":71,"wins":0,"noCut":3,"winner":0,"missed":0,"lastRank":16,"currentRank":15},{"rank":17,"player":"nvance69420","points":70,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":9,"currentRank":17},{"rank":18,"player":"EasyChris","points":66,"wins":0,"noCut":0,"winner":3,"missed":0,"lastRank":16,"currentRank":18},{"rank":19,"player":"dedsdraft35","points":64,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":19,"currentRank":19},{"rank":20,"player":"Bmacsupreme","points":62,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":24,"currentRank":20},{"rank":21,"player":"utaherica","points":59.5,"wins":0,"noCut":3,"winner":3,"missed":0,"lastRank":30,"currentRank":21},{"rank":22,"player":"kenji2323","points":56.5,"wins":0,"noCut":0,"winner":3,"missed":0,"lastRank":13,"currentRank":22},{"rank":23,"player":"dowens25","points":55,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":12,"currentRank":23},{"rank":24,"player":"kreybradley","points":52.5,"wins":0,"noCut":0,"winner":3,"missed":0,"lastRank":15,"currentRank":24},{"rank":25,"player":"Bmillertime3","points":51.5,"wins":0,"noCut":0,"winner":3,"missed":0,"lastRank":29,"currentRank":25},{"rank":26,"player":"ewoofter","points":51,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":27,"currentRank":26},{"rank":27,"player":"rolander32","points":50,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":23,"currentRank":27},{"rank":28,"player":"rmealy","points":42,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":25,"currentRank":28},{"rank":29,"player":"heysenwisen","points":40,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":25,"currentRank":29},{"rank":30,"player":"karibou5550","points":39.5,"wins":0,"noCut":0,"winner":3,"missed":0,"lastRank":28,"currentRank":30},{"rank":31,"player":"idlee23","points":23.5,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":31,"currentRank":31}],"weekHistory":[{"event":"Sony","segment":1,"date":"Mar 11","type":"Completed","winner":"scottdold","results":[{"player":"scottdold","dkScore":507,"wdPts":0,"leaguePts":34,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":40,"isDNS":false},{"player":"taylorhiemenz","dkScore":497,"wdPts":0,"leaguePts":32,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":35,"isDNS":false},{"player":"JottieBucs","dkScore":481,"wdPts":0,"leaguePts":30,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":33,"isDNS":false},{"player":"jlee45","dkScore":462,"wdPts":0,"leaguePts":28,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":34,"isDNS":false},{"player":"jpevans05","dkScore":447,"wdPts":0,"leaguePts":27,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":27,"isDNS":false},{"player":"Sheetwood24","dkScore":441.5,"wdPts":0,"leaguePts":26,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":29,"isDNS":false},{"player":"ColeMighty","dkScore":440,"wdPts":0,"leaguePts":25,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":28,"isDNS":false},{"player":"nvance69420","dkScore":437,"wdPts":0,"leaguePts":24,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":24,"isDNS":false},{"player":"heysebc","dkScore":424.5,"wdPts":0,"leaguePts":22.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22.5,"isDNS":false},{"player":"meathighway","dkScore":424.5,"wdPts":0,"leaguePts":22.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22.5,"isDNS":false},{"player":"wheelhousestl","dkScore":423,"wdPts":0,"leaguePts":21,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":24,"isDNS":false},{"player":"dowens25","dkScore":422.5,"wdPts":0,"leaguePts":20,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":20,"isDNS":false},{"player":"Bmillertime3","dkScore":419,"wdPts":0,"leaguePts":19,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":19,"isDNS":false},{"player":"rolander32","dkScore":416.5,"wdPts":0,"leaguePts":18,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":18,"isDNS":false},{"player":"EasyChris","dkScore":413.5,"wdPts":0,"leaguePts":17,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":17,"isDNS":false},{"player":"cwoofter","dkScore":412.5,"wdPts":0,"leaguePts":15.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15.5,"isDNS":false},{"player":"kenji2323","dkScore":412.5,"wdPts":0,"leaguePts":15.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15.5,"isDNS":false},{"player":"ewoofter","dkScore":408,"wdPts":0,"leaguePts":14,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":14,"isDNS":false},{"player":"tgroff24","dkScore":402,"wdPts":0,"leaguePts":13,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":13,"isDNS":false},{"player":"dedsdraft35","dkScore":395,"wdPts":0,"leaguePts":12,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":12,"isDNS":false},{"player":"rmealy","dkScore":394.5,"wdPts":0,"leaguePts":11,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":11,"isDNS":false},{"player":"vader.av","dkScore":390,"wdPts":0,"leaguePts":10,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":10,"isDNS":false},{"player":"karibou5550","dkScore":387.5,"wdPts":0,"leaguePts":9,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":9,"isDNS":false},{"player":"lcrose22","dkScore":384,"wdPts":0,"leaguePts":8,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":8,"isDNS":false},{"player":"Bmacsupreme","dkScore":365,"wdPts":0,"leaguePts":7,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":7,"isDNS":false},{"player":"idlee23","dkScore":362,"wdPts":0,"leaguePts":5.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5.5,"isDNS":false},{"player":"kreybradley","dkScore":362,"wdPts":0,"leaguePts":5.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5.5,"isDNS":false},{"player":"utaherica","dkScore":360,"wdPts":0,"leaguePts":4,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":4,"isDNS":false},{"player":"heysenwisen","dkScore":323,"wdPts":0,"leaguePts":3,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":3,"isDNS":false},{"player":"jaywmiller22","dkScore":293.5,"wdPts":0,"leaguePts":2,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":2,"isDNS":false},{"player":"ziggysmalls1224","dkScore":269,"wdPts":0,"leaguePts":1,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":1,"isDNS":false}],"fullResults":[{"rank":1,"player":"scottdold","dkScore":507,"wdPts":0,"adjScore":507,"leaguePts":34,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":40,"isDNS":false},{"rank":2,"player":"taylorhiemenz","dkScore":497,"wdPts":0,"adjScore":497,"leaguePts":32,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":35,"isDNS":false},{"rank":3,"player":"JottieBucs","dkScore":481,"wdPts":0,"adjScore":481,"leaguePts":30,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":33,"isDNS":false},{"rank":4,"player":"jlee45","dkScore":462,"wdPts":0,"adjScore":462,"leaguePts":28,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":34,"isDNS":false},{"rank":5,"player":"jpevans05","dkScore":447,"wdPts":0,"adjScore":447,"leaguePts":27,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":27,"isDNS":false},{"rank":6,"player":"Sheetwood24","dkScore":441.5,"wdPts":0,"adjScore":441.5,"leaguePts":26,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":29,"isDNS":false},{"rank":7,"player":"ColeMighty","dkScore":440,"wdPts":0,"adjScore":440,"leaguePts":25,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":28,"isDNS":false},{"rank":8,"player":"nvance69420","dkScore":437,"wdPts":0,"adjScore":437,"leaguePts":24,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":24,"isDNS":false},{"rank":9,"player":"heysebc","dkScore":424.5,"wdPts":0,"adjScore":424.5,"leaguePts":22.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22.5,"isDNS":false},{"rank":9,"player":"meathighway","dkScore":424.5,"wdPts":0,"adjScore":424.5,"leaguePts":22.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22.5,"isDNS":false},{"rank":11,"player":"wheelhousestl","dkScore":423,"wdPts":0,"adjScore":423,"leaguePts":21,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":24,"isDNS":false},{"rank":12,"player":"dowens25","dkScore":422.5,"wdPts":0,"adjScore":422.5,"leaguePts":20,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":20,"isDNS":false},{"rank":13,"player":"Bmillertime3","dkScore":419,"wdPts":0,"adjScore":419,"leaguePts":19,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":19,"isDNS":false},{"rank":14,"player":"rolander32","dkScore":416.5,"wdPts":0,"adjScore":416.5,"leaguePts":18,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":18,"isDNS":false},{"rank":15,"player":"EasyChris","dkScore":413.5,"wdPts":0,"adjScore":413.5,"leaguePts":17,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":17,"isDNS":false},{"rank":16,"player":"cwoofter","dkScore":412.5,"wdPts":0,"adjScore":412.5,"leaguePts":15.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15.5,"isDNS":false},{"rank":16,"player":"kenji2323","dkScore":412.5,"wdPts":0,"adjScore":412.5,"leaguePts":15.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15.5,"isDNS":false},{"rank":18,"player":"ewoofter","dkScore":408,"wdPts":0,"adjScore":408,"leaguePts":14,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":14,"isDNS":false},{"rank":19,"player":"tgroff24","dkScore":402,"wdPts":0,"adjScore":402,"leaguePts":13,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":13,"isDNS":false},{"rank":20,"player":"dedsdraft35","dkScore":395,"wdPts":0,"adjScore":395,"leaguePts":12,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":12,"isDNS":false},{"rank":21,"player":"rmealy","dkScore":394.5,"wdPts":0,"adjScore":394.5,"leaguePts":11,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":11,"isDNS":false},{"rank":22,"player":"vader.av","dkScore":390,"wdPts":0,"adjScore":390,"leaguePts":10,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":10,"isDNS":false},{"rank":23,"player":"karibou5550","dkScore":387.5,"wdPts":0,"adjScore":387.5,"leaguePts":9,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":9,"isDNS":false},{"rank":24,"player":"lcrose22","dkScore":384,"wdPts":0,"adjScore":384,"leaguePts":8,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":8,"isDNS":false},{"rank":25,"player":"Bmacsupreme","dkScore":365,"wdPts":0,"adjScore":365,"leaguePts":7,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":7,"isDNS":false},{"rank":26,"player":"idlee23","dkScore":362,"wdPts":0,"adjScore":362,"leaguePts":5.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5.5,"isDNS":false},{"rank":26,"player":"kreybradley","dkScore":362,"wdPts":0,"adjScore":362,"leaguePts":5.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5.5,"isDNS":false},{"rank":28,"player":"utaherica","dkScore":360,"wdPts":0,"adjScore":360,"leaguePts":4,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":4,"isDNS":false},{"rank":29,"player":"heysenwisen","dkScore":323,"wdPts":0,"adjScore":323,"leaguePts":3,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":3,"isDNS":false},{"rank":30,"player":"jaywmiller22","dkScore":293.5,"wdPts":0,"adjScore":293.5,"leaguePts":2,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":2,"isDNS":false},{"rank":31,"player":"ziggysmalls1224","dkScore":269,"wdPts":0,"adjScore":269,"leaguePts":1,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":1,"isDNS":false}],"prevRanks":[{"player":"JottieBucs","lastRank":1},{"player":"taylorhiemenz","lastRank":1},{"player":"heysebc","lastRank":1},{"player":"jpevans05","lastRank":1},{"player":"lcrose22","lastRank":1},{"player":"scottdold","lastRank":1},{"player":"tgroff24","lastRank":1},{"player":"ziggysmalls1224","lastRank":1},{"player":"Bmacsupreme","lastRank":1},{"player":"Bmillertime3","lastRank":1},{"player":"jaywmiller22","lastRank":1},{"player":"meathighway","lastRank":1},{"player":"EasyChris","lastRank":1},{"player":"heysenwisen","lastRank":1},{"player":"nvance69420","lastRank":1},{"player":"kenji2323","lastRank":1},{"player":"ColeMighty","lastRank":1},{"player":"karibou5550","lastRank":1},{"player":"jlee45","lastRank":1},{"player":"vader.av","lastRank":1},{"player":"ewoofter","lastRank":1},{"player":"utaherica","lastRank":1},{"player":"rolander32","lastRank":1},{"player":"dedsdraft35","lastRank":1},{"player":"Sheetwood24","lastRank":1},{"player":"wheelhousestl","lastRank":1},{"player":"kreybradley","lastRank":1},{"player":"cwoofter","lastRank":1},{"player":"dowens25","lastRank":1},{"player":"rmealy","lastRank":1},{"player":"idlee23","lastRank":1}]},{"event":"Amex","segment":1,"date":"Mar 11","type":"Completed","winner":"ziggysmalls1224","results":[{"player":"ziggysmalls1224","dkScore":626.5,"wdPts":0,"leaguePts":34,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":37,"isDNS":false},{"player":"kenji2323","dkScore":614.5,"wdPts":0,"leaguePts":32,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":35,"isDNS":false},{"player":"wheelhousestl","dkScore":608,"wdPts":0,"leaguePts":30,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":33,"isDNS":false},{"player":"tgroff24","dkScore":607.5,"wdPts":0,"leaguePts":28,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":28,"isDNS":false},{"player":"meathighway","dkScore":588.5,"wdPts":0,"leaguePts":27,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":27,"isDNS":false},{"player":"vader.av","dkScore":587.5,"wdPts":0,"leaguePts":26,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":26,"isDNS":false},{"player":"nvance69420","dkScore":585.5,"wdPts":0,"leaguePts":25,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":25,"isDNS":false},{"player":"jaywmiller22","dkScore":584,"wdPts":0,"leaguePts":23.5,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":26.5,"isDNS":false},{"player":"lcrose22","dkScore":584,"wdPts":0,"leaguePts":23.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":23.5,"isDNS":false},{"player":"dowens25","dkScore":573.5,"wdPts":0,"leaguePts":22,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22,"isDNS":false},{"player":"kreybradley","dkScore":571.5,"wdPts":0,"leaguePts":21,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":24,"isDNS":false},{"player":"taylorhiemenz","dkScore":567.5,"wdPts":0,"leaguePts":20,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":23,"isDNS":false},{"player":"rmealy","dkScore":563,"wdPts":0,"leaguePts":19,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":19,"isDNS":false},{"player":"cwoofter","dkScore":558,"wdPts":0,"leaguePts":18,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":18,"isDNS":false},{"player":"rolander32","dkScore":551,"wdPts":0,"leaguePts":17,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":17,"isDNS":false},{"player":"Sheetwood24","dkScore":547,"wdPts":0,"leaguePts":16,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":16,"isDNS":false},{"player":"heysenwisen","dkScore":537,"wdPts":0,"leaguePts":15,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15,"isDNS":false},{"player":"jpevans05","dkScore":527.5,"wdPts":0,"leaguePts":14,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":14,"isDNS":false},{"player":"Bmacsupreme","dkScore":526.5,"wdPts":0,"leaguePts":13,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":13,"isDNS":false},{"player":"scottdold","dkScore":523.5,"wdPts":0,"leaguePts":12,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":12,"isDNS":false},{"player":"karibou5550","dkScore":516,"wdPts":0,"leaguePts":10.5,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":13.5,"isDNS":false},{"player":"utaherica","dkScore":516,"wdPts":0,"leaguePts":10.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":10.5,"isDNS":false},{"player":"dedsdraft35","dkScore":500.5,"wdPts":0,"leaguePts":9,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":9,"isDNS":false},{"player":"EasyChris","dkScore":497.5,"wdPts":0,"leaguePts":8,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":8,"isDNS":false},{"player":"idlee23","dkScore":483,"wdPts":0,"leaguePts":7,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":7,"isDNS":false},{"player":"heysebc","dkScore":475.5,"wdPts":0,"leaguePts":6,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":6,"isDNS":false},{"player":"ColeMighty","dkScore":464.5,"wdPts":0,"leaguePts":5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5,"isDNS":false},{"player":"Bmillertime3","dkScore":458,"wdPts":0,"leaguePts":3.5,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":6.5,"isDNS":false},{"player":"JottieBucs","dkScore":458,"wdPts":0,"leaguePts":3.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":3.5,"isDNS":false},{"player":"ewoofter","dkScore":426.5,"wdPts":0,"leaguePts":2,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":2,"isDNS":false},{"player":"jlee45","dkScore":423,"wdPts":0,"leaguePts":1,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":1,"isDNS":false}],"fullResults":[{"rank":1,"player":"ziggysmalls1224","dkScore":626.5,"wdPts":0,"adjScore":626.5,"leaguePts":34,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":37,"isDNS":false},{"rank":2,"player":"kenji2323","dkScore":614.5,"wdPts":0,"adjScore":614.5,"leaguePts":32,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":35,"isDNS":false},{"rank":3,"player":"wheelhousestl","dkScore":608,"wdPts":0,"adjScore":608,"leaguePts":30,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":33,"isDNS":false},{"rank":4,"player":"tgroff24","dkScore":607.5,"wdPts":0,"adjScore":607.5,"leaguePts":28,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":28,"isDNS":false},{"rank":5,"player":"meathighway","dkScore":588.5,"wdPts":0,"adjScore":588.5,"leaguePts":27,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":27,"isDNS":false},{"rank":6,"player":"vader.av","dkScore":587.5,"wdPts":0,"adjScore":587.5,"leaguePts":26,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":26,"isDNS":false},{"rank":7,"player":"nvance69420","dkScore":585.5,"wdPts":0,"adjScore":585.5,"leaguePts":25,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":25,"isDNS":false},{"rank":8,"player":"jaywmiller22","dkScore":584,"wdPts":0,"adjScore":584,"leaguePts":23.5,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":26.5,"isDNS":false},{"rank":8,"player":"lcrose22","dkScore":584,"wdPts":0,"adjScore":584,"leaguePts":23.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":23.5,"isDNS":false},{"rank":10,"player":"dowens25","dkScore":573.5,"wdPts":0,"adjScore":573.5,"leaguePts":22,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22,"isDNS":false},{"rank":11,"player":"kreybradley","dkScore":571.5,"wdPts":0,"adjScore":571.5,"leaguePts":21,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":24,"isDNS":false},{"rank":12,"player":"taylorhiemenz","dkScore":567.5,"wdPts":0,"adjScore":567.5,"leaguePts":20,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":23,"isDNS":false},{"rank":13,"player":"rmealy","dkScore":563,"wdPts":0,"adjScore":563,"leaguePts":19,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":19,"isDNS":false},{"rank":14,"player":"cwoofter","dkScore":558,"wdPts":0,"adjScore":558,"leaguePts":18,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":18,"isDNS":false},{"rank":15,"player":"rolander32","dkScore":551,"wdPts":0,"adjScore":551,"leaguePts":17,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":17,"isDNS":false},{"rank":16,"player":"Sheetwood24","dkScore":547,"wdPts":0,"adjScore":547,"leaguePts":16,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":16,"isDNS":false},{"rank":17,"player":"heysenwisen","dkScore":537,"wdPts":0,"adjScore":537,"leaguePts":15,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15,"isDNS":false},{"rank":18,"player":"jpevans05","dkScore":527.5,"wdPts":0,"adjScore":527.5,"leaguePts":14,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":14,"isDNS":false},{"rank":19,"player":"Bmacsupreme","dkScore":526.5,"wdPts":0,"adjScore":526.5,"leaguePts":13,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":13,"isDNS":false},{"rank":20,"player":"scottdold","dkScore":523.5,"wdPts":0,"adjScore":523.5,"leaguePts":12,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":12,"isDNS":false},{"rank":21,"player":"karibou5550","dkScore":516,"wdPts":0,"adjScore":516,"leaguePts":10.5,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":13.5,"isDNS":false},{"rank":21,"player":"utaherica","dkScore":516,"wdPts":0,"adjScore":516,"leaguePts":10.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":10.5,"isDNS":false},{"rank":23,"player":"dedsdraft35","dkScore":500.5,"wdPts":0,"adjScore":500.5,"leaguePts":9,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":9,"isDNS":false},{"rank":24,"player":"EasyChris","dkScore":497.5,"wdPts":0,"adjScore":497.5,"leaguePts":8,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":8,"isDNS":false},{"rank":25,"player":"idlee23","dkScore":483,"wdPts":0,"adjScore":483,"leaguePts":7,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":7,"isDNS":false},{"rank":26,"player":"heysebc","dkScore":475.5,"wdPts":0,"adjScore":475.5,"leaguePts":6,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":6,"isDNS":false},{"rank":27,"player":"ColeMighty","dkScore":464.5,"wdPts":0,"adjScore":464.5,"leaguePts":5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5,"isDNS":false},{"rank":28,"player":"Bmillertime3","dkScore":458,"wdPts":0,"adjScore":458,"leaguePts":3.5,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":6.5,"isDNS":false},{"rank":28,"player":"JottieBucs","dkScore":458,"wdPts":0,"adjScore":458,"leaguePts":3.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":3.5,"isDNS":false},{"rank":30,"player":"ewoofter","dkScore":426.5,"wdPts":0,"adjScore":426.5,"leaguePts":2,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":2,"isDNS":false},{"rank":31,"player":"jlee45","dkScore":423,"wdPts":0,"adjScore":423,"leaguePts":1,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":1,"isDNS":false}],"prevRanks":[{"player":"JottieBucs","lastRank":4},{"player":"taylorhiemenz","lastRank":2},{"player":"heysebc","lastRank":10},{"player":"jpevans05","lastRank":7},{"player":"lcrose22","lastRank":24},{"player":"scottdold","lastRank":1},{"player":"tgroff24","lastRank":19},{"player":"ziggysmalls1224","lastRank":31},{"player":"Bmacsupreme","lastRank":25},{"player":"Bmillertime3","lastRank":13},{"player":"jaywmiller22","lastRank":30},{"player":"meathighway","lastRank":10},{"player":"EasyChris","lastRank":15},{"player":"heysenwisen","lastRank":29},{"player":"nvance69420","lastRank":8},{"player":"kenji2323","lastRank":16},{"player":"ColeMighty","lastRank":6},{"player":"karibou5550","lastRank":23},{"player":"jlee45","lastRank":3},{"player":"vader.av","lastRank":22},{"player":"ewoofter","lastRank":18},{"player":"utaherica","lastRank":28},{"player":"rolander32","lastRank":14},{"player":"dedsdraft35","lastRank":20},{"player":"Sheetwood24","lastRank":5},{"player":"wheelhousestl","lastRank":8},{"player":"kreybradley","lastRank":26},{"player":"cwoofter","lastRank":16},{"player":"dowens25","lastRank":12},{"player":"rmealy","lastRank":21},{"player":"idlee23","lastRank":26}]},{"event":"Farmers","segment":1,"date":"Mar 11","type":"Completed","winner":"taylorhiemenz","results":[{"player":"taylorhiemenz","dkScore":534.5,"wdPts":0,"leaguePts":34,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":37,"isDNS":false},{"player":"jpevans05","dkScore":527,"wdPts":0,"leaguePts":32,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":35,"isDNS":false},{"player":"JottieBucs","dkScore":510,"wdPts":0,"leaguePts":30,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":33,"isDNS":false},{"player":"lcrose22","dkScore":504.5,"wdPts":0,"leaguePts":28,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":31,"isDNS":false},{"player":"jaywmiller22","dkScore":500.5,"wdPts":0,"leaguePts":27,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":30,"isDNS":false},{"player":"dedsdraft35","dkScore":492,"wdPts":0,"leaguePts":26,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":26,"isDNS":false},{"player":"tgroff24","dkScore":481.5,"wdPts":0,"leaguePts":25,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":25,"isDNS":false},{"player":"scottdold","dkScore":457.5,"wdPts":0,"leaguePts":24,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":24,"isDNS":false},{"player":"vader.av","dkScore":453,"wdPts":0,"leaguePts":23,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":23,"isDNS":false},{"player":"EasyChris","dkScore":445,"wdPts":0,"leaguePts":22,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":25,"isDNS":false},{"player":"kreybradley","dkScore":438.5,"wdPts":0,"leaguePts":21,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":21,"isDNS":false},{"player":"heysebc","dkScore":416,"wdPts":0,"leaguePts":20,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":20,"isDNS":false},{"player":"Bmacsupreme","dkScore":414.5,"wdPts":0,"leaguePts":19,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":19,"isDNS":false},{"player":"jlee45","dkScore":407.5,"wdPts":0,"leaguePts":18,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":18,"isDNS":false},{"player":"meathighway","dkScore":398.5,"wdPts":0,"leaguePts":17,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":17,"isDNS":false},{"player":"heysenwisen","dkScore":397,"wdPts":0,"leaguePts":16,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":16,"isDNS":false},{"player":"ewoofter","dkScore":396,"wdPts":0,"leaguePts":15,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15,"isDNS":false},{"player":"wheelhousestl","dkScore":373,"wdPts":0,"leaguePts":14,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":14,"isDNS":false},{"player":"cwoofter","dkScore":371,"wdPts":0,"leaguePts":13,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":13,"isDNS":false},{"player":"dowens25","dkScore":355,"wdPts":0,"leaguePts":12,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":12,"isDNS":false},{"player":"ColeMighty","dkScore":352.5,"wdPts":0,"leaguePts":11,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":11,"isDNS":false},{"player":"nvance69420","dkScore":349.5,"wdPts":0,"leaguePts":10,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":10,"isDNS":false},{"player":"utaherica","dkScore":346,"wdPts":0,"leaguePts":9,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":9,"isDNS":false},{"player":"rolander32","dkScore":342,"wdPts":0,"leaguePts":8,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":8,"isDNS":false},{"player":"karibou5550","dkScore":341,"wdPts":0,"leaguePts":7,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":7,"isDNS":false},{"player":"ziggysmalls1224","dkScore":335,"wdPts":0,"leaguePts":6,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":6,"isDNS":false},{"player":"Sheetwood24","dkScore":326,"wdPts":0,"leaguePts":5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5,"isDNS":false},{"player":"rmealy","dkScore":295,"wdPts":0,"leaguePts":4,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":4,"isDNS":false},{"player":"kenji2323","dkScore":283.5,"wdPts":25.5,"leaguePts":3,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":3,"isDNS":false},{"player":"idlee23","dkScore":263,"wdPts":25.5,"leaguePts":2,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":2,"isDNS":false},{"player":"Bmillertime3","dkScore":262,"wdPts":0,"leaguePts":1,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":1,"isDNS":false}],"fullResults":[{"rank":1,"player":"taylorhiemenz","dkScore":534.5,"wdPts":0,"adjScore":534.5,"leaguePts":34,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":37,"isDNS":false},{"rank":2,"player":"jpevans05","dkScore":527,"wdPts":0,"adjScore":527,"leaguePts":32,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":35,"isDNS":false},{"rank":3,"player":"JottieBucs","dkScore":510,"wdPts":0,"adjScore":510,"leaguePts":30,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":33,"isDNS":false},{"rank":4,"player":"lcrose22","dkScore":504.5,"wdPts":0,"adjScore":504.5,"leaguePts":28,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":31,"isDNS":false},{"rank":5,"player":"jaywmiller22","dkScore":500.5,"wdPts":0,"adjScore":500.5,"leaguePts":27,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":30,"isDNS":false},{"rank":6,"player":"dedsdraft35","dkScore":492,"wdPts":0,"adjScore":492,"leaguePts":26,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":26,"isDNS":false},{"rank":7,"player":"tgroff24","dkScore":481.5,"wdPts":0,"adjScore":481.5,"leaguePts":25,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":25,"isDNS":false},{"rank":8,"player":"scottdold","dkScore":457.5,"wdPts":0,"adjScore":457.5,"leaguePts":24,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":24,"isDNS":false},{"rank":9,"player":"vader.av","dkScore":453,"wdPts":0,"adjScore":453,"leaguePts":23,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":23,"isDNS":false},{"rank":10,"player":"EasyChris","dkScore":445,"wdPts":0,"adjScore":445,"leaguePts":22,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":25,"isDNS":false},{"rank":11,"player":"kreybradley","dkScore":438.5,"wdPts":0,"adjScore":438.5,"leaguePts":21,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":21,"isDNS":false},{"rank":12,"player":"heysebc","dkScore":416,"wdPts":0,"adjScore":416,"leaguePts":20,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":20,"isDNS":false},{"rank":13,"player":"Bmacsupreme","dkScore":414.5,"wdPts":0,"adjScore":414.5,"leaguePts":19,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":19,"isDNS":false},{"rank":14,"player":"jlee45","dkScore":407.5,"wdPts":0,"adjScore":407.5,"leaguePts":18,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":18,"isDNS":false},{"rank":15,"player":"meathighway","dkScore":398.5,"wdPts":0,"adjScore":398.5,"leaguePts":17,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":17,"isDNS":false},{"rank":16,"player":"heysenwisen","dkScore":397,"wdPts":0,"adjScore":397,"leaguePts":16,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":16,"isDNS":false},{"rank":17,"player":"ewoofter","dkScore":396,"wdPts":0,"adjScore":396,"leaguePts":15,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15,"isDNS":false},{"rank":18,"player":"wheelhousestl","dkScore":373,"wdPts":0,"adjScore":373,"leaguePts":14,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":14,"isDNS":false},{"rank":19,"player":"cwoofter","dkScore":371,"wdPts":0,"adjScore":371,"leaguePts":13,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":13,"isDNS":false},{"rank":20,"player":"dowens25","dkScore":355,"wdPts":0,"adjScore":355,"leaguePts":12,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":12,"isDNS":false},{"rank":21,"player":"ColeMighty","dkScore":352.5,"wdPts":0,"adjScore":352.5,"leaguePts":11,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":11,"isDNS":false},{"rank":22,"player":"nvance69420","dkScore":349.5,"wdPts":0,"adjScore":349.5,"leaguePts":10,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":10,"isDNS":false},{"rank":23,"player":"utaherica","dkScore":346,"wdPts":0,"adjScore":346,"leaguePts":9,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":9,"isDNS":false},{"rank":24,"player":"rolander32","dkScore":342,"wdPts":0,"adjScore":342,"leaguePts":8,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":8,"isDNS":false},{"rank":25,"player":"karibou5550","dkScore":341,"wdPts":0,"adjScore":341,"leaguePts":7,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":7,"isDNS":false},{"rank":26,"player":"ziggysmalls1224","dkScore":335,"wdPts":0,"adjScore":335,"leaguePts":6,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":6,"isDNS":false},{"rank":27,"player":"Sheetwood24","dkScore":326,"wdPts":0,"adjScore":326,"leaguePts":5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5,"isDNS":false},{"rank":28,"player":"rmealy","dkScore":295,"wdPts":0,"adjScore":295,"leaguePts":4,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":4,"isDNS":false},{"rank":29,"player":"kenji2323","dkScore":258,"wdPts":25.5,"adjScore":283.5,"leaguePts":3,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":3,"isDNS":false},{"rank":30,"player":"idlee23","dkScore":237.5,"wdPts":25.5,"adjScore":263,"leaguePts":2,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":2,"isDNS":false},{"rank":31,"player":"Bmillertime3","dkScore":262,"wdPts":0,"adjScore":262,"leaguePts":1,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":1,"isDNS":false}],"prevRanks":[{"player":"JottieBucs","lastRank":12},{"player":"taylorhiemenz","lastRank":1},{"player":"heysebc","lastRank":21},{"player":"jpevans05","lastRank":9},{"player":"lcrose22","lastRank":18},{"player":"scottdold","lastRank":3},{"player":"tgroff24","lastRank":9},{"player":"ziggysmalls1224","lastRank":11},{"player":"Bmacsupreme","lastRank":27},{"player":"Bmillertime3","lastRank":23},{"player":"jaywmiller22","lastRank":21},{"player":"meathighway","lastRank":5},{"player":"EasyChris","lastRank":24},{"player":"heysenwisen","lastRank":28},{"player":"nvance69420","lastRank":6},{"player":"kenji2323","lastRank":4},{"player":"ColeMighty","lastRank":17},{"player":"karibou5550","lastRank":25},{"player":"jlee45","lastRank":14},{"player":"vader.av","lastRank":13},{"player":"ewoofter","lastRank":29},{"player":"utaherica","lastRank":30},{"player":"rolander32","lastRank":14},{"player":"dedsdraft35","lastRank":26},{"player":"Sheetwood24","lastRank":7},{"player":"wheelhousestl","lastRank":2},{"player":"kreybradley","lastRank":20},{"player":"cwoofter","lastRank":16},{"player":"dowens25","lastRank":8},{"player":"rmealy","lastRank":19},{"player":"idlee23","lastRank":31}]},{"event":"PHX","segment":1,"date":"Mar 11","type":"Completed","winner":"lcrose22","results":[{"player":"lcrose22","dkScore":619.5,"wdPts":0,"leaguePts":34,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":40,"isDNS":false},{"player":"heysebc","dkScore":568,"wdPts":0,"leaguePts":32,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":38,"isDNS":false},{"player":"utaherica","dkScore":539,"wdPts":0,"leaguePts":30,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":36,"isDNS":false},{"player":"vader.av","dkScore":511.5,"wdPts":0,"leaguePts":28,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":31,"isDNS":false},{"player":"ColeMighty","dkScore":508.5,"wdPts":0,"leaguePts":27,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":30,"isDNS":false},{"player":"ziggysmalls1224","dkScore":490,"wdPts":0,"leaguePts":26,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":29,"isDNS":false},{"player":"Bmillertime3","dkScore":470,"wdPts":0,"leaguePts":25,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":25,"isDNS":false},{"player":"cwoofter","dkScore":468,"wdPts":0,"leaguePts":24,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":27,"isDNS":false},{"player":"Bmacsupreme","dkScore":460,"wdPts":0,"leaguePts":23,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":23,"isDNS":false},{"player":"JottieBucs","dkScore":451.5,"wdPts":0,"leaguePts":22,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22,"isDNS":false},{"player":"Sheetwood24","dkScore":448.5,"wdPts":0,"leaguePts":21,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":21,"isDNS":false},{"player":"ewoofter","dkScore":446.5,"wdPts":0,"leaguePts":20,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":20,"isDNS":false},{"player":"meathighway","dkScore":445.5,"wdPts":0,"leaguePts":19,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":19,"isDNS":false},{"player":"jlee45","dkScore":435,"wdPts":0,"leaguePts":18,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":18,"isDNS":false},{"player":"dedsdraft35","dkScore":430,"wdPts":0,"leaguePts":17,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":17,"isDNS":false},{"player":"EasyChris","dkScore":427.5,"wdPts":0,"leaguePts":16,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":16,"isDNS":false},{"player":"jpevans05","dkScore":426.5,"wdPts":0,"leaguePts":15,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15,"isDNS":false},{"player":"tgroff24","dkScore":422,"wdPts":0,"leaguePts":14,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":14,"isDNS":false},{"player":"jaywmiller22","dkScore":412,"wdPts":0,"leaguePts":13,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":16,"isDNS":false},{"player":"taylorhiemenz","dkScore":407,"wdPts":0,"leaguePts":12,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":12,"isDNS":false},{"player":"nvance69420","dkScore":405.5,"wdPts":0,"leaguePts":11,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":11,"isDNS":false},{"player":"karibou5550","dkScore":401.5,"wdPts":0,"leaguePts":10,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":10,"isDNS":false},{"player":"idlee23","dkScore":401,"wdPts":0,"leaguePts":9,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":9,"isDNS":false},{"player":"rmealy","dkScore":387.5,"wdPts":0,"leaguePts":8,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":8,"isDNS":false},{"player":"rolander32","dkScore":375,"wdPts":0,"leaguePts":7,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":7,"isDNS":false},{"player":"heysenwisen","dkScore":364.5,"wdPts":0,"leaguePts":6,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":6,"isDNS":false},{"player":"scottdold","dkScore":360.5,"wdPts":0,"leaguePts":5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5,"isDNS":false},{"player":"wheelhousestl","dkScore":346,"wdPts":0,"leaguePts":4,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":4,"isDNS":false},{"player":"kenji2323","dkScore":339.5,"wdPts":0,"leaguePts":3,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":3,"isDNS":false},{"player":"kreybradley","dkScore":292,"wdPts":0,"leaguePts":2,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":2,"isDNS":false},{"player":"dowens25","dkScore":262,"wdPts":0,"leaguePts":1,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":1,"isDNS":false}],"fullResults":[{"rank":1,"player":"lcrose22","dkScore":619.5,"wdPts":0,"adjScore":619.5,"leaguePts":34,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":40,"isDNS":false},{"rank":2,"player":"heysebc","dkScore":568,"wdPts":0,"adjScore":568,"leaguePts":32,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":38,"isDNS":false},{"rank":3,"player":"utaherica","dkScore":539,"wdPts":0,"adjScore":539,"leaguePts":30,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":36,"isDNS":false},{"rank":4,"player":"vader.av","dkScore":511.5,"wdPts":0,"adjScore":511.5,"leaguePts":28,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":31,"isDNS":false},{"rank":5,"player":"ColeMighty","dkScore":508.5,"wdPts":0,"adjScore":508.5,"leaguePts":27,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":30,"isDNS":false},{"rank":6,"player":"ziggysmalls1224","dkScore":490,"wdPts":0,"adjScore":490,"leaguePts":26,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":29,"isDNS":false},{"rank":7,"player":"Bmillertime3","dkScore":470,"wdPts":0,"adjScore":470,"leaguePts":25,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":25,"isDNS":false},{"rank":8,"player":"cwoofter","dkScore":468,"wdPts":0,"adjScore":468,"leaguePts":24,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":27,"isDNS":false},{"rank":9,"player":"Bmacsupreme","dkScore":460,"wdPts":0,"adjScore":460,"leaguePts":23,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":23,"isDNS":false},{"rank":10,"player":"JottieBucs","dkScore":451.5,"wdPts":0,"adjScore":451.5,"leaguePts":22,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22,"isDNS":false},{"rank":11,"player":"Sheetwood24","dkScore":448.5,"wdPts":0,"adjScore":448.5,"leaguePts":21,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":21,"isDNS":false},{"rank":12,"player":"ewoofter","dkScore":446.5,"wdPts":0,"adjScore":446.5,"leaguePts":20,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":20,"isDNS":false},{"rank":13,"player":"meathighway","dkScore":445.5,"wdPts":0,"adjScore":445.5,"leaguePts":19,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":19,"isDNS":false},{"rank":14,"player":"jlee45","dkScore":435,"wdPts":0,"adjScore":435,"leaguePts":18,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":18,"isDNS":false},{"rank":15,"player":"dedsdraft35","dkScore":430,"wdPts":0,"adjScore":430,"leaguePts":17,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":17,"isDNS":false},{"rank":16,"player":"EasyChris","dkScore":427.5,"wdPts":0,"adjScore":427.5,"leaguePts":16,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":16,"isDNS":false},{"rank":17,"player":"jpevans05","dkScore":426.5,"wdPts":0,"adjScore":426.5,"leaguePts":15,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15,"isDNS":false},{"rank":18,"player":"tgroff24","dkScore":422,"wdPts":0,"adjScore":422,"leaguePts":14,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":14,"isDNS":false},{"rank":19,"player":"jaywmiller22","dkScore":412,"wdPts":0,"adjScore":412,"leaguePts":13,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":16,"isDNS":false},{"rank":20,"player":"taylorhiemenz","dkScore":407,"wdPts":0,"adjScore":407,"leaguePts":12,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":12,"isDNS":false},{"rank":21,"player":"nvance69420","dkScore":405.5,"wdPts":0,"adjScore":405.5,"leaguePts":11,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":11,"isDNS":false},{"rank":22,"player":"karibou5550","dkScore":401.5,"wdPts":0,"adjScore":401.5,"leaguePts":10,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":10,"isDNS":false},{"rank":23,"player":"idlee23","dkScore":401,"wdPts":0,"adjScore":401,"leaguePts":9,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":9,"isDNS":false},{"rank":24,"player":"rmealy","dkScore":387.5,"wdPts":0,"adjScore":387.5,"leaguePts":8,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":8,"isDNS":false},{"rank":25,"player":"rolander32","dkScore":375,"wdPts":0,"adjScore":375,"leaguePts":7,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":7,"isDNS":false},{"rank":26,"player":"heysenwisen","dkScore":364.5,"wdPts":0,"adjScore":364.5,"leaguePts":6,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":6,"isDNS":false},{"rank":27,"player":"scottdold","dkScore":360.5,"wdPts":0,"adjScore":360.5,"leaguePts":5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5,"isDNS":false},{"rank":28,"player":"wheelhousestl","dkScore":346,"wdPts":0,"adjScore":346,"leaguePts":4,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":4,"isDNS":false},{"rank":29,"player":"kenji2323","dkScore":339.5,"wdPts":0,"adjScore":339.5,"leaguePts":3,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":3,"isDNS":false},{"rank":30,"player":"kreybradley","dkScore":292,"wdPts":0,"adjScore":292,"leaguePts":2,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":2,"isDNS":false},{"rank":31,"player":"dowens25","dkScore":262,"wdPts":0,"adjScore":262,"leaguePts":1,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":1,"isDNS":false}],"prevRanks":[{"player":"JottieBucs","lastRank":5},{"player":"taylorhiemenz","lastRank":1},{"player":"heysebc","lastRank":18},{"player":"jpevans05","lastRank":2},{"player":"lcrose22","lastRank":8},{"player":"scottdold","lastRank":2},{"player":"tgroff24","lastRank":7},{"player":"ziggysmalls1224","lastRank":21},{"player":"Bmacsupreme","lastRank":24},{"player":"Bmillertime3","lastRank":29},{"player":"jaywmiller22","lastRank":11},{"player":"meathighway","lastRank":6},{"player":"EasyChris","lastRank":16},{"player":"heysenwisen","lastRank":25},{"player":"nvance69420","lastRank":9},{"player":"kenji2323","lastRank":13},{"player":"ColeMighty","lastRank":21},{"player":"karibou5550","lastRank":28},{"player":"jlee45","lastRank":14},{"player":"vader.av","lastRank":9},{"player":"ewoofter","lastRank":27},{"player":"utaherica","lastRank":30},{"player":"rolander32","lastRank":23},{"player":"dedsdraft35","lastRank":19},{"player":"Sheetwood24","lastRank":16},{"player":"wheelhousestl","lastRank":4},{"player":"kreybradley","lastRank":15},{"player":"cwoofter","lastRank":20},{"player":"dowens25","lastRank":12},{"player":"rmealy","lastRank":25},{"player":"idlee23","lastRank":31}]}],"shotgunDebts":[],"playerMoney":{"lcrose22":100},"moneyLog":[{"player":"lcrose22","amount":100,"note":"PHX","date":"Mar 11"}]};
   </script>
 <script>
 // ============================================================
