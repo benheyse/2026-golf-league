@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heyse DraftKings Golf League 2026 — Fresh Start</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Mono:wght@300;400;500&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
   :root {
@@ -746,17 +744,41 @@
     <span class="header-flag">⛳</span>
     <h1>Heyse Golf League</h1>
     <div class="subtitle">Fantasy Golf · 2026 Season</div>
-    <button onclick="exportDashboard()" style="margin-top:10px;background:transparent;border:1px solid var(--dk-green);color:var(--dk-green);padding:6px 18px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;cursor:pointer;text-transform:uppercase" title="Download as index.html ready for GitHub">📥 Export & Download</button>
-    <div class="season-badge" id="season-badge">31 Players · Seg 1</div>
+    <button onclick="exportDashboard()" style="margin-top:10px;background:transparent;border:1px solid var(--dk-green);color:var(--dk-green);padding:6px 18px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;cursor:pointer;text-transform:uppercase" title="Download as index.html ready for GitHub">📥 Export &amp; Download</button>
+    <div class="season-badge" id="season-badge">31 Players · 1 Event · Sony Complete</div>
   </header>
 
   <div class="divider">Season Overview</div>
 
   <!-- Segment progress bar — dynamic -->
-  <div class="seg-bar" id="seg-bar"></div>
+  <div class="seg-bar" id="seg-bar"><div class="seg-item done">Sony</div><div class="seg-item current">Next ▶</div></div>
 
   <!-- Stats Row -->
-  <div class="stats-grid" id="stats-grid"></div>
+  <div class="stats-grid" id="stats-grid">
+    <div class="stat-card" style="animation-delay:0.05s">
+      <div class="stat-label">Season Leader</div>
+      <div class="stat-value">scottdold</div>
+      <div class="stat-sub">40 pts · #1</div>
+    </div>
+  
+    <div class="stat-card" style="animation-delay:0.1s">
+      <div class="stat-label">Events Played</div>
+      <div class="stat-value">1</div>
+      <div class="stat-sub">of 9 in Segment 1</div>
+    </div>
+  
+    <div class="stat-card" style="animation-delay:0.15000000000000002s">
+      <div class="stat-label">Biggest Mover</div>
+      <div class="stat-value">—</div>
+      <div class="stat-sub">No movement yet</div>
+    </div>
+  
+    <div class="stat-card" style="animation-delay:0.2s">
+      <div class="stat-label">Playoff Cutline</div>
+      <div class="stat-value">14</div>
+      <div class="stat-sub">ewoofter · 18th safe spot</div>
+    </div>
+  </div>
 
   <!-- TABS -->
   <div class="tabs">
@@ -769,7 +791,28 @@
   <!-- TAB: STANDINGS -->
   <div class="tab-panel active" id="tab-standings">
 
-    <div class="podium" id="podium"></div>
+    <div class="podium" id="podium">
+    <div class="podium-card p2">
+      <div class="podium-rank">2</div>
+      <div class="podium-name">taylorhiemenz</div>
+      <div class="podium-pts">35</div>
+      <div class="podium-pts-label">League Points</div>
+    </div>
+  
+    <div class="podium-card p1">
+      <div class="podium-rank">1</div>
+      <div class="podium-name">scottdold</div>
+      <div class="podium-pts">40</div>
+      <div class="podium-pts-label">League Points</div>
+    </div>
+  
+    <div class="podium-card p3">
+      <div class="podium-rank">3</div>
+      <div class="podium-name">jlee45</div>
+      <div class="podium-pts">34</div>
+      <div class="podium-pts-label">League Points</div>
+    </div>
+  </div>
 
     <table class="standings-table" id="standings-table">
       <thead>
@@ -785,7 +828,379 @@
           <th class="num" style="color:var(--gold)">$$$</th>
         </tr>
       </thead>
-      <tbody id="standings-body"></tbody>
+      <tbody id="standings-body">
+      <tr class="" style="animation-delay:0s">
+        <td class="rank-cell rank1">1</td>
+        <td class="num" style="width:40px"><span class="trend-same">—</span></td>
+        <td class="player-name" style="color:inherit">scottdold<span class="badge badge-win">🏆 1W</span></td>
+        <td class="num points-cell">40</td>
+        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+6</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.025s">
+        <td class="rank-cell top3">2</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼1</span></td>
+        <td class="player-name" style="color:inherit">taylorhiemenz</td>
+        <td class="num points-cell">35</td>
+        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.05s">
+        <td class="rank-cell top3">3</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼2</span></td>
+        <td class="player-name" style="color:inherit">jlee45</td>
+        <td class="num points-cell">34</td>
+        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+6</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.07500000000000001s">
+        <td class="rank-cell ">4</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼3</span></td>
+        <td class="player-name" style="color:inherit">JottieBucs</td>
+        <td class="num points-cell">33</td>
+        <td class="num" style="color:var(--gold);font-size:13px">+3</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.1s">
+        <td class="rank-cell ">5</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼4</span></td>
+        <td class="player-name" style="color:inherit">Sheetwood24</td>
+        <td class="num points-cell">29</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.125s">
+        <td class="rank-cell ">6</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼5</span></td>
+        <td class="player-name" style="color:inherit">ColeMighty</td>
+        <td class="num points-cell">28</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.15000000000000002s">
+        <td class="rank-cell ">7</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼6</span></td>
+        <td class="player-name" style="color:inherit">jpevans05</td>
+        <td class="num points-cell">27</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.17500000000000002s">
+        <td class="rank-cell ">8</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼7</span></td>
+        <td class="player-name" style="color:inherit">nvance69420</td>
+        <td class="num points-cell">24</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.2s">
+        <td class="rank-cell ">8</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼7</span></td>
+        <td class="player-name" style="color:inherit">wheelhousestl</td>
+        <td class="num points-cell">24</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.225s">
+        <td class="rank-cell ">10</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼9</span></td>
+        <td class="player-name" style="color:inherit">heysebc</td>
+        <td class="num points-cell">22.5</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.25s">
+        <td class="rank-cell ">10</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼9</span></td>
+        <td class="player-name" style="color:inherit">meathighway</td>
+        <td class="num points-cell">22.5</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.275s">
+        <td class="rank-cell ">12</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼11</span></td>
+        <td class="player-name" style="color:inherit">dowens25</td>
+        <td class="num points-cell">20</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.30000000000000004s">
+        <td class="rank-cell ">13</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼12</span></td>
+        <td class="player-name" style="color:inherit">Bmillertime3</td>
+        <td class="num points-cell">19</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.325s">
+        <td class="rank-cell ">14</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼13</span></td>
+        <td class="player-name" style="color:inherit">rolander32</td>
+        <td class="num points-cell">18</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.35000000000000003s">
+        <td class="rank-cell ">15</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼14</span></td>
+        <td class="player-name" style="color:inherit">EasyChris</td>
+        <td class="num points-cell">17</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.375s">
+        <td class="rank-cell ">16</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼15</span></td>
+        <td class="player-name" style="color:inherit">kenji2323</td>
+        <td class="num points-cell">15.5</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.4s">
+        <td class="rank-cell ">16</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼15</span></td>
+        <td class="player-name" style="color:inherit">cwoofter</td>
+        <td class="num points-cell">15.5</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.42500000000000004s">
+        <td class="rank-cell ">18</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼17</span></td>
+        <td class="player-name" style="color:inherit">ewoofter</td>
+        <td class="num points-cell">14</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    <tr><td colspan="10" class="playoff-label">── Playoff Cutline (Top 18 Advance) ──</td></tr>
+      <tr class="playoff-line" style="animation-delay:0.45s">
+        <td class="rank-cell ">19</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼18</span></td>
+        <td class="player-name" style="color:inherit">tgroff24</td>
+        <td class="num points-cell">13</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.47500000000000003s">
+        <td class="rank-cell ">20</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼19</span></td>
+        <td class="player-name" style="color:inherit">dedsdraft35</td>
+        <td class="num points-cell">12</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.5s">
+        <td class="rank-cell ">21</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼20</span></td>
+        <td class="player-name" style="color:inherit">rmealy</td>
+        <td class="num points-cell">11</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.525s">
+        <td class="rank-cell ">22</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼21</span></td>
+        <td class="player-name" style="color:inherit">vader.av</td>
+        <td class="num points-cell">10</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.55s">
+        <td class="rank-cell ">23</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼22</span></td>
+        <td class="player-name" style="color:inherit">karibou5550</td>
+        <td class="num points-cell">9</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.5750000000000001s">
+        <td class="rank-cell ">24</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼23</span></td>
+        <td class="player-name" style="color:inherit">lcrose22</td>
+        <td class="num points-cell">8</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.6000000000000001s">
+        <td class="rank-cell ">25</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼24</span></td>
+        <td class="player-name" style="color:inherit">Bmacsupreme</td>
+        <td class="num points-cell">7</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.625s">
+        <td class="rank-cell ">26</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼25</span></td>
+        <td class="player-name" style="color:inherit">kreybradley</td>
+        <td class="num points-cell">5.5</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.65s">
+        <td class="rank-cell ">26</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼25</span></td>
+        <td class="player-name" style="color:inherit">idlee23</td>
+        <td class="num points-cell">5.5</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.675s">
+        <td class="rank-cell ">28</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼27</span></td>
+        <td class="player-name" style="color:inherit">utaherica</td>
+        <td class="num points-cell">4</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.7000000000000001s">
+        <td class="rank-cell ">29</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼28</span></td>
+        <td class="player-name" style="color:inherit">heysenwisen</td>
+        <td class="num points-cell">3</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.7250000000000001s">
+        <td class="rank-cell ">30</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼29</span></td>
+        <td class="player-name" style="color:inherit">jaywmiller22</td>
+        <td class="num points-cell">2</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    
+      <tr class="" style="animation-delay:0.75s">
+        <td class="rank-cell ">31</td>
+        <td class="num" style="width:40px"><span class="trend-down">▼30</span></td>
+        <td class="player-name" style="color:inherit">ziggysmalls1224</td>
+        <td class="num points-cell">1</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">—</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">—</td>
+        <td class="num" style="color:var(--muted);font-size:12px">—</td>
+        <td class="num" style="color:var(--gold);font-size:13px">—</td>
+      </tr>
+    </tbody>
     </table>
 
     <!-- SEGMENT LEADERBOARDS -->
@@ -809,7 +1224,7 @@
     <div class="upload-section">
       <div class="upload-title">Import Weekly Template</div>
       <div class="upload-desc">Fill in the weekly XLSX template and drop it below. Rank, adjusted scores, and all bonuses are read directly from the file — no manual entry needed here.</div>
-      <div id="storage-status" style="font-size:10px;color:var(--dk-muted);letter-spacing:1px;margin-bottom:12px"></div>
+      <div id="storage-status" style="font-size:10px;color:var(--dk-muted);letter-spacing:1px;margin-bottom:12px">✓ Data loaded · Last saved: 3/11/2026, 11:17:08 AM · <span style="cursor:pointer;color:var(--dk-red);text-decoration:underline" onclick="clearStorage()">Clear all data</span></div>
 
       <div style="display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-bottom:18px">
         <div style="flex:2;min-width:200px">
@@ -837,7 +1252,7 @@
         The dashboard reads: <span style="color:var(--green-bright)">EntryName · DKScore · WithdrawalPts · AdjustedScore · Rank · NoCutBonus · WinnerBonus · TotalPts</span>
       </div>
 
-      <button class="btn btn-gold" onclick="processXLSX()" id="process-btn" style="margin-top:20px" disabled>Preview Results →</button>
+      <button class="btn btn-gold" onclick="processXLSX()" id="process-btn" style="margin-top:20px" disabled="">Preview Results →</button>
     </div>
 
     <div class="results-preview" id="results-preview" style="display:none">
@@ -867,7 +1282,7 @@
   <div class="tab-panel" id="tab-history">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
       <div class="divider" style="margin:0; flex:1">Past Events</div>
-      <button class="btn" id="undo-btn" onclick="undoLastWeek()" style="margin-left:16px; background:var(--dark3); color:var(--red); border:1px solid var(--red); font-size:10px; padding:8px 16px;" disabled>↩ Undo Last Week</button>
+      <button class="btn" id="undo-btn" onclick="undoLastWeek()" style="margin-left:16px; background:var(--dark3); color:var(--red); border:1px solid var(--red); font-size:10px; padding:8px 16px;" disabled="">↩ Undo Last Week</button>
     </div>
     <div id="undo-confirm" style="display:none; background:rgba(224,82,82,0.08); border:1px solid rgba(224,82,82,0.3); padding:14px 18px; margin:12px 0; font-size:12px; color:var(--text);">
       <span id="undo-msg"></span>
@@ -876,7 +1291,14 @@
         <button class="btn" onclick="cancelUndo()" style="background:var(--dark3); font-size:10px; padding:7px 16px;">Cancel</button>
       </div>
     </div>
-    <div class="history-grid" id="history-grid"></div>
+    <div class="history-grid" id="history-grid">
+    <div class="history-card" onclick="showWeekDetail(0)" id="hcard-0">
+      <div class="hc-event">Sony</div>
+      <div class="hc-winner-label">Winner</div>
+      <div class="hc-winner">scottdold</div>
+      <div class="hc-pts">Mar 11 · Completed</div>
+    </div>
+  </div>
     <div class="week-detail-panel" id="week-detail"></div>
   </div>
 
@@ -887,7 +1309,255 @@
     <!-- SHOTGUN SECTION -->
     <div class="divider" style="margin-top:0">🍺 Shotgun Debts</div>
     <p style="font-size:11px;color:var(--muted);letter-spacing:1px;margin-bottom:16px">Toggle a player's shotgun debt on or off. Active debts are highlighted on the leaderboard.</p>
-    <div id="beer-list"></div>
+    <div id="beer-list">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          Bmacsupreme
+        </span>
+        <button onclick="toggleShotgun('Bmacsupreme')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          Bmillertime3
+        </span>
+        <button onclick="toggleShotgun('Bmillertime3')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          ColeMighty
+        </span>
+        <button onclick="toggleShotgun('ColeMighty')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          cwoofter
+        </span>
+        <button onclick="toggleShotgun('cwoofter')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          dedsdraft35
+        </span>
+        <button onclick="toggleShotgun('dedsdraft35')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          dowens25
+        </span>
+        <button onclick="toggleShotgun('dowens25')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          EasyChris
+        </span>
+        <button onclick="toggleShotgun('EasyChris')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          ewoofter
+        </span>
+        <button onclick="toggleShotgun('ewoofter')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          heysebc
+        </span>
+        <button onclick="toggleShotgun('heysebc')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          heysenwisen
+        </span>
+        <button onclick="toggleShotgun('heysenwisen')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          idlee23
+        </span>
+        <button onclick="toggleShotgun('idlee23')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          jaywmiller22
+        </span>
+        <button onclick="toggleShotgun('jaywmiller22')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          jlee45
+        </span>
+        <button onclick="toggleShotgun('jlee45')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          JottieBucs
+        </span>
+        <button onclick="toggleShotgun('JottieBucs')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          jpevans05
+        </span>
+        <button onclick="toggleShotgun('jpevans05')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          karibou5550
+        </span>
+        <button onclick="toggleShotgun('karibou5550')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          kenji2323
+        </span>
+        <button onclick="toggleShotgun('kenji2323')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          kreybradley
+        </span>
+        <button onclick="toggleShotgun('kreybradley')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          lcrose22
+        </span>
+        <button onclick="toggleShotgun('lcrose22')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          meathighway
+        </span>
+        <button onclick="toggleShotgun('meathighway')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          nvance69420
+        </span>
+        <button onclick="toggleShotgun('nvance69420')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          rmealy
+        </span>
+        <button onclick="toggleShotgun('rmealy')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          rolander32
+        </span>
+        <button onclick="toggleShotgun('rolander32')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          scottdold
+        </span>
+        <button onclick="toggleShotgun('scottdold')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          Sheetwood24
+        </span>
+        <button onclick="toggleShotgun('Sheetwood24')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          taylorhiemenz
+        </span>
+        <button onclick="toggleShotgun('taylorhiemenz')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          tgroff24
+        </span>
+        <button onclick="toggleShotgun('tgroff24')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          utaherica
+        </span>
+        <button onclick="toggleShotgun('utaherica')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          vader.av
+        </span>
+        <button onclick="toggleShotgun('vader.av')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          wheelhousestl
+        </span>
+        <button onclick="toggleShotgun('wheelhousestl')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--dark3);">
+        <span style="font-size:13px;font-weight:500;color:var(--text)">
+          ziggysmalls1224
+        </span>
+        <button onclick="toggleShotgun('ziggysmalls1224')" style="background:var(--dark3);border:1px solid var(--green);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          + Assign
+        </button>
+      </div></div>
 
     <!-- MONEY SECTION -->
     <div class="divider" style="margin-top:32px">💰 Prize Money</div>
@@ -895,7 +1565,7 @@
     <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin-bottom:20px">
       <div>
         <label class="upload-label">Player</label>
-        <select class="bonus-input" id="money-player" style="min-width:180px"></select>
+        <select class="bonus-input" id="money-player" style="min-width:180px"><option value="">— Select player —</option><option value="Bmacsupreme">Bmacsupreme</option><option value="Bmillertime3">Bmillertime3</option><option value="ColeMighty">ColeMighty</option><option value="cwoofter">cwoofter</option><option value="dedsdraft35">dedsdraft35</option><option value="dowens25">dowens25</option><option value="EasyChris">EasyChris</option><option value="ewoofter">ewoofter</option><option value="heysebc">heysebc</option><option value="heysenwisen">heysenwisen</option><option value="idlee23">idlee23</option><option value="jaywmiller22">jaywmiller22</option><option value="jlee45">jlee45</option><option value="JottieBucs">JottieBucs</option><option value="jpevans05">jpevans05</option><option value="karibou5550">karibou5550</option><option value="kenji2323">kenji2323</option><option value="kreybradley">kreybradley</option><option value="lcrose22">lcrose22</option><option value="meathighway">meathighway</option><option value="nvance69420">nvance69420</option><option value="rmealy">rmealy</option><option value="rolander32">rolander32</option><option value="scottdold">scottdold</option><option value="Sheetwood24">Sheetwood24</option><option value="taylorhiemenz">taylorhiemenz</option><option value="tgroff24">tgroff24</option><option value="utaherica">utaherica</option><option value="vader.av">vader.av</option><option value="wheelhousestl">wheelhousestl</option><option value="ziggysmalls1224">ziggysmalls1224</option></select>
       </div>
       <div>
         <label class="upload-label">Amount ($)</label>
@@ -907,7 +1577,7 @@
       </div>
       <button class="btn btn-gold" onclick="addMoney()">+ Add</button>
     </div>
-    <div id="money-log"></div>
+    <div id="money-log"><div style="font-size:12px;color:var(--muted);padding:10px 0">No prize money awarded yet this season.</div></div>
 
   </div>
 
@@ -916,6 +1586,10 @@
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
+
+  <script id="snapshot-boot">
+  window.__SNAPSHOT__ = {"standings":[{"rank":4,"player":"JottieBucs","points":33,"wins":0,"noCut":0,"winner":3,"missed":0,"lastRank":1,"currentRank":4},{"rank":2,"player":"taylorhiemenz","points":35,"wins":0,"noCut":0,"winner":3,"missed":0,"lastRank":1,"currentRank":2},{"rank":10,"player":"heysebc","points":22.5,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":10},{"rank":7,"player":"jpevans05","points":27,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":7},{"rank":24,"player":"lcrose22","points":8,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":24},{"rank":1,"player":"scottdold","points":40,"wins":1,"noCut":3,"winner":3,"missed":0,"lastRank":1,"currentRank":1},{"rank":19,"player":"tgroff24","points":13,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":19},{"rank":31,"player":"ziggysmalls1224","points":1,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":31},{"rank":25,"player":"Bmacsupreme","points":7,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":25},{"rank":13,"player":"Bmillertime3","points":19,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":13},{"rank":30,"player":"jaywmiller22","points":2,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":30},{"rank":10,"player":"meathighway","points":22.5,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":10},{"rank":15,"player":"EasyChris","points":17,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":15},{"rank":29,"player":"heysenwisen","points":3,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":29},{"rank":8,"player":"nvance69420","points":24,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":8},{"rank":16,"player":"kenji2323","points":15.5,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":16},{"rank":6,"player":"ColeMighty","points":28,"wins":0,"noCut":3,"winner":0,"missed":0,"lastRank":1,"currentRank":6},{"rank":23,"player":"karibou5550","points":9,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":23},{"rank":3,"player":"jlee45","points":34,"wins":0,"noCut":3,"winner":3,"missed":0,"lastRank":1,"currentRank":3},{"rank":22,"player":"vader.av","points":10,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":22},{"rank":18,"player":"ewoofter","points":14,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":18},{"rank":28,"player":"utaherica","points":4,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":28},{"rank":14,"player":"rolander32","points":18,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":14},{"rank":20,"player":"dedsdraft35","points":12,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":20},{"rank":5,"player":"Sheetwood24","points":29,"wins":0,"noCut":3,"winner":0,"missed":0,"lastRank":1,"currentRank":5},{"rank":8,"player":"wheelhousestl","points":24,"wins":0,"noCut":3,"winner":0,"missed":0,"lastRank":1,"currentRank":8},{"rank":26,"player":"kreybradley","points":5.5,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":26},{"rank":16,"player":"cwoofter","points":15.5,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":16},{"rank":12,"player":"dowens25","points":20,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":12},{"rank":21,"player":"rmealy","points":11,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":21},{"rank":26,"player":"idlee23","points":5.5,"wins":0,"noCut":0,"winner":0,"missed":0,"lastRank":1,"currentRank":26}],"weekHistory":[{"event":"Sony","segment":1,"date":"Mar 11","type":"Completed","winner":"scottdold","results":[{"player":"scottdold","dkScore":507,"wdPts":0,"leaguePts":34,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":40,"isDNS":false},{"player":"taylorhiemenz","dkScore":497,"wdPts":0,"leaguePts":32,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":35,"isDNS":false},{"player":"JottieBucs","dkScore":481,"wdPts":0,"leaguePts":30,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":33,"isDNS":false},{"player":"jlee45","dkScore":462,"wdPts":0,"leaguePts":28,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":34,"isDNS":false},{"player":"jpevans05","dkScore":447,"wdPts":0,"leaguePts":27,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":27,"isDNS":false},{"player":"Sheetwood24","dkScore":441.5,"wdPts":0,"leaguePts":26,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":29,"isDNS":false},{"player":"ColeMighty","dkScore":440,"wdPts":0,"leaguePts":25,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":28,"isDNS":false},{"player":"nvance69420","dkScore":437,"wdPts":0,"leaguePts":24,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":24,"isDNS":false},{"player":"heysebc","dkScore":424.5,"wdPts":0,"leaguePts":22.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22.5,"isDNS":false},{"player":"meathighway","dkScore":424.5,"wdPts":0,"leaguePts":22.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22.5,"isDNS":false},{"player":"wheelhousestl","dkScore":423,"wdPts":0,"leaguePts":21,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":24,"isDNS":false},{"player":"dowens25","dkScore":422.5,"wdPts":0,"leaguePts":20,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":20,"isDNS":false},{"player":"Bmillertime3","dkScore":419,"wdPts":0,"leaguePts":19,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":19,"isDNS":false},{"player":"rolander32","dkScore":416.5,"wdPts":0,"leaguePts":18,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":18,"isDNS":false},{"player":"EasyChris","dkScore":413.5,"wdPts":0,"leaguePts":17,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":17,"isDNS":false},{"player":"cwoofter","dkScore":412.5,"wdPts":0,"leaguePts":15.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15.5,"isDNS":false},{"player":"kenji2323","dkScore":412.5,"wdPts":0,"leaguePts":15.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15.5,"isDNS":false},{"player":"ewoofter","dkScore":408,"wdPts":0,"leaguePts":14,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":14,"isDNS":false},{"player":"tgroff24","dkScore":402,"wdPts":0,"leaguePts":13,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":13,"isDNS":false},{"player":"dedsdraft35","dkScore":395,"wdPts":0,"leaguePts":12,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":12,"isDNS":false},{"player":"rmealy","dkScore":394.5,"wdPts":0,"leaguePts":11,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":11,"isDNS":false},{"player":"vader.av","dkScore":390,"wdPts":0,"leaguePts":10,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":10,"isDNS":false},{"player":"karibou5550","dkScore":387.5,"wdPts":0,"leaguePts":9,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":9,"isDNS":false},{"player":"lcrose22","dkScore":384,"wdPts":0,"leaguePts":8,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":8,"isDNS":false},{"player":"Bmacsupreme","dkScore":365,"wdPts":0,"leaguePts":7,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":7,"isDNS":false},{"player":"idlee23","dkScore":362,"wdPts":0,"leaguePts":5.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5.5,"isDNS":false},{"player":"kreybradley","dkScore":362,"wdPts":0,"leaguePts":5.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5.5,"isDNS":false},{"player":"utaherica","dkScore":360,"wdPts":0,"leaguePts":4,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":4,"isDNS":false},{"player":"heysenwisen","dkScore":323,"wdPts":0,"leaguePts":3,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":3,"isDNS":false},{"player":"jaywmiller22","dkScore":293.5,"wdPts":0,"leaguePts":2,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":2,"isDNS":false},{"player":"ziggysmalls1224","dkScore":269,"wdPts":0,"leaguePts":1,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":1,"isDNS":false}],"fullResults":[{"rank":1,"player":"scottdold","dkScore":507,"wdPts":0,"adjScore":507,"leaguePts":34,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":40,"isDNS":false},{"rank":2,"player":"taylorhiemenz","dkScore":497,"wdPts":0,"adjScore":497,"leaguePts":32,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":35,"isDNS":false},{"rank":3,"player":"JottieBucs","dkScore":481,"wdPts":0,"adjScore":481,"leaguePts":30,"noCutBonus":0,"winBonus":3,"bonuses":3,"total":33,"isDNS":false},{"rank":4,"player":"jlee45","dkScore":462,"wdPts":0,"adjScore":462,"leaguePts":28,"noCutBonus":3,"winBonus":3,"bonuses":6,"total":34,"isDNS":false},{"rank":5,"player":"jpevans05","dkScore":447,"wdPts":0,"adjScore":447,"leaguePts":27,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":27,"isDNS":false},{"rank":6,"player":"Sheetwood24","dkScore":441.5,"wdPts":0,"adjScore":441.5,"leaguePts":26,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":29,"isDNS":false},{"rank":7,"player":"ColeMighty","dkScore":440,"wdPts":0,"adjScore":440,"leaguePts":25,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":28,"isDNS":false},{"rank":8,"player":"nvance69420","dkScore":437,"wdPts":0,"adjScore":437,"leaguePts":24,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":24,"isDNS":false},{"rank":9,"player":"heysebc","dkScore":424.5,"wdPts":0,"adjScore":424.5,"leaguePts":22.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22.5,"isDNS":false},{"rank":9,"player":"meathighway","dkScore":424.5,"wdPts":0,"adjScore":424.5,"leaguePts":22.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":22.5,"isDNS":false},{"rank":11,"player":"wheelhousestl","dkScore":423,"wdPts":0,"adjScore":423,"leaguePts":21,"noCutBonus":3,"winBonus":0,"bonuses":3,"total":24,"isDNS":false},{"rank":12,"player":"dowens25","dkScore":422.5,"wdPts":0,"adjScore":422.5,"leaguePts":20,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":20,"isDNS":false},{"rank":13,"player":"Bmillertime3","dkScore":419,"wdPts":0,"adjScore":419,"leaguePts":19,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":19,"isDNS":false},{"rank":14,"player":"rolander32","dkScore":416.5,"wdPts":0,"adjScore":416.5,"leaguePts":18,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":18,"isDNS":false},{"rank":15,"player":"EasyChris","dkScore":413.5,"wdPts":0,"adjScore":413.5,"leaguePts":17,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":17,"isDNS":false},{"rank":16,"player":"cwoofter","dkScore":412.5,"wdPts":0,"adjScore":412.5,"leaguePts":15.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15.5,"isDNS":false},{"rank":16,"player":"kenji2323","dkScore":412.5,"wdPts":0,"adjScore":412.5,"leaguePts":15.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":15.5,"isDNS":false},{"rank":18,"player":"ewoofter","dkScore":408,"wdPts":0,"adjScore":408,"leaguePts":14,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":14,"isDNS":false},{"rank":19,"player":"tgroff24","dkScore":402,"wdPts":0,"adjScore":402,"leaguePts":13,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":13,"isDNS":false},{"rank":20,"player":"dedsdraft35","dkScore":395,"wdPts":0,"adjScore":395,"leaguePts":12,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":12,"isDNS":false},{"rank":21,"player":"rmealy","dkScore":394.5,"wdPts":0,"adjScore":394.5,"leaguePts":11,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":11,"isDNS":false},{"rank":22,"player":"vader.av","dkScore":390,"wdPts":0,"adjScore":390,"leaguePts":10,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":10,"isDNS":false},{"rank":23,"player":"karibou5550","dkScore":387.5,"wdPts":0,"adjScore":387.5,"leaguePts":9,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":9,"isDNS":false},{"rank":24,"player":"lcrose22","dkScore":384,"wdPts":0,"adjScore":384,"leaguePts":8,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":8,"isDNS":false},{"rank":25,"player":"Bmacsupreme","dkScore":365,"wdPts":0,"adjScore":365,"leaguePts":7,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":7,"isDNS":false},{"rank":26,"player":"idlee23","dkScore":362,"wdPts":0,"adjScore":362,"leaguePts":5.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5.5,"isDNS":false},{"rank":26,"player":"kreybradley","dkScore":362,"wdPts":0,"adjScore":362,"leaguePts":5.5,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":5.5,"isDNS":false},{"rank":28,"player":"utaherica","dkScore":360,"wdPts":0,"adjScore":360,"leaguePts":4,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":4,"isDNS":false},{"rank":29,"player":"heysenwisen","dkScore":323,"wdPts":0,"adjScore":323,"leaguePts":3,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":3,"isDNS":false},{"rank":30,"player":"jaywmiller22","dkScore":293.5,"wdPts":0,"adjScore":293.5,"leaguePts":2,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":2,"isDNS":false},{"rank":31,"player":"ziggysmalls1224","dkScore":269,"wdPts":0,"adjScore":269,"leaguePts":1,"noCutBonus":0,"winBonus":0,"bonuses":0,"total":1,"isDNS":false}],"prevRanks":[{"player":"JottieBucs","lastRank":1},{"player":"taylorhiemenz","lastRank":1},{"player":"heysebc","lastRank":1},{"player":"jpevans05","lastRank":1},{"player":"lcrose22","lastRank":1},{"player":"scottdold","lastRank":1},{"player":"tgroff24","lastRank":1},{"player":"ziggysmalls1224","lastRank":1},{"player":"Bmacsupreme","lastRank":1},{"player":"Bmillertime3","lastRank":1},{"player":"jaywmiller22","lastRank":1},{"player":"meathighway","lastRank":1},{"player":"EasyChris","lastRank":1},{"player":"heysenwisen","lastRank":1},{"player":"nvance69420","lastRank":1},{"player":"kenji2323","lastRank":1},{"player":"ColeMighty","lastRank":1},{"player":"karibou5550","lastRank":1},{"player":"jlee45","lastRank":1},{"player":"vader.av","lastRank":1},{"player":"ewoofter","lastRank":1},{"player":"utaherica","lastRank":1},{"player":"rolander32","lastRank":1},{"player":"dedsdraft35","lastRank":1},{"player":"Sheetwood24","lastRank":1},{"player":"wheelhousestl","lastRank":1},{"player":"kreybradley","lastRank":1},{"player":"cwoofter","lastRank":1},{"player":"dowens25","lastRank":1},{"player":"rmealy","lastRank":1},{"player":"idlee23","lastRank":1}]}],"shotgunDebts":[],"playerMoney":{},"moneyLog":[]};
+  </script>
 <script>
 // ============================================================
 // DATA
@@ -1853,5 +2527,6 @@ renderStats();
 renderSeasonBar();
 renderBeer();
 </script>
-</body>
-</html>
+
+
+</body></html>
