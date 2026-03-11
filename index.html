@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heyse DraftKings Golf League 2026 — Fresh Start</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+  :root {
+    /* DraftKings palette */
+    --dk-green:   #53d337;
+    --dk-green2:  #3ab222;
+    --dk-bg:      #0e0e14;
+    --dk-surface: #16161f;
+    --dk-card:    #1e1e2a;
+    --dk-border:  #2a2a3a;
+    --dk-border2: #353548;
+    --dk-text:    #f0f0f5;
+    --dk-muted:   #7a7a9a;
+    --dk-gold:    #f5c518;
+    --dk-gold2:   #d4a800;
+    --dk-red:     #e84040;
+    --dk-blue:    #4a9eff;
+    --dk-purple:  #7c5cbf;
+
+    /* Aliases for existing code */
+    --green:        var(--dk-green2);
+    --green-light:  var(--dk-green);
+    --green-bright: var(--dk-green);
+    --gold:         var(--dk-gold2);
+    --gold-light:   var(--dk-gold);
+    --cream:        var(--dk-text);
+    --dark:         var(--dk-bg);
+    --dark2:        var(--dk-surface);
+    --dark3:        var(--dk-card);
+    --mid:          var(--dk-border2);
+    --text:         var(--dk-text);
+    --muted:        var(--dk-muted);
+    --red:          var(--dk-red);
+    --blue:         var(--dk-blue);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--dk-bg);
+    color: var(--text);
+    font-family: 'Inter', 'DM Mono', monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* DraftKings-style subtle dot grid background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(83,211,55,0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Top green glow accent */
+  body::after {
+    content: '';
+    position: fixed;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(83,211,55,0.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 0 20px 60px; }
+
+  /* HEADER */
+  header {
+    text-align: center;
+    padding: 50px 20px 30px;
+    position: relative;
+  }
+
+  .header-flag {
+    font-size: 48px;
+    margin-bottom: 10px;
+    display: block;
+    animation: flagwave 3s ease-in-out infinite;
+  }
+  @keyframes flagwave {
+    0%,100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 8vw, 88px);
+    letter-spacing: 4px;
+    line-height: 0.9;
+    background: linear-gradient(135deg, #fff 0%, var(--dk-green) 55%, var(--dk-green2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(0 0 30px rgba(83,211,55,0.35));
+  }
+
+  .subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 6px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  .season-badge {
+    display: inline-block;
+    background: rgba(83,211,55,0.08);
+    border: 1px solid rgba(83,211,55,0.4);
+    color: var(--dk-green);
+    font-size: 11px;
+    letter-spacing: 3px;
+    padding: 5px 16px;
+    margin-top: 14px;
+    text-transform: uppercase;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* DIVIDER */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 30px 0;
+    color: var(--dk-green);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-family: 'DM Mono', monospace;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(83,211,55,0.4), transparent);
+  }
+
+  /* TABS */
+  .tabs {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--dk-border);
+    overflow-x: auto;
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    color: var(--dk-muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 11px 20px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .tab-btn:hover { color: var(--dk-text); }
+  .tab-btn.active {
+    color: var(--dk-green);
+    border-bottom-color: var(--dk-green);
+  }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* STANDINGS TABLE */
+  .standings-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .standings-table thead tr {
+    background: rgba(83,211,55,0.05);
+  }
+  .standings-table th {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dk-muted);
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid rgba(83,211,55,0.25);
+  }
+  .standings-table th.num { text-align: right; }
+
+  .standings-table tbody tr {
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    transition: background 0.15s;
+    animation: rowIn 0.4s ease both;
+  }
+  .standings-table tbody tr:hover { background: rgba(83,211,55,0.05); }
+
+  @keyframes rowIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .standings-table td {
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+  .standings-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  .rank-cell {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--muted);
+    width: 50px;
+    min-width: 50px;
+  }
+  .rank-cell.top3 { color: var(--dk-gold); }
+  .rank-cell.rank1 { color: var(--dk-green); font-size: 26px; }
+
+  .player-name {
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+
+  .points-cell {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px !important;
+    color: var(--dk-green);
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+
+  .trend-up { color: var(--dk-green); font-size: 11px; font-weight:600; }
+  .trend-down { color: var(--red); font-size: 11px; }
+  .trend-same { color: var(--muted); font-size: 11px; }
+
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    padding: 2px 7px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+  .badge-win { background: rgba(212,160,23,0.2); color: var(--gold-light); border: 1px solid rgba(212,160,23,0.4); }
+  .badge-miss { background: rgba(224,82,82,0.15); color: var(--red); border: 1px solid rgba(224,82,82,0.3); }
+  .badge-beer { background: rgba(91,155,213,0.15); color: var(--blue); border: 1px solid rgba(91,155,213,0.3); }
+
+  .playoff-line {
+    background: rgba(224,82,82,0.06);
+    border-top: 2px dashed rgba(224,82,82,0.4) !important;
+  }
+  .playoff-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--red);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 6px;
+    background: rgba(224,82,82,0.05);
+    border-bottom: 1px solid rgba(224,82,82,0.2);
+  }
+
+  /* TOP 3 PODIUM */
+  .podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 36px;
+    padding: 0 10px;
+  }
+
+  .podium-card {
+    background: var(--dk-surface);
+    border: 1px solid var(--dk-border);
+    padding: 16px 20px;
+    text-align: center;
+    flex: 1;
+    max-width: 220px;
+    transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .podium-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .podium-card.p1 { transform: translateY(-16px); border-color: rgba(83,211,55,0.5); box-shadow: 0 0 30px rgba(83,211,55,0.1); }
+  .podium-card.p1::before { background: linear-gradient(90deg, var(--dk-green2), var(--dk-green), var(--dk-green2)); }
+  .podium-card.p2::before { background: linear-gradient(90deg, #888, #ccc, #888); }
+  .podium-card.p3::before { background: linear-gradient(90deg, #a06030, #d4853a, #a06030); }
+
+  .podium-rank {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    line-height: 1;
+    color: var(--muted);
+  }
+  .p1 .podium-rank { color: var(--gold-light); font-size: 60px; }
+  .p2 .podium-rank { color: #ccc; }
+  .p3 .podium-rank { color: #b08040; }
+
+  .podium-name {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 4px 0;
+  }
+  .podium-pts {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--dk-green);
+    letter-spacing: 1px;
+  }
+  .podium-pts-label { font-size: 9px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; }
+
+  /* UPLOAD SECTION */
+  .upload-section {
+    background: var(--dk-surface);
+    border: 1px solid var(--dk-border);
+    padding: 32px;
+    margin-bottom: 28px;
+  }
+
+  .upload-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    color: var(--dk-green);
+  }
+
+  .upload-desc {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .upload-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .upload-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .file-drop {
+    border: 2px dashed rgba(83,211,55,0.35);
+    padding: 20px 28px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex: 1;
+    min-width: 200px;
+  }
+  .file-drop:hover, .file-drop.dragover {
+    border-color: var(--dk-green);
+    background: rgba(83,211,55,0.05);
+  }
+  .file-drop-text { font-size: 12px; color: var(--muted); }
+  .file-drop-icon { font-size: 28px; display: block; margin-bottom: 6px; }
+
+  input[type="file"] { display: none; }
+
+  .btn {
+    background: var(--dk-green);
+    color: #0a1a06;
+    border: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn:hover { background: #6de84f; box-shadow: 0 0 16px rgba(83,211,55,0.3); }
+  .btn:disabled { background: var(--dk-border); color: var(--dk-muted); cursor: not-allowed; box-shadow: none; }
+  .btn-gold { background: var(--dk-gold); color: #1a1000; }
+  .btn-gold:hover { background: #ffe033; box-shadow: 0 0 16px rgba(245,197,24,0.3); }
+
+  /* BONUS OPTIONS */
+  .bonus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .bonus-card {
+    background: var(--dk-card);
+    padding: 14px 16px;
+    border: 1px solid var(--dk-border);
+  }
+
+  .bonus-card label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .bonus-input {
+    background: var(--dk-bg);
+    border: 1px solid var(--dk-border2);
+    color: var(--dk-text);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    padding: 8px 10px;
+    width: 100%;
+  }
+  .bonus-input:focus { outline: none; border-color: var(--dk-green); box-shadow: 0 0 0 2px rgba(83,211,55,0.15); }
+
+  .checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+  }
+  .checkbox-row input[type="checkbox"] {
+    accent-color: var(--green-light);
+    width: 16px;
+    height: 16px;
+  }
+  .checkbox-row span { font-size: 12px; color: var(--text); }
+
+  /* RESULTS PREVIEW */
+  .results-preview {
+    margin-top: 20px;
+  }
+
+  .results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .results-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--gold-light);
+  }
+
+  .week-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .week-table th {
+    background: rgba(83,211,55,0.05);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dk-muted);
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(83,211,55,0.2);
+  }
+  .week-table th.r { text-align: right; }
+  .week-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-variant-numeric: tabular-nums;
+  }
+  .week-table td.r { text-align: right; }
+  .week-table tr:hover td { background: rgba(83,211,55,0.04); }
+
+  .pts-earned {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--dk-green);
+  }
+
+  .no-set { color: var(--red); font-style: italic; font-size: 11px; }
+  .bonus-tag { color: var(--gold); font-size: 10px; margin-left: 4px; }
+
+  /* WEEK HISTORY */
+  .history-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .history-card {
+    background: var(--dk-surface);
+    border: 1px solid var(--dk-border);
+    padding: 14px;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .history-card:hover { border-color: var(--dk-green); box-shadow: 0 0 12px rgba(83,211,55,0.08); }
+  .history-card.active-week { border-color: var(--dk-green); box-shadow: 0 0 16px rgba(83,211,55,0.15); }
+
+  .hc-event { font-size: 11px; letter-spacing: 1px; color: var(--text); margin-bottom: 6px; }
+  .hc-winner {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--dk-green);
+    letter-spacing: 1px;
+  }
+  .hc-winner-label { font-size: 9px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; }
+  .hc-pts { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+  .week-detail-panel {
+    background: var(--dk-surface);
+    border: 1px solid var(--dk-border);
+    padding: 20px;
+    margin-top: 16px;
+    display: none;
+  }
+  .week-detail-panel.open { display: block; }
+
+  /* STATS */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .stat-card {
+    background: var(--dk-surface);
+    border: 1px solid var(--dk-border);
+    border-left: 3px solid var(--dk-green);
+    padding: 16px 18px;
+    animation: fadeUp 0.5s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .stat-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .stat-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    color: var(--text);
+    letter-spacing: 1px;
+  }
+  .stat-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* SEGMENT LEADERBOARDS */
+  .seg-leaderboards {
+    margin-top: 32px;
+    border-top: 1px solid var(--dk-border);
+    padding-top: 4px;
+  }
+  .seg-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    cursor: pointer;
+    user-select: none;
+  }
+  .seg-toggle:hover .seg-toggle-label { color: var(--dk-text); }
+  .seg-toggle-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: var(--dk-green);
+    transition: color 0.2s;
+  }
+  .seg-toggle-meta {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--dk-muted);
+    border: 1px solid var(--dk-border);
+    padding: 3px 8px;
+    text-transform: uppercase;
+    margin-left: 12px;
+  }
+  .seg-toggle-arrow {
+    color: var(--dk-green);
+    font-size: 11px;
+    transition: transform 0.2s;
+  }
+  .seg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 4px;
+    animation: fadeUp 0.2s ease both;
+  }
+  .seg-card {
+    background: var(--dk-surface);
+    border: 1px solid var(--dk-border);
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .seg-card.active  { border-color: rgba(245,197,24,0.4); }
+  .seg-card.final   { border-color: rgba(83,211,55,0.3); }
+  .seg-card.upcoming { opacity: 0.45; }
+  .seg-card-header {
+    padding: 9px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--dk-border);
+  }
+  .seg-card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+  .seg-card-weeks { font-size: 9px; color: var(--dk-muted); letter-spacing: 1px; margin-top: 1px; }
+  .seg-status-badge {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 7px;
+  }
+  .seg-table { width: 100%; border-collapse: collapse; }
+  .seg-table td { padding: 6px 10px; font-size: 11px; border-bottom: 1px solid rgba(255,255,255,0.03); }
+  .seg-table tr:last-child td { border-bottom: none; }
+  .seg-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .seg-rank {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    width: 24px;
+    color: var(--dk-muted);
+  }
+  .seg-pts {
+    text-align: right;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    color: var(--dk-muted);
+  }
+  .seg-empty {
+    padding: 20px 12px;
+    font-size: 10px;
+    color: var(--dk-muted);
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  @media (max-width: 640px) {
+    .seg-grid { grid-template-columns: 1fr; }
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: var(--dk-bg); }
+  ::-webkit-scrollbar-thumb { background: var(--dk-border2); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--dk-green2); }
+
+  /* TOAST */
+  .toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: var(--dark3);
+    border: 1px solid var(--green-light);
+    border-left: 4px solid var(--green-bright);
+    padding: 14px 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    z-index: 999;
+    transform: translateX(200px);
+    opacity: 0;
+    transition: all 0.3s;
+    max-width: 320px;
+  }
+  .toast.show { transform: translateX(0); opacity: 1; }
+  .toast.error { border-color: var(--red); border-left-color: var(--red); }
+
+  /* SEGMENT BAR */
+  .seg-bar {
+    display: flex;
+    gap: 0;
+    margin-bottom: 20px;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  .seg-item {
+    flex: 1;
+    text-align: center;
+    padding: 6px 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 2px solid var(--dark3);
+  }
+  .seg-item.done { color: var(--green-bright); border-color: var(--dk-green); }
+  .seg-item.current { color: var(--gold-light); border-color: var(--gold); font-weight: 500; }
+
+  /* MOBILE */
+  @media (max-width: 600px) {
+    .podium { flex-direction: row; }
+    .podium-card { padding: 10px 12px; }
+    .standings-table td, .standings-table th { padding: 9px 8px; }
+    .upload-section { padding: 20px 16px; }
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 48px 20px;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .empty-icon { font-size: 48px; display: block; margin-bottom: 12px; opacity: 0.4; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <span class="header-flag">⛳</span>
+    <h1>Heyse Golf League</h1>
+    <div class="subtitle">Fantasy Golf · 2026 Season</div>
+    <div class="season-badge" id="season-badge">31 Players · Seg 1</div>
+  </header>
+
+  <div class="divider">Season Overview</div>
+
+  <!-- Segment progress bar — dynamic -->
+  <div class="seg-bar" id="seg-bar"></div>
+
+  <!-- Stats Row -->
+  <div class="stats-grid" id="stats-grid"></div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('standings')">Standings</button>
+    <button class="tab-btn" onclick="switchTab('update')">⬆ Update Week</button>
+    <button class="tab-btn" onclick="switchTab('history')">Week History</button>
+    <button class="tab-btn" onclick="switchTab('beer')">🏦 Tracker</button>
+  </div>
+
+  <!-- TAB: STANDINGS -->
+  <div class="tab-panel active" id="tab-standings">
+
+    <div class="podium" id="podium"></div>
+
+    <table class="standings-table" id="standings-table">
+      <thead>
+        <tr>
+          <th style="width:50px">Rank</th>
+          <th style="width:50px"></th>
+          <th>Player</th>
+          <th class="num">Points</th>
+          <th class="num">Winner Bonus</th>
+          <th class="num">No-Cut Bonus</th>
+          <th class="num" style="color:var(--dk-green)">Bonus Pts</th>
+          <th class="num">Missed</th>
+          <th class="num" style="color:var(--gold)">$$$</th>
+        </tr>
+      </thead>
+      <tbody id="standings-body"></tbody>
+    </table>
+
+    <!-- SEGMENT LEADERBOARDS -->
+    <div class="seg-leaderboards" id="seg-leaderboards">
+      <div class="seg-toggle" onclick="toggleSegments()">
+        <div style="display:flex;align-items:center">
+          <span class="seg-toggle-label">Segment Leaderboards</span>
+          <span class="seg-toggle-meta" id="seg-toggle-meta"></span>
+        </div>
+        <span class="seg-toggle-arrow" id="seg-arrow">▼</span>
+      </div>
+      <div id="seg-grid-wrap" style="display:none">
+        <div class="seg-grid" id="seg-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: UPDATE WEEK -->
+  <div class="tab-panel" id="tab-update">
+
+    <div class="upload-section">
+      <div class="upload-title">Import Weekly Template</div>
+      <div class="upload-desc">Fill in the weekly XLSX template and drop it below. Rank, adjusted scores, and all bonuses are read directly from the file — no manual entry needed here.</div>
+
+      <div style="display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-bottom:18px">
+        <div style="flex:2;min-width:200px">
+          <label class="upload-label">Tournament Name</label>
+          <input class="bonus-input" id="tournament-name" placeholder="e.g. The Players Championship" style="width:100%">
+        </div>
+        <div style="min-width:120px">
+          <label class="upload-label">Segment</label>
+          <select class="bonus-input" id="tournament-segment" style="width:100%">
+            <option value="1">Segment 1</option>
+            <option value="2">Segment 2</option>
+            <option value="3">Segment 3</option>
+          </select>
+        </div>
+      </div>
+
+      <label class="upload-label">Weekly Template File (.xlsx)</label>
+      <div class="file-drop" id="file-drop" onclick="document.getElementById('xlsx-input').click()">
+        <span class="file-drop-icon">📂</span>
+        <span class="file-drop-text" id="file-drop-text">Click or drag weekly template XLSX here</span>
+      </div>
+      <input type="file" id="xlsx-input" accept=".xlsx,.xls" onchange="handleFileSelect(event)">
+
+      <div style="margin-top:16px; font-size:11px; color:var(--muted); letter-spacing:1px;">
+        The dashboard reads: <span style="color:var(--green-bright)">EntryName · DKScore · WithdrawalPts · AdjustedScore · Rank · NoCutBonus · WinnerBonus · TotalPts</span>
+      </div>
+
+      <button class="btn btn-gold" onclick="processXLSX()" id="process-btn" style="margin-top:20px" disabled>Preview Results →</button>
+    </div>
+
+    <div class="results-preview" id="results-preview" style="display:none">
+      <div class="results-header">
+        <div class="results-title" id="results-title">Week Results</div>
+        <button class="btn" onclick="applyResults()">✓ Apply to Standings</button>
+      </div>
+      <table class="week-table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th class="r">DK Score</th>
+            <th class="r">WD Pts</th>
+            <th class="r">Adj. Score</th>
+            <th class="r">Lg Pts</th>
+            <th class="r">Bonuses</th>
+            <th class="r">Total</th>
+          </tr>
+        </thead>
+        <tbody id="results-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TAB: HISTORY -->
+  <div class="tab-panel" id="tab-history">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+      <div class="divider" style="margin:0; flex:1">Past Events</div>
+      <button class="btn" id="undo-btn" onclick="undoLastWeek()" style="margin-left:16px; background:var(--dark3); color:var(--red); border:1px solid var(--red); font-size:10px; padding:8px 16px;" disabled>↩ Undo Last Week</button>
+    </div>
+    <div id="undo-confirm" style="display:none; background:rgba(224,82,82,0.08); border:1px solid rgba(224,82,82,0.3); padding:14px 18px; margin:12px 0; font-size:12px; color:var(--text);">
+      <span id="undo-msg"></span>
+      <div style="margin-top:10px; display:flex; gap:10px;">
+        <button class="btn" onclick="confirmUndo()" style="background:var(--red); font-size:10px; padding:7px 16px;">Yes, delete it</button>
+        <button class="btn" onclick="cancelUndo()" style="background:var(--dark3); font-size:10px; padding:7px 16px;">Cancel</button>
+      </div>
+    </div>
+    <div class="history-grid" id="history-grid"></div>
+    <div class="week-detail-panel" id="week-detail"></div>
+  </div>
+
+
+    <!-- TAB: BEER / SHOTGUN TRACKER -->
+  <div class="tab-panel" id="tab-beer">
+
+    <!-- SHOTGUN SECTION -->
+    <div class="divider" style="margin-top:0">🍺 Shotgun Debts</div>
+    <p style="font-size:11px;color:var(--muted);letter-spacing:1px;margin-bottom:16px">Toggle a player's shotgun debt on or off. Active debts are highlighted on the leaderboard.</p>
+    <div id="beer-list"></div>
+
+    <!-- MONEY SECTION -->
+    <div class="divider" style="margin-top:32px">💰 Prize Money</div>
+    <p style="font-size:11px;color:var(--muted);letter-spacing:1px;margin-bottom:16px">Add prize money earned by a player. Running totals appear in the $$$ column on the leaderboard.</p>
+    <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin-bottom:20px">
+      <div>
+        <label class="upload-label">Player</label>
+        <select class="bonus-input" id="money-player" style="min-width:180px"></select>
+      </div>
+      <div>
+        <label class="upload-label">Amount ($)</label>
+        <input class="bonus-input" id="money-amount" type="number" min="1" placeholder="e.g. 100" style="width:110px">
+      </div>
+      <div>
+        <label class="upload-label">Note (optional)</label>
+        <input class="bonus-input" id="money-note" placeholder="e.g. Week 8 last place" style="width:200px">
+      </div>
+      <button class="btn btn-gold" onclick="addMoney()">+ Add</button>
+    </div>
+    <div id="money-log"></div>
+
+  </div>
+
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+const POINTS_CHART = {
+  1:34, 2:32, 3:30, 4:28, 5:27, 6:26, 7:25, 8:24, 9:23, 10:22,
+  11:21, 12:20, 13:19, 14:18, 15:17, 16:16, 17:15, 18:14, 19:13,
+  20:12, 21:11, 22:10, 23:9, 24:8, 25:7, 26:6, 27:5, 28:4, 29:3,
+  30:2, 31:1
+};
+
+const MAJOR_POINTS = {
+  1:36, 2:34, 3:32, 4:29, 5:28, 6:26, 7:25, 8:24, 9:23, 10:22,
+  11:21, 12:20, 13:19, 14:18, 15:17, 16:16, 17:15, 18:14, 19:13,
+  20:12, 21:11, 22:10, 23:9, 24:8, 25:7, 26:6, 27:5, 28:4, 29:3,
+  30:2, 31:1
+};
+
+// Current standings after API week
+let standings = [
+  {rank:1, player:'JottieBucs', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:2, player:'taylorhiemenz', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:3, player:'heysebc', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:4, player:'jpevans05', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:5, player:'lcrose22', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:6, player:'scottdold', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:7, player:'tgroff24', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:8, player:'ziggysmalls1224', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:9, player:'Bmacsupreme', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:10, player:'Bmillertime3', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:11, player:'jaywmiller22', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:11, player:'meathighway', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:13, player:'EasyChris', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:13, player:'heysenwisen', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:15, player:'nvance69420', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:16, player:'kenji2323', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:17, player:'ColeMighty', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:18, player:'karibou5550', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:19, player:'jlee45', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:20, player:'vader.av', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:21, player:'ewoofter', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:22, player:'utaherica', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:23, player:'rolander32', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:24, player:'dedsdraft35', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:25, player:'Sheetwood24', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:26, player:'wheelhousestl', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:27, player:'kreybradley', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:28, player:'cwoofter', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:29, player:'dowens25', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:30, player:'rmealy', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+  {rank:31, player:'idlee23', points:0, wins:0, noCut:0, winner:0, missed:0, lastRank:0},
+];
+
+// Historical week data
+const weekHistory = [];
+
+let pendingResults = null;
+
+// ============================================================
+// RENDER STANDINGS
+// ============================================================
+function renderStandings() {
+  const sorted = [...standings].sort((a,b) => b.points - a.points);
+
+  // Re-rank
+  let rank = 1;
+  for(let i=0; i<sorted.length; i++) {
+    if(i>0 && sorted[i].points === sorted[i-1].points) {
+      sorted[i].currentRank = sorted[i-1].currentRank;
+    } else {
+      sorted[i].currentRank = rank;
+    }
+    rank++;
+  }
+
+  // Podium
+  const p = document.getElementById('podium');
+  const top3 = sorted.slice(0,3);
+  const order = [top3[1], top3[0], top3[2]];
+  const cls = ['p2','p1','p3'];
+  p.innerHTML = order.map((pl,i) => `
+    <div class="podium-card ${cls[i]}">
+      <div class="podium-rank">${['2','1','3'][i]}</div>
+      <div class="podium-name">${pl.player}</div>
+      <div class="podium-pts">${pl.points}</div>
+      <div class="podium-pts-label">League Points</div>
+    </div>
+  `).join('');
+
+  // Table
+  const tbody = document.getElementById('standings-body');
+  let html = '';
+  const PLAYOFF_CUTLINE = 18; // top 18 make playoffs
+
+  sorted.forEach((p, idx) => {
+    const prevRank = p.lastRank || p.currentRank;
+    const diff = prevRank - p.currentRank;
+    let trendHtml = '<span class="trend-same">—</span>';
+    if(diff > 0) trendHtml = `<span class="trend-up">▲${diff}</span>`;
+    else if(diff < 0) trendHtml = `<span class="trend-down">▼${Math.abs(diff)}</span>`;
+
+    let badges = '';
+    // Trophy badge: show number of times they won a week outright (wins field = week win count)
+    if(p.wins > 0) badges += `<span class="badge badge-win">🏆 ${p.wins}W</span>`;
+    if(p.missed > 0) badges += `<span class="badge badge-miss">DNS ×${p.missed}</span>`;
+    if(shotgunDebts.has(p.player)) badges += `<span class="badge badge-beer">🍺</span>`;
+
+    const rankClass = p.currentRank === 1 ? 'rank1' : p.currentRank <= 3 ? 'top3' : '';
+
+    let rowClass = '';
+    if(idx === PLAYOFF_CUTLINE) {
+      html += `<tr><td colspan="10" class="playoff-label">── Playoff Cutline (Top 18 Advance) ──</td></tr>`;
+      rowClass = 'playoff-line';
+    }
+
+    const animDelay = idx * 0.025;
+    html += `
+      <tr class="${rowClass}" style="animation-delay:${animDelay}s">
+        <td class="rank-cell ${rankClass}">${p.currentRank}</td>
+        <td class="num" style="width:40px">${trendHtml}</td>
+        <td class="player-name" style="color:${shotgunDebts.has(p.player) ? 'var(--red)' : 'inherit'}">${p.player}${badges}</td>
+        <td class="num points-cell">${p.points}</td>
+        <td class="num" style="color:var(--gold);font-size:13px">${p.winner > 0 ? '+'+p.winner : '—'}</td>
+        <td class="num" style="color:var(--green-bright);font-size:13px">${p.noCut > 0 ? '+'+p.noCut : '—'}</td>
+        <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">${(p.winner||0)+(p.noCut||0) > 0 ? '+'+(( p.winner||0)+(p.noCut||0)) : '—'}</td>
+        <td class="num" style="color:${p.missed>0?'var(--red)':'var(--muted)'};font-size:12px">${p.missed > 0 ? p.missed : '—'}</td>
+        <td class="num" style="color:var(--gold);font-size:13px">${(playerMoney[p.player]||0) > 0 ? '$'+(playerMoney[p.player]) : '—'}</td>
+      </tr>
+    `;
+  });
+
+  tbody.innerHTML = html;
+}
+
+// ============================================================
+// RENDER HISTORY
+// ============================================================
+function renderHistory() {
+  const grid = document.getElementById('history-grid');
+  grid.innerHTML = weekHistory.map((w, i) => `
+    <div class="history-card" onclick="showWeekDetail(${i})" id="hcard-${i}">
+      <div class="hc-event">${w.event}</div>
+      <div class="hc-winner-label">Winner</div>
+      <div class="hc-winner">${w.winner}</div>
+      <div class="hc-pts">${w.date} · ${w.type}</div>
+    </div>
+  `).join('');
+}
+
+function showWeekDetail(idx) {
+  document.querySelectorAll('.history-card').forEach(c=>c.classList.remove('active-week'));
+  document.getElementById(`hcard-${idx}`).classList.add('active-week');
+
+  const w = weekHistory[idx];
+  const panel = document.getElementById('week-detail');
+  panel.classList.add('open');
+
+  const active = w.results.filter(r => !r.isDNS);
+  const dns    = w.results.filter(r =>  r.isDNS);
+
+  // Detect if we have WD pts data (newer weeks will have it)
+  const hasWD = w.results.some(r => (r.wdPts || 0) > 0);
+
+  const rows = [...active, ...dns].map((r, i) => {
+    const bonusStr = [
+      (r.noCutBonus || 0) > 0 ? `+${r.noCutBonus} nc` : '',
+      (r.winBonus   || 0) > 0 ? `+${r.winBonus} win`  : '',
+    ].filter(Boolean).join(', ') || (r.bonuses > 0 ? `+${r.bonuses}` : '—');
+
+    const rankDisp = r.isDNS ? '<span style="color:var(--red);font-size:11px">DNS</span>'
+                              : `<span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--muted)">${i+1}</span>`;
+    const dkDisp   = r.dkScore > 0 ? r.dkScore : '—';
+    const wdDisp   = (r.wdPts || 0) > 0 ? `<span style="color:var(--blue)">+${r.wdPts}</span>` : '—';
+    const totalDisp = r.total > 0
+      ? `<span class="pts-earned">${r.total}</span>`
+      : '<span style="color:var(--muted)">0</span>';
+
+    return `<tr>
+      <td>${rankDisp}</td>
+      <td style="font-weight:500">${r.player}</td>
+      <td class="r">${dkDisp}</td>
+      ${hasWD ? `<td class="r">${wdDisp}</td>` : ''}
+      <td class="r" style="color:var(--green-bright)">${r.leaguePts > 0 ? r.leaguePts : '—'}</td>
+      <td class="r" style="color:var(--gold);font-size:11px">${bonusStr}</td>
+      <td class="r">${totalDisp}</td>
+    </tr>`;
+  }).join('');
+
+  panel.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;flex-wrap:wrap;gap:8px">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--gold-light);letter-spacing:2px">${w.event}</div>
+      <div style="font-size:11px;color:var(--muted);letter-spacing:2px">${w.date} · ${w.type} · ${w.results.length} players</div>
+    </div>
+    <table class="week-table">
+      <thead>
+        <tr>
+          <th style="width:40px">Rank</th>
+          <th>Player</th>
+          <th class="r">DK Score</th>
+          ${hasWD ? '<th class="r">WD Pts</th>' : ''}
+          <th class="r">Lg Pts</th>
+          <th class="r">Bonuses</th>
+          <th class="r">Total</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  `;
+}
+
+// ============================================================
+// XLSX PROCESSING
+// ============================================================
+
+document.getElementById('file-drop').addEventListener('dragover', e => {
+  e.preventDefault();
+  document.getElementById('file-drop').classList.add('dragover');
+});
+document.getElementById('file-drop').addEventListener('dragleave', () => {
+  document.getElementById('file-drop').classList.remove('dragover');
+});
+document.getElementById('file-drop').addEventListener('drop', e => {
+  e.preventDefault();
+  document.getElementById('file-drop').classList.remove('dragover');
+  const f = e.dataTransfer.files[0];
+  if(f) readXLSXFile(f);
+});
+
+function handleFileSelect(e) {
+  const f = e.target.files[0];
+  if(f) readXLSXFile(f);
+}
+
+function readXLSXFile(file) {
+  if(!file.name.match(/\.xlsx?$/i)) { showToast('Please upload an .xlsx file', true); return; }
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    try {
+      const data = new Uint8Array(ev.target.result);
+      parseXLSX(data, file.name);
+      document.getElementById('file-drop-text').textContent = '✓ ' + file.name;
+      document.getElementById('process-btn').disabled = false;
+    } catch(err) {
+      showToast('Error: ' + err.message, true);
+      console.error(err);
+    }
+  };
+  reader.onerror = () => showToast('Could not read file', true);
+  reader.readAsArrayBuffer(file);
+}
+
+
+function parseXLSX(buffer, filename) {
+  const workbook = XLSX.read(buffer, { type: 'array' });
+
+  // Find the "Weekly Import" sheet
+  const sheetName = workbook.SheetNames.find(n => n.toLowerCase().includes('weekly')) || workbook.SheetNames[0];
+  const sheet = workbook.Sheets[sheetName];
+
+  // Convert to JSON — rows start at row 10 (index 9), headers at row 8
+  // Use raw: false to get formatted values
+  const rows = XLSX.utils.sheet_to_json(sheet, { raw: false, defval: '' });
+
+  // Find the header row — look for "EntryName"
+  let dataRows = rows.filter(r => {
+    const vals = Object.values(r).map(v => String(v).trim());
+    return vals.includes('EntryName') === false; // skip header-like rows
+  });
+
+  // SheetJS with raw:false uses first row as keys — but our sheet has merged header rows
+  // Use raw sheet_to_json with header:1 to get array of arrays, find data manually
+  const aoa = XLSX.utils.sheet_to_json(sheet, { header: 1, raw: false, defval: '' });
+
+  // Find the column header row (row 8, index 7 in 0-based)
+  let headerRowIdx = -1;
+  for(let i = 0; i < aoa.length; i++) {
+    if(aoa[i].includes('EntryName')) { headerRowIdx = i; break; }
+  }
+
+  if(headerRowIdx === -1) throw new Error('Could not find EntryName column. Check sheet format.');
+
+  const headers = aoa[headerRowIdx].map(h => String(h).trim());
+  const colIdx = {
+    name:        headers.indexOf('EntryName'),
+    dkScore:     headers.indexOf('DKScore'),
+    wdPts:       headers.indexOf('WithdrawalPts'),
+    adjScore:    headers.indexOf('AdjustedScore'),
+    rank:        headers.indexOf('Rank'),
+    noCut:       headers.indexOf('NoCutBonus'),
+    winner:      headers.indexOf('WinnerBonus'),
+    total:       headers.indexOf('TotalPts'),
+  };
+
+  // Skip sub-header note row (headerRowIdx+1), data starts at headerRowIdx+2
+  parsedXLSXData = [];
+  const tournamentCell = aoa.find(r => String(r[0]).trim() === 'Tournament:');
+  const tournamentName = tournamentCell ? String(tournamentCell[1]).trim() : 'Tournament';
+
+  for(let i = headerRowIdx + 2; i < aoa.length; i++) {
+    const row = aoa[i];
+    const name = String(row[colIdx.name] || '').trim();
+    if(!name || name === 'TOTALS' || name === '') continue;
+
+    const dkScore    = parseFloat(row[colIdx.dkScore]) || 0;
+    const wdPts      = parseFloat(row[colIdx.wdPts])   || 0;
+    const adjScore   = parseFloat(row[colIdx.adjScore]) || (dkScore + wdPts);
+    const rankVal    = String(row[colIdx.rank] || '').trim();
+    const noCutBonus = parseFloat(row[colIdx.noCut])   || 0;
+    const winBonus   = parseFloat(row[colIdx.winner])  || 0;
+    const totalPts   = parseFloat(row[colIdx.total])   || 0;
+    const isDNS      = rankVal === 'DNS' || (dkScore === 0 && wdPts === 0);
+
+    parsedXLSXData.push({
+      name, dkScore, wdPts, adjScore,
+      rank: isDNS ? 'DNS' : (parseInt(rankVal) || 0),
+      noCutBonus, winBonus, totalPts, isDNS,
+      tournamentName
+    });
+  }
+
+  window._pendingTournamentName = tournamentName;
+  showToast(`Loaded: ${filename} · ${parsedXLSXData.filter(p=>!p.isDNS).length} players, ${parsedXLSXData.filter(p=>p.isDNS).length} DNS`);
+}
+
+let parsedXLSXData = null;
+
+function processXLSX() {
+  if(!parsedXLSXData || parsedXLSXData.length === 0) {
+    showToast('No data loaded yet', true); return;
+  }
+
+  const nameInput = document.getElementById('tournament-name').value.trim();
+  const tournamentName = nameInput || window._pendingTournamentName || 'Tournament';
+
+  // Sort: active players by rank, DNS at bottom
+  const active = parsedXLSXData.filter(p => !p.isDNS).sort((a,b) => a.rank - b.rank);
+  const dns    = parsedXLSXData.filter(p => p.isDNS);
+
+  const results = [
+    ...active.map(p => ({
+      rank:        p.rank,
+      player:      p.name,
+      dkScore:     p.dkScore,
+      wdPts:       p.wdPts,
+      adjScore:    p.adjScore,
+      leaguePts:   p.totalPts - p.noCutBonus - p.winBonus,
+      noCutBonus:  p.noCutBonus,
+      winBonus:    p.winBonus,
+      bonuses:     p.noCutBonus + p.winBonus,
+      total:       p.totalPts,
+      isDNS:       false
+    })),
+    ...dns.map(p => ({
+      rank: 'DNS', player: p.name, dkScore: 0, wdPts: 0,
+      adjScore: 0, leaguePts: 0, noCutBonus: 0, winBonus: 0,
+      bonuses: 0, total: 0, isDNS: true
+    }))
+  ];
+
+  const segInput = document.getElementById('tournament-segment');
+  const segNum = segInput ? parseInt(segInput.value) : 1;
+  pendingResults = { name: tournamentName, segment: segNum, results };
+
+  // Render preview table
+  document.getElementById('results-title').textContent = tournamentName + ' — Preview';
+  document.getElementById('results-preview').style.display = 'block';
+
+  const tbody = document.getElementById('results-body');
+  tbody.innerHTML = results.map(r => {
+    const bonusStr = [
+      r.noCutBonus > 0 ? `+${r.noCutBonus} no-cut` : '',
+      r.winBonus   > 0 ? `+${r.winBonus} winner`   : ''
+    ].filter(Boolean).join(', ') || '—';
+
+    return `
+    <tr>
+      <td style="color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:18px">${r.rank}</td>
+      <td>${r.isDNS ? `<span class="no-set">${r.player} (DNS)</span>` : r.player}</td>
+      <td class="r">${r.dkScore > 0 ? r.dkScore : '—'}</td>
+      <td class="r" style="color:var(--blue)">${r.wdPts > 0 ? '+'+r.wdPts : '—'}</td>
+      <td class="r" style="color:var(--muted)">${r.adjScore > 0 ? r.adjScore : '—'}</td>
+      <td class="r" style="color:var(--green-bright)">${r.leaguePts > 0 ? r.leaguePts : '—'}</td>
+      <td class="r" style="color:var(--gold);font-size:11px">${bonusStr}</td>
+      <td class="r pts-earned">${r.total > 0 ? r.total : '0'}</td>
+    </tr>`;
+  }).join('');
+
+  showToast(`${results.filter(r=>!r.isDNS).length} players · ${results.filter(r=>r.isDNS).length} DNS — review then apply`);
+}
+
+function applyResults() {
+  if(!pendingResults) return;
+
+  // Save current ranks as lastRank
+  standings.forEach(s => { s.lastRank = s.currentRank || s.rank; });
+
+  // Apply points to each player
+  pendingResults.results.forEach(r => {
+    const player = standings.find(s => s.player.toLowerCase() === r.player.toLowerCase());
+    if(player) {
+      player.points  = Math.round((player.points + r.total) * 2) / 2; // keep 0.5 precision
+      if(r.isDNS)          player.missed  = (player.missed  || 0) + 1;
+      if(r.winBonus > 0)   player.winner  = (player.winner  || 0) + r.winBonus;   // cumulative winner bonus pts
+      if(r.rank === 1)     player.wins    = (player.wins    || 0) + 1;            // count of weeks won outright
+      if(r.noCutBonus > 0) player.noCut   = (player.noCut   || 0) + r.noCutBonus; // cumulative no-cut bonus pts
+    }
+  });
+
+  // Add to history (store full snapshot for undo)
+  weekHistory.push({
+    event:       pendingResults.name,
+    segment:     pendingResults.segment || 1,
+    date:        new Date().toLocaleDateString('en-US', {month:'short', day:'numeric'}),
+    type:        'Completed',
+    winner:      pendingResults.results.find(r => r.rank === 1)?.player || '?',
+    results:     pendingResults.results.map(r => ({
+      player: r.player, dkScore: r.adjScore, wdPts: r.wdPts || 0,
+      leaguePts: r.leaguePts, noCutBonus: r.noCutBonus || 0,
+      winBonus: r.winBonus || 0, bonuses: r.bonuses, total: r.total, isDNS: r.isDNS
+    })),
+    fullResults: pendingResults.results,           // full snapshot for undo
+    prevRanks:   standings.map(s => ({             // rank snapshot before this week
+      player: s.player, lastRank: s.lastRank
+    }))
+  });
+  document.getElementById('undo-btn').disabled = false;
+
+  // Re-sort & re-rank
+  standings.sort((a,b) => b.points - a.points);
+  let rank = 1;
+  for(let i = 0; i < standings.length; i++) {
+    if(i > 0 && standings[i].points === standings[i-1].points) {
+      standings[i].rank = standings[i-1].rank;
+    } else {
+      standings[i].rank = rank;
+    }
+    standings[i].currentRank = standings[i].rank;
+    rank++;
+  }
+
+  renderStandings();
+  renderHistory();
+  renderStats();
+  renderSeasonBar();
+  if(segOpen) renderSegments();
+  renderSeasonBar();
+  switchTab('standings');
+  showToast('✓ Standings updated for ' + pendingResults.name);
+
+  // Reset state
+  parsedXLSXData = null;
+  pendingResults = null;
+  window._pendingTournamentName = null;
+  document.getElementById('results-preview').style.display = 'none';
+  document.getElementById('file-drop-text').textContent = 'Click or drag weekly template XLSX here';
+  document.getElementById('process-btn').disabled = true;
+  document.getElementById('xlsx-input').value = '';
+  document.getElementById('tournament-name').value = '';
+  if(document.getElementById('tournament-segment')) document.getElementById('tournament-segment').value = '1';
+}
+
+// ============================================================
+// UNDO LAST WEEK
+// ============================================================
+function undoLastWeek() {
+  if(weekHistory.length === 0) return;
+  const last = weekHistory[weekHistory.length - 1];
+  document.getElementById('undo-msg').textContent =
+    `Delete "${last.event}" (${last.date})? This will reverse all points changes for this week.`;
+  document.getElementById('undo-confirm').style.display = 'block';
+  document.getElementById('undo-btn').disabled = true;
+}
+
+function cancelUndo() {
+  document.getElementById('undo-confirm').style.display = 'none';
+  document.getElementById('undo-btn').disabled = false;
+}
+
+function confirmUndo() {
+  const last = weekHistory.pop();
+  if(!last || !last.fullResults) {
+    showToast('No undo data available for this week', true);
+    document.getElementById('undo-confirm').style.display = 'none';
+    return;
+  }
+
+  // Reverse each player's points
+  last.fullResults.forEach(r => {
+    const player = standings.find(s => s.player.toLowerCase() === r.player.toLowerCase());
+    if(player) {
+      player.points = Math.round((player.points - r.total) * 2) / 2;
+      if(r.isDNS)          player.missed  = Math.max(0, (player.missed  || 0) - 1);
+      if(r.winBonus > 0)   player.winner  = Math.max(0, (player.winner  || 0) - r.winBonus);
+      if(r.rank === 1)     player.wins    = Math.max(0, (player.wins    || 0) - 1);
+      if(r.noCutBonus > 0) player.noCut   = Math.max(0, (player.noCut   || 0) - r.noCutBonus);
+    }
+  });
+
+  // Restore previous lastRank values
+  if(last.prevRanks) {
+    last.prevRanks.forEach(pr => {
+      const player = standings.find(s => s.player === pr.player);
+      if(player) player.lastRank = pr.lastRank;
+    });
+  }
+
+  // Re-sort & re-rank
+  standings.sort((a,b) => b.points - a.points);
+  let rank = 1;
+  for(let i = 0; i < standings.length; i++) {
+    if(i > 0 && standings[i].points === standings[i-1].points) {
+      standings[i].rank = standings[i-1].rank;
+    } else {
+      standings[i].rank = rank;
+    }
+    standings[i].currentRank = standings[i].rank;
+    rank++;
+  }
+
+  document.getElementById('undo-confirm').style.display = 'none';
+  document.getElementById('undo-btn').disabled = weekHistory.length === 0;
+  renderStandings();
+  renderHistory();
+  renderStats();
+  renderSeasonBar();
+  if(segOpen) renderSegments();
+  showToast(`↩ "${last.event}" removed — standings restored`);
+}
+
+// ============================================================
+// UI HELPERS
+// ============================================================
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelector(`[onclick="switchTab('${name}')"]`).classList.add('active');
+  document.getElementById('tab-' + name).classList.add('active');
+}
+
+function showToast(msg, isError=false) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (isError ? ' error' : '');
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(() => { t.classList.remove('show'); }, 3500);
+}
+
+// ============================================================
+// BEER / SHOTGUN TRACKER
+// ============================================================
+// ============================================================
+// BEER / SHOTGUN TRACKER
+// ============================================================
+// ============================================================
+// TRACKER DATA
+// ============================================================
+let shotgunDebts = new Set();
+let playerMoney  = {};   // { playerName: totalDollars }
+let moneyLog     = [];   // [ { player, amount, note, date } ]
+
+// ============================================================
+// SHOTGUN TOGGLE
+// ============================================================
+function renderBeer() {
+  const sorted = [...standings].sort((a,b) => a.player.localeCompare(b.player));
+
+  // Populate player dropdown for money section
+  const sel = document.getElementById('money-player');
+  if(sel) {
+    sel.innerHTML = '<option value="">— Select player —</option>' +
+      sorted.map(s => `<option value="${s.player}">${s.player}</option>`).join('');
+  }
+
+  // Shotgun list
+  document.getElementById('beer-list').innerHTML = sorted.map(s => {
+    const owes = shotgunDebts.has(s.player);
+    return `
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;margin-bottom:6px;background:var(--dark2);border:1px solid ${owes ? 'rgba(224,82,82,0.4)' : 'var(--dark3)'};border-left:3px solid ${owes ? 'var(--red)' : 'var(--dark3)'};">
+        <span style="font-size:13px;font-weight:500;color:${owes ? 'var(--red)' : 'var(--text)'}">
+          ${owes ? '🍺 ' : ''}${s.player}
+        </span>
+        <button onclick="toggleShotgun('${s.player}')" style="background:${owes ? 'rgba(224,82,82,0.15)' : 'var(--dark3)'};border:1px solid ${owes ? 'var(--red)' : 'var(--green)'};color:${owes ? 'var(--red)' : 'var(--muted)'};font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;cursor:pointer;">
+          ${owes ? '✓ Clear' : '+ Assign'}
+        </button>
+      </div>`;
+  }).join('');
+
+  // Money log
+  renderMoneyLog();
+}
+
+function toggleShotgun(player) {
+  if(shotgunDebts.has(player)) {
+    shotgunDebts.delete(player);
+    showToast(`✅ ${player} — shotgun debt cleared`);
+  } else {
+    shotgunDebts.add(player);
+    showToast(`🍺 ${player} owes a shotgun!`);
+  }
+  renderBeer();
+  renderStandings();
+}
+
+// ============================================================
+// MONEY TRACKER
+// ============================================================
+function addMoney() {
+  const player = document.getElementById('money-player').value;
+  const amount = parseInt(document.getElementById('money-amount').value);
+  const note   = document.getElementById('money-note').value.trim();
+
+  if(!player) { showToast('Select a player', true); return; }
+  if(!amount || amount <= 0) { showToast('Enter a valid dollar amount', true); return; }
+
+  playerMoney[player] = (playerMoney[player] || 0) + amount;
+  moneyLog.push({
+    player, amount, note,
+    date: new Date().toLocaleDateString('en-US', {month:'short', day:'numeric'})
+  });
+
+  document.getElementById('money-amount').value = '';
+  document.getElementById('money-note').value = '';
+
+  renderMoneyLog();
+  renderStandings();
+  showToast(`💰 $${amount} added to ${player}`);
+}
+
+function removeMoney(idx) {
+  const entry = moneyLog[idx];
+  playerMoney[entry.player] = Math.max(0, (playerMoney[entry.player] || 0) - entry.amount);
+  moneyLog.splice(idx, 1);
+  renderMoneyLog();
+  renderStandings();
+  showToast(`↩ Removed $${entry.amount} from ${entry.player}`);
+}
+
+function renderMoneyLog() {
+  const el = document.getElementById('money-log');
+  if(!el) return;
+  if(moneyLog.length === 0) {
+    el.innerHTML = '<div style="font-size:12px;color:var(--muted);padding:10px 0">No prize money awarded yet this season.</div>';
+    return;
+  }
+  // Group totals by player
+  const totals = Object.entries(playerMoney)
+    .filter(([,v]) => v > 0)
+    .sort((a,b) => b[1]-a[1]);
+
+  const totalsHtml = totals.map(([player, total]) =>
+    `<span style="display:inline-block;margin-right:16px;margin-bottom:6px;font-size:12px;color:var(--gold)">
+      ${player} <strong>$${total}</strong>
+    </span>`
+  ).join('');
+
+  const logRows = [...moneyLog].reverse().map((e, ri) => {
+    const realIdx = moneyLog.length - 1 - ri;
+    return `
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 14px;margin-bottom:5px;background:var(--dark2);border:1px solid var(--dark3);border-left:3px solid var(--gold);">
+        <div>
+          <span style="font-size:13px;font-weight:500;color:var(--gold)">$${e.amount}</span>
+          <span style="font-size:13px;color:var(--text);margin-left:10px">${e.player}</span>
+          ${e.note ? `<span style="font-size:11px;color:var(--muted);margin-left:8px">— ${e.note}</span>` : ''}
+        </div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font-size:10px;color:var(--muted)">${e.date}</span>
+          <button onclick="removeMoney(${realIdx})" style="background:none;border:1px solid var(--dark3);color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;padding:3px 8px;cursor:pointer;letter-spacing:1px;">✕</button>
+        </div>
+      </div>`;
+  }).join('');
+
+  el.innerHTML = `
+    <div style="margin-bottom:14px;padding:10px 14px;background:var(--dark2);border:1px solid var(--dark3)">
+      <div style="font-size:10px;color:var(--muted);letter-spacing:2px;margin-bottom:8px">TOTALS</div>
+      ${totalsHtml}
+    </div>
+    ${logRows}
+  `;
+}
+
+// ============================================================
+// SEGMENT LEADERBOARDS
+// ============================================================
+let segOpen = false;
+
+function toggleSegments() {
+  segOpen = !segOpen;
+  document.getElementById('seg-grid-wrap').style.display = segOpen ? 'block' : 'none';
+  document.getElementById('seg-arrow').style.transform = segOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+  if(segOpen) renderSegments();
+}
+
+function renderSegments() {
+  const grid = document.getElementById('seg-grid');
+  const meta = document.getElementById('seg-toggle-meta');
+  if(!grid) return;
+
+  const segs = [1, 2, 3];
+  const activeSeg = Math.max(...weekHistory.map(w => w.segment || 1), 1);
+
+  // Update meta badge
+  if(meta) {
+    const counts = segs.map(s => weekHistory.filter(w => (w.segment||1) === s).length);
+    meta.textContent = counts.map((c,i) => `Seg ${i+1}: ${c}w`).join(' · ');
+  }
+
+  grid.innerHTML = segs.map(seg => {
+    const segWeeks = weekHistory.filter(w => (w.segment || 1) === seg);
+    const hasData  = segWeeks.length > 0;
+    const isCurrent = seg === activeSeg && seg <= 3;
+    const isFinal   = hasData && seg < activeSeg;
+    const status    = !hasData ? 'upcoming' : isFinal ? 'final' : 'active';
+
+    // Calculate segment points per player
+    const segPoints = {};
+    segWeeks.forEach(w => {
+      (w.fullResults || []).forEach(r => {
+        if(!segPoints[r.player]) segPoints[r.player] = 0;
+        segPoints[r.player] += r.total || 0;
+      });
+    });
+
+    const sorted = Object.entries(segPoints)
+      .sort((a,b) => b[1]-a[1])
+      .slice(0, 10);
+
+    const statusColor = status === 'final' ? 'var(--dk-green)' : status === 'active' ? 'var(--dk-gold)' : 'var(--dk-muted)';
+    const statusLabel = status === 'final' ? '✓ Final' : status === 'active' ? '● Live' : 'Upcoming';
+    const statusBg    = status === 'final' ? 'rgba(83,211,55,0.08)' : status === 'active' ? 'rgba(245,197,24,0.08)' : 'rgba(122,122,154,0.08)';
+
+    const rows = sorted.length === 0
+      ? `<div class="seg-empty">No data yet</div>`
+      : `<table class="seg-table"><tbody>${sorted.map(([player, pts], i) => {
+          const isTop = i === 0;
+          return `<tr>
+            <td class="seg-rank" style="color:${isTop ? statusColor : i < 3 ? 'var(--dk-muted)' : '#444'}">${i+1}</td>
+            <td style="color:${isTop ? 'var(--dk-text)' : 'var(--dk-muted)'};font-weight:${isTop?600:400};font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:110px">${player}</td>
+            <td class="seg-pts" style="color:${isTop ? statusColor : 'var(--dk-muted)'}">${pts}</td>
+          </tr>`;
+        }).join('')}</tbody></table>`;
+
+    return `
+      <div class="seg-card ${status}">
+        <div class="seg-card-header" style="background:${statusBg}">
+          <div>
+            <div class="seg-card-title" style="color:${statusColor}">Segment ${seg}</div>
+            <div class="seg-card-weeks">${segWeeks.length} week${segWeeks.length !== 1 ? 's' : ''} · ${segWeeks.map(w=>w.event).join(', ') || 'No events yet'}</div>
+          </div>
+          <span class="seg-status-badge" style="color:${statusColor};background:${statusBg};border:1px solid ${statusColor}44">${statusLabel}</span>
+        </div>
+        ${rows}
+      </div>`;
+  }).join('');
+}
+
+// ============================================================
+// SEASON SCHEDULE
+// ============================================================
+function renderSeasonBar() {
+  const bar   = document.getElementById('seg-bar');
+  const badge = document.getElementById('season-badge');
+  if(!bar) return;
+
+  const played = weekHistory.length;
+
+  // Build tiles from actual imported tournament names
+  if(played === 0) {
+    bar.innerHTML = '<div style="font-size:11px;color:var(--dk-muted);letter-spacing:2px;padding:10px 0">No events imported yet</div>';
+    if(badge) badge.textContent = '31 Players · Season Starting';
+    return;
+  }
+
+  bar.innerHTML = weekHistory.map((w, i) =>
+    `<div class="seg-item done">${w.event}</div>`
+  ).join('') + '<div class="seg-item current">Next ▶</div>';
+
+  if(badge) {
+    const last = weekHistory[played - 1].event;
+    badge.textContent = `31 Players · ${played} Event${played !== 1 ? 's' : ''} · ${last} Complete`;
+  }
+}
+
+// ============================================================
+// RENDER STATS
+// ============================================================
+function renderStats() {
+  const grid = document.getElementById('stats-grid');
+  if(!grid) return;
+
+  const sorted = [...standings].sort((a,b) => b.points - a.points);
+  const leader = sorted[0];
+  const eventsPlayed = weekHistory.length;
+  const cutlinePlayer = sorted[17];
+
+  let biggestMover = null;
+  let biggestMove = 0;
+  if(eventsPlayed >= 2) {
+    sorted.forEach(p => {
+      const last    = p.lastRank;
+      const current = p.currentRank || p.rank;
+      if(!last || last === current) return; // skip if no valid prior rank
+      const move = last - current;
+      if(move > biggestMove) { biggestMove = move; biggestMover = p; }
+    });
+  }
+
+  const cards = [
+    {
+      label: 'Season Leader',
+      value: eventsPlayed === 0 ? '—' : (leader?.player || '—'),
+      sub:   eventsPlayed === 0 ? 'No events yet' : `${leader?.points} pts · #1`
+    },
+    {
+      label: 'Events Played',
+      value: eventsPlayed,
+      sub:   'of 9 in Segment 1'
+    },
+    {
+      label: 'Biggest Mover',
+      value: (biggestMover && biggestMove > 0) ? biggestMover.player : '—',
+      sub:   (biggestMover && biggestMove > 0) ? `↑ ${biggestMove} spots` : 'No movement yet'
+    },
+    {
+      label: 'Playoff Cutline',
+      value: eventsPlayed === 0 ? '—' : (cutlinePlayer?.points ?? '—'),
+      sub:   eventsPlayed === 0 ? '18th safe spot' : `${cutlinePlayer?.player} · 18th safe spot`
+    }
+  ];
+
+  grid.innerHTML = cards.map((c, i) => `
+    <div class="stat-card" style="animation-delay:${i * 0.05 + 0.05}s">
+      <div class="stat-label">${c.label}</div>
+      <div class="stat-value">${c.value}</div>
+      <div class="stat-sub">${c.sub}</div>
+    </div>
+  `).join('');
+}
+
+// ============================================================
+// INIT
+// ============================================================
+renderStandings();
+renderHistory();
+renderStats();
+renderSeasonBar();
+renderBeer();
+</script>
+</body>
+</html>
