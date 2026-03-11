@@ -746,6 +746,7 @@
     <span class="header-flag">⛳</span>
     <h1>Heyse Golf League</h1>
     <div class="subtitle">Fantasy Golf · 2026 Season</div>
+    <button onclick="exportDashboard()" style="margin-top:10px;background:transparent;border:1px solid var(--dk-green);color:var(--dk-green);padding:6px 18px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;cursor:pointer;text-transform:uppercase" title="Download as index.html ready for GitHub">📥 Export & Download</button>
     <div class="season-badge" id="season-badge">31 Players · Seg 1</div>
   </header>
 
@@ -1759,6 +1760,38 @@ function renderStats() {
 }
 
 // ============================================================
+// EXPORT — BAKE DATA INTO HTML & DOWNLOAD
+// ============================================================
+function exportDashboard() {
+  // Serialize current state
+  const snapshot = {
+    standings:    standings,
+    weekHistory:  weekHistory,
+    shotgunDebts: [...shotgunDebts],
+    playerMoney:  playerMoney,
+    moneyLog:     moneyLog
+  };
+
+  // Get the original HTML and inject a boot script that pre-loads data
+  const bootScript = `
+  <script id="snapshot-boot">
+  window.__SNAPSHOT__ = ${JSON.stringify(snapshot)};
+  <\/script>`;
+
+  // Insert the boot script right before the main <script> tag
+  let exported = document.documentElement.outerHTML;
+  exported = exported.replace('<script>', bootScript + '\n<script>');
+
+  const blob = new Blob([exported], { type: 'text/html' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'index.html';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  showToast('📥 index.html downloaded — ready to upload to GitHub!');
+}
+
+// ============================================================
 // LOCAL STORAGE — AUTO SAVE / LOAD
 // ============================================================
 const STORAGE_KEY = 'heyse_golf_2026';
@@ -1779,9 +1812,10 @@ function saveToStorage() {
 
 function loadFromStorage() {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if(!raw) return false;
-    const data = JSON.parse(raw);
+    // First check if data was baked into the file at export time
+    const data = window.__SNAPSHOT__ || JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+    if(!data) return false;
+    // Merge snapshot into live state
     if(data.standings) data.standings.forEach(saved => {
       const p = standings.find(s => s.player === saved.player);
       if(p) Object.assign(p, saved);
