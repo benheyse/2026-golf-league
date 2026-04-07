@@ -516,10 +516,28 @@
 
   /* WEEK HISTORY */
   .history-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 12px;
     margin-top: 8px;
+  }
+
+  .seg-group-label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 10px 0 8px 2px;
+    border-bottom: 1px solid var(--dk-border);
+    margin-bottom: 10px;
+  }
+
+  .seg-group-label:not(:first-child) {
+    margin-top: 20px;
+  }
+
+  .seg-history-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+    margin-bottom: 4px;
   }
 
   .history-card {
@@ -710,19 +728,34 @@
 
   /* SEGMENT BAR */
   .seg-bar {
-    display: flex;
-    gap: 0;
     margin-bottom: 20px;
-    font-size: 10px;
-    letter-spacing: 1px;
   }
-  .seg-item {
-    flex: 1;
-    text-align: center;
-    padding: 6px 4px;
+  .seg-bar-group {
+    margin-bottom: 14px;
+  }
+  .seg-bar-label {
+    font-size: 9px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--muted);
-    border-bottom: 2px solid var(--dark3);
+    margin-bottom: 6px;
+    padding-left: 2px;
+  }
+  .seg-bar-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .seg-item {
+    text-align: center;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--dark3);
+    border-radius: 3px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    white-space: nowrap;
   }
   .seg-item.done { color: var(--green-bright); border-color: var(--dk-green); }
   .seg-item.current { color: var(--gold-light); border-color: var(--gold); font-weight: 500; }
@@ -759,7 +792,7 @@
   <div class="divider">Season Overview</div>
 
   <!-- Segment progress bar — dynamic -->
-  <div class="seg-bar" id="seg-bar"><div class="seg-item done">Sony</div><div class="seg-item done">Amex</div><div class="seg-item done">Farmers</div><div class="seg-item done">PHX</div><div class="seg-item done">AT&amp;T</div><div class="seg-item done">Genesis</div><div class="seg-item done">Cognizant</div><div class="seg-item done">API</div><div class="seg-item done">The Players</div><div class="seg-item done">Valspar</div><div class="seg-item done">Houston Open</div><div class="seg-item done">Valero</div><div class="seg-item current">Next ▶</div></div>
+  <div class="seg-bar" id="seg-bar"><div class="seg-bar-group"><div class="seg-bar-label">Segment 1</div><div class="seg-bar-row"><div class="seg-item done">Sony</div><div class="seg-item done">Amex</div><div class="seg-item done">Farmers</div><div class="seg-item done">PHX</div><div class="seg-item done">AT&amp;T</div><div class="seg-item done">Genesis</div><div class="seg-item done">Cognizant</div><div class="seg-item done">API</div><div class="seg-item done">The Players</div></div></div><div class="seg-bar-group"><div class="seg-bar-label">Segment 2</div><div class="seg-bar-row"><div class="seg-item done">Valspar</div><div class="seg-item done">Houston Open</div><div class="seg-item done">Valero</div></div></div></div>
 
   <!-- Stats Row -->
   <div class="stats-grid" id="stats-grid">
@@ -1641,91 +1674,91 @@
         <button class="btn" onclick="cancelUndo()" style="background:var(--dark3); font-size:10px; padding:7px 16px;">Cancel</button>
       </div>
     </div>
-    <div class="history-grid" id="history-grid">
-    <div class="history-card" onclick="showWeekDetail(0)" id="hcard-0">
-      <div class="hc-event">Sony</div>
-      <div class="hc-winner-label">Winner</div>
-      <div class="hc-winner">scottdold</div>
-      <div class="hc-pts">Mar 15 · Completed</div>
-    </div>
-  
-    <div class="history-card" onclick="showWeekDetail(1)" id="hcard-1">
-      <div class="hc-event">Amex</div>
-      <div class="hc-winner-label">Winner</div>
-      <div class="hc-winner">ziggysmalls1224</div>
-      <div class="hc-pts">Mar 15 · Completed</div>
-    </div>
-  
-    <div class="history-card" onclick="showWeekDetail(2)" id="hcard-2">
-      <div class="hc-event">Farmers</div>
-      <div class="hc-winner-label">Winner</div>
-      <div class="hc-winner">taylorhiemenz</div>
-      <div class="hc-pts">Mar 15 · Completed</div>
-    </div>
-  
-    <div class="history-card" onclick="showWeekDetail(3)" id="hcard-3">
-      <div class="hc-event">PHX</div>
-      <div class="hc-winner-label">Winner</div>
-      <div class="hc-winner">lcrose22</div>
-      <div class="hc-pts">Mar 15 · Completed</div>
-    </div>
-  
-    <div class="history-card" onclick="showWeekDetail(4)" id="hcard-4">
-      <div class="hc-event">AT&amp;T</div>
-      <div class="hc-winner-label">Winner</div>
-      <div class="hc-winner">heysenwisen</div>
-      <div class="hc-pts">Mar 15 · Completed</div>
-    </div>
-  
-    <div class="history-card" onclick="showWeekDetail(5)" id="hcard-5">
-      <div class="hc-event">Genesis</div>
-      <div class="hc-winner-label">Winner</div>
-      <div class="hc-winner">karibou5550</div>
-      <div class="hc-pts">Mar 15 · Completed</div>
-    </div>
-  
-    <div class="history-card" onclick="showWeekDetail(6)" id="hcard-6">
-      <div class="hc-event">Cognizant</div>
-      <div class="hc-winner-label">Winner</div>
-      <div class="hc-winner">jlee45</div>
-      <div class="hc-pts">Mar 15 · Completed</div>
-    </div>
-  
-    <div class="history-card" onclick="showWeekDetail(7)" id="hcard-7">
-      <div class="hc-event">API</div>
-      <div class="hc-winner-label">Winner</div>
-      <div class="hc-winner">lcrose22</div>
-      <div class="hc-pts">Mar 15 · Completed</div>
-    </div>
-  
-    <div class="history-card" onclick="showWeekDetail(8)" id="hcard-8">
-      <div class="hc-event">The Players</div>
-      <div class="hc-winner-label">Winner</div>
-      <div class="hc-winner">Bmacsupreme</div>
-      <div class="hc-pts">Mar 15 · Completed</div>
-    </div>
-  
-    <div class="history-card" onclick="showWeekDetail(9)" id="hcard-9">
-      <div class="hc-event">Valspar</div>
-      <div class="hc-winner-label">Winner</div>
-      <div class="hc-winner">ziggysmalls1224</div>
-      <div class="hc-pts">Mar 23 · Completed</div>
-    </div>
-  
-    <div class="history-card" onclick="showWeekDetail(10)" id="hcard-10">
-      <div class="hc-event">Houston Open</div>
-      <div class="hc-winner-label">Winner</div>
-      <div class="hc-winner">ziggysmalls1224</div>
-      <div class="hc-pts">Mar 30 · Completed</div>
-    </div>
-  
-    <div class="history-card" onclick="showWeekDetail(11)" id="hcard-11">
-      <div class="hc-event">Valero</div>
-      <div class="hc-winner-label">Winner</div>
-      <div class="hc-winner">heysebc</div>
-      <div class="hc-pts">Apr 6 · Completed</div>
-    </div>
-  </div>
+    <div class="history-grid" id="history-grid"><div class="seg-group-label">Segment 1</div><div class="seg-history-grid">
+        <div class="history-card" onclick="showWeekDetail(0)" id="hcard-0">
+          <div class="hc-event">Sony</div>
+          <div class="hc-winner-label">Winner</div>
+          <div class="hc-winner">scottdold</div>
+          <div class="hc-pts">Mar 15 · Completed</div>
+        </div>
+      
+        <div class="history-card" onclick="showWeekDetail(1)" id="hcard-1">
+          <div class="hc-event">Amex</div>
+          <div class="hc-winner-label">Winner</div>
+          <div class="hc-winner">ziggysmalls1224</div>
+          <div class="hc-pts">Mar 15 · Completed</div>
+        </div>
+      
+        <div class="history-card" onclick="showWeekDetail(2)" id="hcard-2">
+          <div class="hc-event">Farmers</div>
+          <div class="hc-winner-label">Winner</div>
+          <div class="hc-winner">taylorhiemenz</div>
+          <div class="hc-pts">Mar 15 · Completed</div>
+        </div>
+      
+        <div class="history-card" onclick="showWeekDetail(3)" id="hcard-3">
+          <div class="hc-event">PHX</div>
+          <div class="hc-winner-label">Winner</div>
+          <div class="hc-winner">lcrose22</div>
+          <div class="hc-pts">Mar 15 · Completed</div>
+        </div>
+      
+        <div class="history-card" onclick="showWeekDetail(4)" id="hcard-4">
+          <div class="hc-event">AT&amp;T</div>
+          <div class="hc-winner-label">Winner</div>
+          <div class="hc-winner">heysenwisen</div>
+          <div class="hc-pts">Mar 15 · Completed</div>
+        </div>
+      
+        <div class="history-card" onclick="showWeekDetail(5)" id="hcard-5">
+          <div class="hc-event">Genesis</div>
+          <div class="hc-winner-label">Winner</div>
+          <div class="hc-winner">karibou5550</div>
+          <div class="hc-pts">Mar 15 · Completed</div>
+        </div>
+      
+        <div class="history-card" onclick="showWeekDetail(6)" id="hcard-6">
+          <div class="hc-event">Cognizant</div>
+          <div class="hc-winner-label">Winner</div>
+          <div class="hc-winner">jlee45</div>
+          <div class="hc-pts">Mar 15 · Completed</div>
+        </div>
+      
+        <div class="history-card" onclick="showWeekDetail(7)" id="hcard-7">
+          <div class="hc-event">API</div>
+          <div class="hc-winner-label">Winner</div>
+          <div class="hc-winner">lcrose22</div>
+          <div class="hc-pts">Mar 15 · Completed</div>
+        </div>
+      
+        <div class="history-card" onclick="showWeekDetail(8)" id="hcard-8">
+          <div class="hc-event">The Players</div>
+          <div class="hc-winner-label">Winner</div>
+          <div class="hc-winner">Bmacsupreme</div>
+          <div class="hc-pts">Mar 15 · Completed</div>
+        </div>
+      </div><div class="seg-group-label">Segment 2</div><div class="seg-history-grid">
+        <div class="history-card" onclick="showWeekDetail(9)" id="hcard-9">
+          <div class="hc-event">Valspar</div>
+          <div class="hc-winner-label">Winner</div>
+          <div class="hc-winner">ziggysmalls1224</div>
+          <div class="hc-pts">Mar 23 · Completed</div>
+        </div>
+      
+        <div class="history-card" onclick="showWeekDetail(10)" id="hcard-10">
+          <div class="hc-event">Houston Open</div>
+          <div class="hc-winner-label">Winner</div>
+          <div class="hc-winner">ziggysmalls1224</div>
+          <div class="hc-pts">Mar 30 · Completed</div>
+        </div>
+      
+        <div class="history-card" onclick="showWeekDetail(11)" id="hcard-11">
+          <div class="hc-event">Valero</div>
+          <div class="hc-winner-label">Winner</div>
+          <div class="hc-winner">heysebc</div>
+          <div class="hc-pts">Apr 6 · Completed</div>
+        </div>
+      </div></div>
     <div class="week-detail-panel" id="week-detail"></div>
   </div>
 
@@ -2243,14 +2276,33 @@ function renderStandings() {
 // ============================================================
 function renderHistory() {
   const grid = document.getElementById('history-grid');
-  grid.innerHTML = weekHistory.map((w, i) => `
-    <div class="history-card" onclick="showWeekDetail(${i})" id="hcard-${i}">
-      <div class="hc-event">${w.event}</div>
-      <div class="hc-winner-label">Winner</div>
-      <div class="hc-winner">${w.winner}</div>
-      <div class="hc-pts">${w.date} · ${w.type}</div>
-    </div>
-  `).join('');
+
+  // Group events by segment
+  const segments = {};
+  weekHistory.forEach((w, i) => {
+    const seg = w.segment || 1;
+    if (!segments[seg]) segments[seg] = [];
+    segments[seg].push({ w, i });
+  });
+
+  let html = '';
+  Object.keys(segments).sort((a, b) => a - b).forEach(seg => {
+    html += `<div class="seg-group-label">Segment ${seg}</div>`;
+    html += `<div class="seg-history-grid">`;
+    segments[seg].forEach(({ w, i }) => {
+      html += `
+        <div class="history-card" onclick="showWeekDetail(${i})" id="hcard-${i}">
+          <div class="hc-event">${w.event}</div>
+          <div class="hc-winner-label">Winner</div>
+          <div class="hc-winner">${w.winner}</div>
+          <div class="hc-pts">${w.date} · ${w.type}</div>
+        </div>
+      `;
+    });
+    html += `</div>`;
+  });
+
+  grid.innerHTML = html;
 }
 
 function showWeekDetail(idx) {
@@ -2881,9 +2933,26 @@ function renderSeasonBar() {
     return;
   }
 
-  bar.innerHTML = weekHistory.map((w, i) =>
-    `<div class="seg-item done">${w.event}</div>`
-  ).join('') + '<div class="seg-item current">Next ▶</div>';
+  // Group by segment
+  const segGroups = {};
+  weekHistory.forEach(w => {
+    const seg = w.segment || 1;
+    if(!segGroups[seg]) segGroups[seg] = [];
+    segGroups[seg].push(w);
+  });
+
+  let html = '';
+  Object.keys(segGroups).sort((a, b) => a - b).forEach(seg => {
+    html += `<div class="seg-bar-group">`;
+    html += `<div class="seg-bar-label">Segment ${seg}</div>`;
+    html += `<div class="seg-bar-row">`;
+    segGroups[seg].forEach(w => {
+      html += `<div class="seg-item done">${w.event}</div>`;
+    });
+    html += `</div></div>`;
+  });
+
+  bar.innerHTML = html;
 
   if(badge) {
     const last = weekHistory[played - 1].event;
