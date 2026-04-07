@@ -247,6 +247,18 @@
     line-height: 1;
   }
 
+  /* Extra left spacing between Points and Wins columns on mobile */
+  .standings-table th.num:nth-child(5),
+  .standings-table td.num:nth-child(5) {
+    padding-left: 14px;
+  }
+  @media (max-width: 600px) {
+    .standings-table th.num:nth-child(5),
+    .standings-table td.num:nth-child(5) {
+      padding-left: 20px;
+    }
+  }
+
   .trend-up { color: var(--dk-green); font-size: 11px; font-weight:600; }
   .trend-down { color: var(--red); font-size: 11px; }
   .trend-same { color: var(--muted); font-size: 11px; }
@@ -889,7 +901,7 @@
         <td class="num" style="width:40px"><span class="trend-up">▲1</span></td>
         <td class="player-name" style="color:inherit">heysebc</td>
         <td class="num points-cell">274.5</td>
-        <td class="num"><span style="white-space:nowrap;color:var(--gold-light);font-size:13px;font-weight:600;">🏆 1W</span></td>
+        <td class="num"><span style="white-space:nowrap;color:var(--gold);font-size:11px;font-weight:500;">🏆 1W</span></td>
         <td class="num" style="color:var(--gold);font-size:13px">+9</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">+6</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+15</td>
@@ -902,7 +914,7 @@
         <td class="num" style="width:40px"><span class="trend-down">▼1</span></td>
         <td class="player-name" style="color:inherit">ziggysmalls1224</td>
         <td class="num points-cell">253.5</td>
-        <td class="num"><span style="white-space:nowrap;color:var(--gold-light);font-size:13px;font-weight:600;">🏆 3W</span></td>
+        <td class="num"><span style="white-space:nowrap;color:var(--gold);font-size:11px;font-weight:500;">🏆 3W</span></td>
         <td class="num" style="color:var(--gold);font-size:13px">+12</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">+9</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+21</td>
@@ -941,7 +953,7 @@
         <td class="num" style="width:40px"><span class="trend-down">▼2</span></td>
         <td class="player-name" style="color:inherit">taylorhiemenz</td>
         <td class="num points-cell">241</td>
-        <td class="num"><span style="white-space:nowrap;color:var(--gold-light);font-size:13px;font-weight:600;">🏆 1W</span></td>
+        <td class="num"><span style="white-space:nowrap;color:var(--gold);font-size:11px;font-weight:500;">🏆 1W</span></td>
         <td class="num" style="color:var(--gold);font-size:13px">+6</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+9</td>
@@ -980,7 +992,7 @@
         <td class="num" style="width:40px"><span class="trend-same">—</span></td>
         <td class="player-name" style="color:inherit">karibou5550</td>
         <td class="num points-cell">228</td>
-        <td class="num"><span style="white-space:nowrap;color:var(--gold-light);font-size:13px;font-weight:600;">🏆 1W</span></td>
+        <td class="num"><span style="white-space:nowrap;color:var(--gold);font-size:11px;font-weight:500;">🏆 1W</span></td>
         <td class="num" style="color:var(--gold);font-size:13px">+12</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+15</td>
@@ -993,7 +1005,7 @@
         <td class="num" style="width:40px"><span class="trend-down">▼2</span></td>
         <td class="player-name" style="color:inherit">Bmacsupreme</td>
         <td class="num points-cell">224</td>
-        <td class="num"><span style="white-space:nowrap;color:var(--gold-light);font-size:13px;font-weight:600;">🏆 1W</span></td>
+        <td class="num"><span style="white-space:nowrap;color:var(--gold);font-size:11px;font-weight:500;">🏆 1W</span></td>
         <td class="num" style="color:var(--gold);font-size:13px">+6</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+9</td>
@@ -1006,7 +1018,7 @@
         <td class="num" style="width:40px"><span class="trend-down">▼1</span></td>
         <td class="player-name" style="color:inherit">lcrose22</td>
         <td class="num points-cell">212.5</td>
-        <td class="num"><span style="white-space:nowrap;color:var(--gold-light);font-size:13px;font-weight:600;">🏆 2W</span></td>
+        <td class="num"><span style="white-space:nowrap;color:var(--gold);font-size:11px;font-weight:500;">🏆 2W</span></td>
         <td class="num" style="color:var(--gold);font-size:13px">+6</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">+9</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+15</td>
@@ -1032,7 +1044,7 @@
         <td class="num" style="width:40px"><span class="trend-up">▲2</span></td>
         <td class="player-name" style="color:inherit">scottdold</td>
         <td class="num points-cell">209.5</td>
-        <td class="num"><span style="white-space:nowrap;color:var(--gold-light);font-size:13px;font-weight:600;">🏆 1W</span></td>
+        <td class="num"><span style="white-space:nowrap;color:var(--gold);font-size:11px;font-weight:500;">🏆 1W</span></td>
         <td class="num" style="color:var(--gold);font-size:13px">+3</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">+6</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+9</td>
@@ -1058,7 +1070,7 @@
         <td class="num" style="width:40px"><span class="trend-up">▲1</span></td>
         <td class="player-name" style="color:inherit">heysenwisen</td>
         <td class="num points-cell">206</td>
-        <td class="num"><span style="white-space:nowrap;color:var(--gold-light);font-size:13px;font-weight:600;">🏆 1W</span></td>
+        <td class="num"><span style="white-space:nowrap;color:var(--gold);font-size:11px;font-weight:500;">🏆 1W</span></td>
         <td class="num" style="color:var(--gold);font-size:13px">—</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">+3</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+3</td>
@@ -1149,7 +1161,7 @@
         <td class="num" style="width:40px"><span class="trend-down">▼3</span></td>
         <td class="player-name" style="color:inherit">jlee45</td>
         <td class="num points-cell">177.5</td>
-        <td class="num"><span style="white-space:nowrap;color:var(--gold-light);font-size:13px;font-weight:600;">🏆 1W</span></td>
+        <td class="num"><span style="white-space:nowrap;color:var(--gold);font-size:11px;font-weight:500;">🏆 1W</span></td>
         <td class="num" style="color:var(--gold);font-size:13px">+3</td>
         <td class="num" style="color:var(--green-bright);font-size:13px">+6</td>
         <td class="num" style="color:var(--dk-green);font-family:'Bebas Neue',sans-serif;font-size:16px">+9</td>
@@ -2241,7 +2253,7 @@ function renderStandings() {
 
     let badges = '';
     if(shotgunDebts.has(p.player)) badges += `<span class="badge badge-beer">🍺</span>`;
-    const winsCell = p.wins > 0 ? `<span style="white-space:nowrap;color:var(--gold-light);font-size:13px;font-weight:600;">🏆 ${p.wins}W</span>` : '<span style="color:var(--muted)">—</span>';
+    const winsCell = p.wins > 0 ? `<span style="white-space:nowrap;color:var(--gold);font-size:11px;font-weight:500;">🏆 ${p.wins}W</span>` : '<span style="color:var(--muted)">—</span>';
 
     const rankClass = p.currentRank === 1 ? 'rank1' : p.currentRank <= 3 ? 'top3' : '';
 
