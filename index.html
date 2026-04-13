@@ -3503,8 +3503,86 @@ function exportDashboard() {
     moneyLog:     moneyLog
   };
 
-  // Get the original HTML, strip any existing snapshot, inject fresh one
-  const bootScript = `
+  // Get the original HTML and replace the snapshot data in-place
+  const snapshotStr = 'window.__SNAPSHOT__ = ' + JSON.stringify(snapshot) + ';';
+  let exported = document.documentElement.outerHTML;
+  // Replace existing snapshot assignment directly — avoids any script-tag regex issues
+  exported = exported.replace(/window\.__SNAPSHOT__\s*=[^;]*;/, snapshotStr);
+
+  const blob = new Blob([exported], { type: 'text/html' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'index.html';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  showToast('📥 index.html downloaded — ready to upload to GitHub!');
+}
+
+// ============================================================
+// LOCAL STORAGE — AUTO SAVE / LOAD
+// ============================================================
+const STORAGE_KEY = 'heyse_golf_2026';
+
+function saveToStorage() {
+  try {
+    const data = {
+      standings:    standings,
+      weekHistory:  weekHistory,
+      shotgunDebts: [...shotgunDebts],
+      playerMoney:  playerMoney,
+      moneyLog:     moneyLog,
+      savedAt:      new Date().toISOString()
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  } catch(e) { console.warn('Save failed:', e); }
+}
+
+function loadFromStorage() {
+  try {
+    // First check if data was baked into the file at export time
+    const data = window.__SNAPSHOT__ || JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+    if(!data) return false;
+    // Merge snapshot into live state
+    if(data.standings) data.standings.forEach(saved => {
+      const p = standings.find(s => s.player === saved.player);
+      if(p) Object.assign(p, saved);
+    });
+    if(data.weekHistory)  weekHistory.push(...data.weekHistory);
+    if(data.shotgunDebts) data.shotgunDebts.forEach(p => shotgunDebts.add(p));
+    if(data.playerMoney)  Object.assign(playerMoney, data.playerMoney);
+    if(data.moneyLog)     moneyLog.push(...data.moneyLog);
+    return data.savedAt;
+  } catch(e) { console.warn('Load failed:', e); return false; }
+}
+
+function clearStorage() {
+  if(confirm('Clear all saved data and reset to zero? This cannot be undone.')) {
+    localStorage.removeItem(STORAGE_KEY);
+    location.reload();
+  }
+}
+
+// ============================================================
+// INIT
+// ============================================================
+const _savedAt = loadFromStorage();
+const _statusEl = document.getElementById('storage-status');
+if(_statusEl) {
+  if(_savedAt) {
+    _statusEl.innerHTML = `✓ Data loaded · Last saved: ${new Date(_savedAt).toLocaleString()} · <span style="cursor:pointer;color:var(--masters-red);text-decoration:underline" onclick="clearStorage()">Clear all data</span>`;
+  } else {
+    _statusEl.textContent = '💾 Auto-save active — data will persist between sessions';
+  }
+}
+renderStandings();
+renderHistory();
+renderStats();
+renderSeasonBar();
+renderBeer();
+switchTab('standings');
+const _undoBtn = document.getElementById('undo-btn');
+if(_undoBtn) _undoBtn.disabled = weekHistory.length === 0;
+</script>
 
 
 
