@@ -1160,11 +1160,12 @@
     .lb-table td.col-money,  .lb-table th.col-money  { display: none; }
 
     /* Week detail panel — fit table on XS without horizontal scroll */
-    .week-detail-panel { padding: 12px 10px; }
-    .week-table { font-size: 11px; }
-    .week-table th { padding: 7px 5px; font-size: 9px; letter-spacing: 1px; }
-    .week-table td { padding: 6px 5px; }
-    .pts-earned { font-size: 13px; }
+    .week-detail-panel { padding: 12px 10px; overflow-x: auto; }
+    .week-table { font-size: 11px; min-width: 0; width: 100%; }
+    .week-table th { padding: 7px 4px; font-size: 9px; letter-spacing: 0; }
+    .week-table td { padding: 6px 4px; }
+    .week-table td:nth-child(2) { max-width: 90px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .pts-earned { font-size: 11px; }
   }
 
   .empty-state {
@@ -3159,8 +3160,8 @@
   <div class="tabs">
     <button class="tab-btn active" onclick="switchTab('standings')">Standings</button>
     <button class="tab-btn" onclick="switchTab('history')">Week History</button>
-    <button class="tab-btn" onclick="switchTab('update')">⬆ Update Week</button>
-    <button class="tab-btn" onclick="switchTab('settings')">⚙ Settings</button>
+    <button class="tab-btn" onclick="switchTab('update')">Update Week</button>
+    <button class="tab-btn" onclick="switchTab('settings')">Settings</button>
   </div>
 
   <!-- TAB: STANDINGS -->
@@ -6327,7 +6328,7 @@ function showWeekDetail(idx) {
     ].filter(Boolean).join(', ') || (r.bonuses > 0 ? `+${r.bonuses}` : '—');
 
     const rankDisp = r.dns ? '<span style="color:var(--red);font-size:11px">DNS</span>'
-                              : `<span style="font-family:'Playfair Display',serif;font-weight:700;font-style:italic;font-size:16px;color:var(--masters-muted)">${i+1}</span>`;
+                              : `<span style="font-family:'Playfair Display',serif;font-weight:700;font-style:italic;font-size:clamp(11px,3vw,16px);color:var(--masters-muted)">${i+1}</span>`;
     const dkDisp   = r.dk > 0 ? r.dk : '—';
     const wdDisp   = (r.wd || 0) > 0 ? `<span style="color:var(--blue)">+${r.wd}</span>` : '—';
     const totalDisp = r.total > 0
