@@ -3159,7 +3159,6 @@
   <div class="tabs">
     <button class="tab-btn active" onclick="switchTab('standings')">Standings</button>
     <button class="tab-btn" onclick="switchTab('history')">Week History</button>
-    <button class="tab-btn" onclick="switchTab('beer')">🏦 Tracker</button>
     <button class="tab-btn" onclick="switchTab('update')">⬆ Update Week</button>
     <button class="tab-btn" onclick="switchTab('settings')">⚙ Settings</button>
   </div>
@@ -5084,7 +5083,44 @@
 
 
     <!-- TAB: BEER / SHOTGUN TRACKER -->
-  <div class="tab-panel" id="tab-beer">
+  
+
+<!-- TAB: SETTINGS -->
+<div class="tab-panel" id="tab-settings">
+  <div class="settings-section">
+    <div class="settings-section-title">Themes</div>
+    <div class="settings-section-desc">Choose a colour theme for the dashboard.</div>
+    <div class="theme-options">
+      <div class="theme-card" id="theme-card-default" onclick="applyTheme('default')">
+        <div class="theme-swatch">
+          <span class="theme-swatch-dot" style="background:#0f1f38"></span>
+          <span class="theme-swatch-dot" style="background:#20487c"></span>
+          <span class="theme-swatch-dot" style="background:#fce300"></span>
+        </div>
+        <div class="theme-card-name">Midnight</div>
+        <div class="theme-card-check">✓</div>
+      </div>
+      <div class="theme-card" id="theme-card-masters" onclick="applyTheme('masters')">
+        <div class="theme-swatch">
+          <span class="theme-swatch-dot" style="background:#0f2318"></span>
+          <span class="theme-swatch-dot" style="background:#006747"></span>
+          <span class="theme-swatch-dot" style="background:#fce300"></span>
+        </div>
+        <div class="theme-card-name">Augusta</div>
+        <div class="theme-card-check">✓</div>
+      </div>
+      <div class="theme-card active" id="theme-card-slate" onclick="applyTheme('slate')">
+        <div class="theme-swatch">
+          <span class="theme-swatch-dot" style="background:#161a21"></span>
+          <span class="theme-swatch-dot" style="background:#1c2028"></span>
+          <span class="theme-swatch-dot" style="background:#e8b86a"></span>
+        </div>
+        <div class="theme-card-name">Slate</div>
+        <div class="theme-card-check">✓</div>
+      </div>
+    </div>
+  </div>
+
 
     <!-- SHOTGUN SECTION -->
     <div class="divider" style="margin-top:0">🍺 Shotgun Debts</div>
@@ -5543,43 +5579,7 @@
 
   </div>
 
-</div>
 
-<!-- TAB: SETTINGS -->
-<div class="tab-panel" id="tab-settings">
-  <div class="settings-section">
-    <div class="settings-section-title">Themes</div>
-    <div class="settings-section-desc">Choose a colour theme for the dashboard.</div>
-    <div class="theme-options">
-      <div class="theme-card" id="theme-card-default" onclick="applyTheme('default')">
-        <div class="theme-swatch">
-          <span class="theme-swatch-dot" style="background:#0f1f38"></span>
-          <span class="theme-swatch-dot" style="background:#20487c"></span>
-          <span class="theme-swatch-dot" style="background:#fce300"></span>
-        </div>
-        <div class="theme-card-name">Midnight</div>
-        <div class="theme-card-check">✓</div>
-      </div>
-      <div class="theme-card" id="theme-card-masters" onclick="applyTheme('masters')">
-        <div class="theme-swatch">
-          <span class="theme-swatch-dot" style="background:#0f2318"></span>
-          <span class="theme-swatch-dot" style="background:#006747"></span>
-          <span class="theme-swatch-dot" style="background:#fce300"></span>
-        </div>
-        <div class="theme-card-name">Augusta</div>
-        <div class="theme-card-check">✓</div>
-      </div>
-      <div class="theme-card active" id="theme-card-slate" onclick="applyTheme('slate')">
-        <div class="theme-swatch">
-          <span class="theme-swatch-dot" style="background:#161a21"></span>
-          <span class="theme-swatch-dot" style="background:#1c2028"></span>
-          <span class="theme-swatch-dot" style="background:#e8b86a"></span>
-        </div>
-        <div class="theme-card-name">Slate</div>
-        <div class="theme-card-check">✓</div>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!-- TOAST -->
@@ -7274,7 +7274,7 @@ function applyTheme(name) {
 }
 
 function initTheme() {
-  const saved = localStorage.getItem('heyse_theme') || 'default';
+  const saved = localStorage.getItem('heyse_theme') || 'slate';
   applyTheme(saved);
 }
 initTheme();
@@ -7325,7 +7325,7 @@ initTheme();
 
   // Palette wires into existing applyTheme()
   function syncPaletteActive() {
-    const cur = localStorage.getItem('heyse_theme') || 'default';
+    const cur = localStorage.getItem('heyse_theme') || 'slate';
     panel.querySelectorAll('.rf-palette').forEach(el => {
       el.classList.toggle('active', el.dataset.palette === cur);
     });
