@@ -2356,6 +2356,20 @@
     letter-spacing: -0.3px;
   }
   .lbs-head-stat-value.amber { color: var(--lbs-amber); }
+  .lbs-legacy-link {
+    font-family: var(--mono-font);
+    font-size: 10px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--rf-faint);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rf-faint);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .lbs-legacy-link:hover {
+    color: var(--lbs-amber);
+    border-color: var(--lbs-amber);
+  }
 
   /* ── Player row card ────────────────────────────────────── */
   .lbs-row {
@@ -3720,18 +3734,7 @@
     <div class="lbs-head">
       <div class="lbs-head-title">The <em>Leaderboard</em></div>
       <div class="lbs-head-meta">
-        <div class="lbs-head-stat">
-          <span class="lbs-head-stat-label">Leader</span>
-          <span class="lbs-head-stat-value amber">408</span>
-        </div>
-        <div class="lbs-head-stat">
-          <span class="lbs-head-stat-label">Cutline</span>
-          <span class="lbs-head-stat-value">290</span>
-        </div>
-        <div class="lbs-head-stat">
-          <span class="lbs-head-stat-label">Events</span>
-          <span class="lbs-head-stat-value">18</span>
-        </div>
+        <a href="https://docs.google.com/spreadsheets/d/1gw7q-N1t338PT7AM8IYX7ts2eesZMbAfRXs3cgWAr8k/edit?usp=sharing" target="_blank" class="lbs-legacy-link">Legacy Leaderboard ↗</a>
       </div>
     </div>
   
@@ -6141,18 +6144,7 @@ function renderSlateStack() {
     <div class="lbs-head">
       <div class="lbs-head-title">The <em>Leaderboard</em></div>
       <div class="lbs-head-meta">
-        <div class="lbs-head-stat">
-          <span class="lbs-head-stat-label">Leader</span>
-          <span class="lbs-head-stat-value amber">${leader ? leader.points : '—'}</span>
-        </div>
-        <div class="lbs-head-stat">
-          <span class="lbs-head-stat-label">Cutline</span>
-          <span class="lbs-head-stat-value">${cutlinePts || '—'}</span>
-        </div>
-        <div class="lbs-head-stat">
-          <span class="lbs-head-stat-label">Events</span>
-          <span class="lbs-head-stat-value">${eventsPlayed}</span>
-        </div>
+        <a href="https://docs.google.com/spreadsheets/d/1gw7q-N1t338PT7AM8IYX7ts2eesZMbAfRXs3cgWAr8k/edit?usp=sharing" target="_blank" class="lbs-legacy-link">Legacy Leaderboard ↗</a>
       </div>
     </div>
   `;
@@ -7275,6 +7267,11 @@ function applyTheme(name) {
 }
 
 function initTheme() {
+  // v2: force-reset any pre-slate theme preference for all users
+  if (localStorage.getItem('heyse_theme_v') !== '2') {
+    localStorage.setItem('heyse_theme', 'slate');
+    localStorage.setItem('heyse_theme_v', '2');
+  }
   const saved = localStorage.getItem('heyse_theme') || 'slate';
   applyTheme(saved);
 }
