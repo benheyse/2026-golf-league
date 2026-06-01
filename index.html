@@ -7310,7 +7310,7 @@ function renderStats() {
       if(count === 0) return;
       const done = count >= SEG_CONFIG[num];
       const active = !done;
-      const color = active ? '#F97316' : 'var(--masters-text)';
+      const color = active ? 'var(--rf-accent)' : 'var(--masters-text)';
       const label = done ? ' complete' : ' underway';
       lines.push(`<div class="stat-sub" style="color:${color};font-size:12px;font-weight:${active ? 600 : 400}">${count} of ${SEG_CONFIG[num]} · Segment ${num}${label}</div>`);
     });
@@ -7416,18 +7416,13 @@ function renderStats() {
     return `
     <div class="stat-card" style="animation-delay:${i * 0.05 + 0.05}s">
       <div class="stat-label">${c.label}</div>
-      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:10px;margin-top:2px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:2px">
         <!-- Col 1: player name -->
-        <div style="min-width:0;overflow:hidden">
+        <div style="min-width:0;flex:1;overflow:hidden">
           <div style="font-family:var(--display-font);font-style:italic;font-size:clamp(20px,4vw,30px);font-weight:400;line-height:1.05;color:var(--rf-accent);letter-spacing:-0.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${c.player}</div>
         </div>
-        <!-- Col 2: points -->
-        <div style="text-align:center;padding:0 6px;border-left:1px solid color-mix(in oklab,var(--rf-text) 10%,transparent);border-right:1px solid color-mix(in oklab,var(--rf-text) 10%,transparent)">
-          <div style="font-family:var(--mono-font);font-size:26px;font-weight:700;line-height:1;color:var(--rf-text)">${c.total5w}</div>
-          <div style="font-family:var(--mono-font);font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:var(--rf-faint);margin-top:2px">pts</div>
-        </div>
-        <!-- Col 3: sparkline + label -->
-        <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+        <!-- Col 2: sparkline + label -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0">
           <div style="display:flex;align-items:flex-end">${c.spark}</div>
           <div style="font-family:var(--mono-font);font-size:8px;letter-spacing:1.3px;text-transform:uppercase;color:var(--rf-faint);white-space:nowrap">Last 5 Wks</div>
         </div>
@@ -7817,13 +7812,13 @@ initTheme();
 #seg-grid >.final tr:nth-child(2) >.seg-pts { color: rgb(255, 255, 255) !important }
 #seg-grid >.final tr:nth-child(3) >.seg-pts { color: rgb(255, 255, 255) !important }
 #seg-bar .seg-bar-chip-active {
-  background: linear-gradient(135deg, rgba(249,115,22,0.22) 0%, rgba(249,115,22,0.10) 100%) !important;
-  border: 1px solid rgba(249,115,22,0.45) !important;
-  color: #F97316 !important;
+  background: linear-gradient(135deg, color-mix(in oklab, var(--rf-accent) 22%, transparent) 0%, color-mix(in oklab, var(--rf-accent) 10%, transparent) 100%) !important;
+  border: 1px solid color-mix(in oklab, var(--rf-accent) 45%, transparent) !important;
+  color: var(--rf-accent) !important;
   font-weight: 700 !important;
   opacity: 1 !important;
 }
-#seg-bar .seg-bar-chip-active::before { background: #F97316 !important; box-shadow: 0 0 7px rgba(249,115,22,0.7) !important; }
+#seg-bar .seg-bar-chip-active::before { background: var(--rf-accent) !important; box-shadow: 0 0 7px color-mix(in oklab, var(--rf-accent) 70%, transparent) !important; }
 #seg-grid >.final .seg-status-badge { color: rgb(61, 91, 150) !important }
 #seg-grid >.final .seg-status-badge { color: rgb(39, 95, 205) !important }
 #seg-grid >.final .seg-status-badge { background: rgb(234, 243, 240) !important }
