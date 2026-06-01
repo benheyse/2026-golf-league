@@ -7345,7 +7345,7 @@ function renderStats() {
       const hotPlayer = formScores[0];
       function miniSparkline(weeks) {
         if (!weeks || !weeks.length) return '';
-        const W = 8, GAP = 4, H = 28;
+        const W = 11, GAP = 5, H = 40;
         const totalW = weeks.length * W + (weeks.length - 1) * GAP;
         const bars = weeks.map((f, i) => {
           const x = i * (W + GAP);
@@ -7415,14 +7415,14 @@ function renderStats() {
   function renderHotHandCard(c, i) {
     return `
     <div class="stat-card" style="animation-delay:${i * 0.05 + 0.05}s">
-      <div class="stat-label">${c.label}</div>
-      <div style="font-family:var(--display-font);font-style:italic;font-size:clamp(16px,3.5vw,24px);font-weight:400;line-height:1.1;color:#F97316;margin-bottom:8px;letter-spacing:-0.3px">${c.player}</div>
-      <div style="display:flex;align-items:flex-end;gap:12px">
-        <div style="display:flex;align-items:flex-end">${c.spark}</div>
-        <div style="display:flex;flex-direction:column;gap:2px">
-          <div style="font-family:var(--mono-font);font-size:20px;font-weight:700;line-height:1;color:var(--rf-text)">${c.total5w}<span style="font-size:10px;font-weight:400;color:var(--rf-faint);margin-left:3px">pts</span></div>
-          <div style="font-family:var(--mono-font);font-size:9px;letter-spacing:1.4px;text-transform:uppercase;color:var(--rf-faint)">Last 5 Weeks</div>
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">
+        <div style="flex:1;min-width:0">
+          <div class="stat-label">${c.label}</div>
+          <div style="font-family:var(--display-font);font-style:italic;font-size:clamp(16px,3.5vw,24px);font-weight:400;line-height:1.1;color:var(--rf-accent);letter-spacing:-0.3px;margin-bottom:6px">${c.player}</div>
+          <div style="font-family:var(--mono-font);font-size:22px;font-weight:700;line-height:1;color:var(--rf-text)">${c.total5w}<span style="font-size:10px;font-weight:400;color:var(--rf-faint);margin-left:3px">pts</span></div>
+          <div style="font-family:var(--mono-font);font-size:9px;letter-spacing:1.4px;text-transform:uppercase;color:var(--rf-faint);margin-top:3px">Last 5 Weeks</div>
         </div>
+        <div style="display:flex;align-items:flex-end;padding-bottom:2px;flex-shrink:0">${c.spark}</div>
       </div>
     </div>
   `;
