@@ -7352,7 +7352,7 @@ function renderStats() {
           const cls = f.v > 30 ? 'fire' : pct >= 60 ? 'hi' : pct >= 30 ? 'mid' : 'lo';
           return `<span class="lbs-form-bar ${cls}" style="height:${h}px" title="${f.v}pts"></span>`;
         }).join('');
-        return `<span class="lbs-form" style="height:26px">${bars}</span>`;
+        return bars;  // raw bar spans — container div handles flex layout
       }
       if (!hotPlayer || eventsPlayed === 0) {
         return { label: 'Hot Hand', value: '—', sub: 'No data yet' };
@@ -7404,13 +7404,13 @@ function renderStats() {
 
   function renderHotHandCard(c, i) {
     return `
-    <div class="stat-card" style="animation-delay:${i * 0.05 + 0.05}s;position:relative;overflow:hidden">
-      <div class="stat-label" style="display:flex;align-items:center;gap:6px">${c.label}</div>
-      <div class="stat-value" style="font-size:clamp(16px,3.5vw,22px);color:#F97316;line-height:1.1;margin-bottom:4px">${c.player}</div>
-      <div style="display:flex;align-items:flex-end;gap:10px;margin-top:2px">
-        ${c.spark}
-        <div style="display:flex;flex-direction:column;gap:1px">
-          <div style="font-family:var(--mono-font);font-size:18px;font-weight:700;line-height:1;color:var(--rf-text)">${c.total5w}<span style="font-size:10px;font-weight:400;color:var(--rf-faint);margin-left:2px">pts</span></div>
+    <div class="stat-card" style="animation-delay:${i * 0.05 + 0.05}s">
+      <div class="stat-label">${c.label}</div>
+      <div style="font-family:var(--display-font);font-style:italic;font-size:clamp(16px,3.5vw,24px);font-weight:400;line-height:1.1;color:#F97316;margin-bottom:8px;letter-spacing:-0.3px">${c.player}</div>
+      <div style="display:flex;align-items:flex-end;gap:12px">
+        <div style="display:inline-flex;align-items:flex-end;gap:4px;height:26px">${c.spark}</div>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <div style="font-family:var(--mono-font);font-size:20px;font-weight:700;line-height:1;color:var(--rf-text)">${c.total5w}<span style="font-size:10px;font-weight:400;color:var(--rf-faint);margin-left:3px">pts</span></div>
           <div style="font-family:var(--mono-font);font-size:9px;letter-spacing:1.4px;text-transform:uppercase;color:var(--rf-faint)">Last 5 Weeks</div>
         </div>
       </div>
