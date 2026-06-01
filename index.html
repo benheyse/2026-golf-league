@@ -2537,6 +2537,25 @@
   html[data-theme="slate"] .lbs-row .chip.beer  { color: var(--lbs-amber); }
   html[data-theme="slate"] .lbs-row .chip-label { color: var(--rf-faint); letter-spacing: 1.2px; text-transform: uppercase; font-size: 9px; }
 
+  /* Hot Hand card — responsive player name */
+  .hh-player-name {
+    font-family: var(--display-font);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--rf-accent);
+    letter-spacing: -0.5px;
+    word-break: break-word;
+    /* Fluid type: 24px on mobile → 17px on desktop */
+    font-size: clamp(17px, calc(27px - 0.91vw), 24px);
+  }
+  @media (max-width: 600px) {
+    .hh-player-name { font-size: 24px; }
+  }
+  @media (min-width: 1100px) {
+    .hh-player-name { font-size: 17px; }
+  }
+
   /* Form sparkline — its own column, centered in the card */
   .lbs-form-cell {
     display: flex;
@@ -7419,7 +7438,7 @@ function renderStats() {
       <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:2px">
         <!-- Col 1: player name -->
         <div style="min-width:0;flex:1;overflow:hidden">
-          <div style="font-family:var(--display-font);font-style:italic;font-size:clamp(20px,4vw,30px);font-weight:400;line-height:1.05;color:var(--rf-accent);letter-spacing:-0.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${c.player}</div>
+          <div class="hh-player-name">${c.player}</div>
         </div>
         <!-- Col 2: sparkline + label -->
         <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0">
