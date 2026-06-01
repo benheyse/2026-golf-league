@@ -7415,14 +7415,22 @@ function renderStats() {
   function renderHotHandCard(c, i) {
     return `
     <div class="stat-card" style="animation-delay:${i * 0.05 + 0.05}s">
-      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">
-        <div style="flex:1;min-width:0">
-          <div class="stat-label">${c.label}</div>
-          <div style="font-family:var(--display-font);font-style:italic;font-size:clamp(16px,3.5vw,24px);font-weight:400;line-height:1.1;color:var(--rf-accent);letter-spacing:-0.3px;margin-bottom:6px">${c.player}</div>
-          <div style="font-family:var(--mono-font);font-size:22px;font-weight:700;line-height:1;color:var(--rf-text)">${c.total5w}<span style="font-size:10px;font-weight:400;color:var(--rf-faint);margin-left:3px">pts</span></div>
-          <div style="font-family:var(--mono-font);font-size:9px;letter-spacing:1.4px;text-transform:uppercase;color:var(--rf-faint);margin-top:3px">Last 5 Weeks</div>
+      <div class="stat-label">${c.label}</div>
+      <div style="display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:10px;margin-top:2px">
+        <!-- Col 1: player name -->
+        <div style="min-width:0;overflow:hidden">
+          <div style="font-family:var(--display-font);font-style:italic;font-size:clamp(20px,4vw,30px);font-weight:400;line-height:1.05;color:var(--rf-accent);letter-spacing:-0.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${c.player}</div>
         </div>
-        <div style="display:flex;align-items:flex-end;padding-bottom:2px;flex-shrink:0">${c.spark}</div>
+        <!-- Col 2: points -->
+        <div style="text-align:center;padding:0 6px;border-left:1px solid color-mix(in oklab,var(--rf-text) 10%,transparent);border-right:1px solid color-mix(in oklab,var(--rf-text) 10%,transparent)">
+          <div style="font-family:var(--mono-font);font-size:26px;font-weight:700;line-height:1;color:var(--rf-text)">${c.total5w}</div>
+          <div style="font-family:var(--mono-font);font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:var(--rf-faint);margin-top:2px">pts</div>
+        </div>
+        <!-- Col 3: sparkline + label -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+          <div style="display:flex;align-items:flex-end">${c.spark}</div>
+          <div style="font-family:var(--mono-font);font-size:8px;letter-spacing:1.3px;text-transform:uppercase;color:var(--rf-faint);white-space:nowrap">Last 5 Wks</div>
+        </div>
       </div>
     </div>
   `;
