@@ -7298,20 +7298,22 @@ function renderStats() {
   const seg3Count  = weekHistory.filter(w => (w.segment||1) === 3).length;
 
   function segSubLines() {
-    const lines = [];
     if(eventsPlayed === 0) return '<div class="stat-sub" style="font-size:12px">No events yet</div>';
-    if(seg1Count > 0) {
-      const done = seg1Count >= SEG_CONFIG[1];
-      lines.push(`<div class="stat-sub" style="font-size:12px">${seg1Count} of ${SEG_CONFIG[1]} · Segment 1${done ? ' complete' : ' underway'}</div>`);
-    }
-    if(seg2Count > 0) {
-      const done = seg2Count >= SEG_CONFIG[2];
-      lines.push(`<div class="stat-sub" style="color:var(--masters-text);font-size:12px">${seg2Count} of ${SEG_CONFIG[2]} · Segment 2${done ? ' complete' : ' underway'}</div>`);
-    }
-    if(seg3Count > 0) {
-      const done = seg3Count >= SEG_CONFIG[3];
-      lines.push(`<div class="stat-sub" style="color:var(--masters-text);font-size:12px">${seg3Count} of ${SEG_CONFIG[3]} · Segment 3${done ? ' complete' : ' underway'}</div>`);
-    }
+    // Build segments in reverse order (highest first), active segments in orange
+    const segs = [
+      { num: 3, count: seg3Count },
+      { num: 2, count: seg2Count },
+      { num: 1, count: seg1Count }
+    ];
+    const lines = [];
+    segs.forEach(({ num, count }) => {
+      if(count === 0) return;
+      const done = count >= SEG_CONFIG[num];
+      const active = !done;
+      const color = active ? '#F97316' : 'var(--masters-text)';
+      const label = done ? ' complete' : ' underway';
+      lines.push(`<div class="stat-sub" style="color:${color};font-size:12px;font-weight:${active ? 600 : 400}">${count} of ${SEG_CONFIG[num]} · Segment ${num}${label}</div>`);
+    });
     return lines.join('');
   }
 
@@ -7744,10 +7746,14 @@ initTheme();
 #seg-grid >.final tr:nth-child(1) >.seg-pts { color: rgb(255, 255, 255) !important }
 #seg-grid >.final tr:nth-child(2) >.seg-pts { color: rgb(255, 255, 255) !important }
 #seg-grid >.final tr:nth-child(3) >.seg-pts { color: rgb(255, 255, 255) !important }
-#seg-bar .seg-bar-chip-active { font-weight: 400 !important }
-#seg-bar .seg-bar-chip-active { opacity: 0.5 !important }
-#seg-bar .seg-bar-chip-active { opacity: 0.05 !important }
-#seg-bar .seg-bar-chip-active { opacity: 0.07 !important }
+#seg-bar .seg-bar-chip-active {
+  background: linear-gradient(135deg, rgba(249,115,22,0.22) 0%, rgba(249,115,22,0.10) 100%) !important;
+  border: 1px solid rgba(249,115,22,0.45) !important;
+  color: #F97316 !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+#seg-bar .seg-bar-chip-active::before { background: #F97316 !important; box-shadow: 0 0 7px rgba(249,115,22,0.7) !important; }
 #seg-grid >.final .seg-status-badge { color: rgb(61, 91, 150) !important }
 #seg-grid >.final .seg-status-badge { color: rgb(39, 95, 205) !important }
 #seg-grid >.final .seg-status-badge { background: rgb(234, 243, 240) !important }
