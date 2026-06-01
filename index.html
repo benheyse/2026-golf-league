@@ -7326,11 +7326,46 @@ function renderStats() {
         .sort((a, b) => b[1] - a[1])
         .slice(0, 2)
     },
-    {
-      label: 'Events Played',
-      value: eventsPlayed,
-      sub:   null
-    },
+    (function() {
+      // Hot Hand card — find the #1 form leader by last-5-weeks total
+      const FORM_W = 5;
+      const MAX_PTS = 40;
+      const recentW = weekHistory.slice(-FORM_W);
+      function getFormScores() {
+        return sorted.map(p => {
+          const weeks = recentW.map(w => {
+            const row = (w.results || []).find(r => r.player === p.player);
+            return row ? { v: row.total || 0, missed: false } : { v: 0, missed: true };
+          });
+          const total = weeks.reduce((s, w) => s + w.v, 0);
+          return { player: p.player, weeks, total };
+        });
+      }
+      const formScores = getFormScores().sort((a, b) => b.total - a.total);
+      const hotPlayer = formScores[0];
+      function miniSparkline(weeks) {
+        if (!weeks || !weeks.length) return '';
+        const bars = weeks.map(f => {
+          if (f.missed) return `<span class="lbs-form-bar miss" title="Missed"></span>`;
+          const pct = Math.min(100, Math.round((f.v / MAX_PTS) * 100));
+          const h = Math.max(4, Math.round((pct / 100) * 26));
+          const cls = f.v > 30 ? 'fire' : pct >= 60 ? 'hi' : pct >= 30 ? 'mid' : 'lo';
+          return `<span class="lbs-form-bar ${cls}" style="height:${h}px" title="${f.v}pts"></span>`;
+        }).join('');
+        return `<span class="lbs-form" style="height:26px">${bars}</span>`;
+      }
+      if (!hotPlayer || eventsPlayed === 0) {
+        return { label: 'Hot Hand', value: '—', sub: 'No data yet' };
+      }
+      const sparkHtml = miniSparkline(hotPlayer.weeks);
+      return {
+        label: 'Hot Hand 🔥',
+        _hotHand: true,
+        player: hotPlayer.player,
+        total5w: hotPlayer.total,
+        spark: sparkHtml
+      };
+    })(),
     {
       label: 'Biggest Mover',
       value: (biggestMover && biggestMove > 0) ? biggestMover.player : '—',
@@ -7367,8 +7402,25 @@ function renderStats() {
     `;
   }
 
+  function renderHotHandCard(c, i) {
+    return `
+    <div class="stat-card" style="animation-delay:${i * 0.05 + 0.05}s;position:relative;overflow:hidden">
+      <div class="stat-label" style="display:flex;align-items:center;gap:6px">${c.label}</div>
+      <div class="stat-value" style="font-size:clamp(16px,3.5vw,22px);color:#F97316;line-height:1.1;margin-bottom:4px">${c.player}</div>
+      <div style="display:flex;align-items:flex-end;gap:10px;margin-top:2px">
+        ${c.spark}
+        <div style="display:flex;flex-direction:column;gap:1px">
+          <div style="font-family:var(--mono-font);font-size:18px;font-weight:700;line-height:1;color:var(--rf-text)">${c.total5w}<span style="font-size:10px;font-weight:400;color:var(--rf-faint);margin-left:2px">pts</span></div>
+          <div style="font-family:var(--mono-font);font-size:9px;letter-spacing:1.4px;text-transform:uppercase;color:var(--rf-faint)">Last 5 Weeks</div>
+        </div>
+      </div>
+    </div>
+  `;
+  }
+
   grid.innerHTML = cards.map((c, i) => {
     if(c.money) return renderMoneyCard(c, i);
+    if(c._hotHand) return renderHotHandCard(c, i);
     return `
     <div class="stat-card" style="animation-delay:${i * 0.05 + 0.05}s">
       <div class="stat-label">${c.label}</div>
