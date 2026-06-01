@@ -7345,14 +7345,24 @@ function renderStats() {
       const hotPlayer = formScores[0];
       function miniSparkline(weeks) {
         if (!weeks || !weeks.length) return '';
-        const bars = weeks.map(f => {
-          if (f.missed) return `<span class="lbs-form-bar miss" title="Missed"></span>`;
-          const pct = Math.min(100, Math.round((f.v / MAX_PTS) * 100));
-          const h = Math.max(4, Math.round((pct / 100) * 26));
-          const cls = f.v > 30 ? 'fire' : pct >= 60 ? 'hi' : pct >= 30 ? 'mid' : 'lo';
-          return `<span class="lbs-form-bar ${cls}" style="height:${h}px" title="${f.v}pts"></span>`;
+        const W = 8, GAP = 4, H = 28;
+        const totalW = weeks.length * W + (weeks.length - 1) * GAP;
+        const bars = weeks.map((f, i) => {
+          const x = i * (W + GAP);
+          if (f.missed) {
+            return `<rect x="${x}" y="${H - 6}" width="${W}" height="3" rx="1" fill="rgba(255,255,255,0.15)" stroke="rgba(249,115,22,0.35)" stroke-width="1" stroke-dasharray="2,2"/>`;
+          }
+          const pct = Math.min(1, f.v / MAX_PTS);
+          const h = Math.max(4, Math.round(pct * H));
+          const y = H - h;
+          const fill = f.v > 30 ? '#F97316' : pct >= 0.6 ? '#fce300' : pct >= 0.3 ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.25)';
+          const glow = f.v > 30 ? `filter="url(#hh-glow)"` : '';
+          return `<rect x="${x}" y="${y}" width="${W}" height="${h}" rx="1.5" fill="${fill}" ${glow}/>`;
         }).join('');
-        return bars;  // raw bar spans — container div handles flex layout
+        return `<svg width="${totalW}" height="${H}" viewBox="0 0 ${totalW} ${H}" xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:visible">
+          <defs><filter id="hh-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          ${bars}
+        </svg>`;
       }
       if (!hotPlayer || eventsPlayed === 0) {
         return { label: 'Hot Hand', value: '—', sub: 'No data yet' };
@@ -7408,7 +7418,7 @@ function renderStats() {
       <div class="stat-label">${c.label}</div>
       <div style="font-family:var(--display-font);font-style:italic;font-size:clamp(16px,3.5vw,24px);font-weight:400;line-height:1.1;color:#F97316;margin-bottom:8px;letter-spacing:-0.3px">${c.player}</div>
       <div style="display:flex;align-items:flex-end;gap:12px">
-        <div style="display:inline-flex;align-items:flex-end;gap:4px;height:26px">${c.spark}</div>
+        <div style="display:flex;align-items:flex-end">${c.spark}</div>
         <div style="display:flex;flex-direction:column;gap:2px">
           <div style="font-family:var(--mono-font);font-size:20px;font-weight:700;line-height:1;color:var(--rf-text)">${c.total5w}<span style="font-size:10px;font-weight:400;color:var(--rf-faint);margin-left:3px">pts</span></div>
           <div style="font-family:var(--mono-font);font-size:9px;letter-spacing:1.4px;text-transform:uppercase;color:var(--rf-faint)">Last 5 Weeks</div>
