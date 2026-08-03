@@ -7587,6 +7587,12 @@ function renderStats() {
 
   const cards = [
     {
+      label: 'Playoff Cutline',
+      _playoffLink: true,
+      value: eventsPlayed === 0 ? '—' : (cutlinePlayer?.points ?? '—'),
+      sub:   eventsPlayed === 0 ? '18th safe spot' : `${cutlinePlayer?.player} · 18th safe spot`
+    },
+    {
       label: 'Money Leaders',
       money: true,
       top: Object.entries(playerMoney || {})
@@ -7649,12 +7655,6 @@ function renderStats() {
       value: (biggestMover && biggestMove > 0) ? biggestMover.player : '—',
       sub:   (biggestMover && biggestMove > 0) ? `↑ ${biggestMove} spots` : 'No movement yet'
     },
-    {
-      label: 'Playoff Cutline',
-      _playoffLink: true,
-      value: eventsPlayed === 0 ? '—' : (cutlinePlayer?.points ?? '—'),
-      sub:   eventsPlayed === 0 ? '18th safe spot' : `${cutlinePlayer?.player} · 18th safe spot`
-    }
   ];
 
   function fmtMoney(n) { return '$' + Number(n).toLocaleString(); }
