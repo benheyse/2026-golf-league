@@ -1660,6 +1660,19 @@
     50% { opacity: 1; }
   }
   .seg-bar-row { gap: 6px !important; }
+
+  /* ── Collapsible seg-bar groups (mobile) ───────────────── */
+  .seg-bar-group .seg-bar-label { cursor: pointer; user-select: none; display: flex !important; align-items: center; }
+  .seg-bar-group .seg-bar-chevron {
+    font-size: 9px;
+    color: var(--rf-muted);
+    transition: transform 0.22s ease;
+    margin-left: auto;
+    padding-left: 10px;
+    flex-shrink: 0;
+  }
+  .seg-bar-group.seg-bar-collapsed .seg-bar-chevron { transform: rotate(-90deg); }
+  .seg-bar-group.seg-bar-collapsed .seg-bar-row { display: none; }
   .seg-item {
     font-family: var(--ui-font) !important;
     font-weight: 500;
@@ -4174,7 +4187,7 @@
         <div class="lbs-cutline-glyph">▼ ▼ ▼</div>
         <div class="lbs-cutline-title">Playoff Cut</div>
         <div class="lbs-cutline-sub">
-          Top 18 · <span class="lbs-cutline-pts">463.5</span> pts · heysenwisen
+          The following players failed to make the playoffs · <span class="lbs-cutline-pts">463.5</span> pts
         </div>
       </div>
       <div class="lbs-cutline-line-r"></div>
@@ -4268,7 +4281,7 @@
         </div>
       </div>
     
-      <div class="lbs-row tier-out" data-rank="23" data-player="Bmillertime3">
+      <div class="lbs-row tier-bubble" data-rank="23" data-player="Bmillertime3">
         <div class="lbs-rank">23</div>
         <div class="lbs-body">
           <div class="lbs-name-row">
@@ -4290,7 +4303,7 @@
         </div>
       </div>
     
-      <div class="lbs-row tier-out" data-rank="24" data-player="Sheetwood24">
+      <div class="lbs-row tier-bubble" data-rank="24" data-player="Sheetwood24">
         <div class="lbs-rank">24</div>
         <div class="lbs-body">
           <div class="lbs-name-row">
@@ -4312,7 +4325,7 @@
         </div>
       </div>
     
-      <div class="lbs-row tier-out" data-rank="25" data-player="jlee45">
+      <div class="lbs-row tier-bubble" data-rank="25" data-player="jlee45">
         <div class="lbs-rank">25</div>
         <div class="lbs-body">
           <div class="lbs-name-row">
@@ -4334,7 +4347,7 @@
         </div>
       </div>
     
-      <div class="lbs-row tier-out" data-rank="26" data-player="utaherica">
+      <div class="lbs-row tier-bubble" data-rank="26" data-player="utaherica">
         <div class="lbs-rank">26</div>
         <div class="lbs-body">
           <div class="lbs-name-row">
@@ -4356,7 +4369,7 @@
         </div>
       </div>
     
-      <div class="lbs-row tier-out" data-rank="27" data-player="cwoofter">
+      <div class="lbs-row tier-bubble" data-rank="27" data-player="cwoofter">
         <div class="lbs-rank">27</div>
         <div class="lbs-body">
           <div class="lbs-name-row">
@@ -4378,7 +4391,7 @@
         </div>
       </div>
     
-      <div class="lbs-row tier-out" data-rank="28" data-player="EasyChris">
+      <div class="lbs-row tier-bubble" data-rank="28" data-player="EasyChris">
         <div class="lbs-rank">28</div>
         <div class="lbs-body">
           <div class="lbs-name-row">
@@ -4400,7 +4413,7 @@
         </div>
       </div>
     
-      <div class="lbs-row tier-out" data-rank="29" data-player="ewoofter">
+      <div class="lbs-row tier-bubble" data-rank="29" data-player="ewoofter">
         <div class="lbs-rank">29</div>
         <div class="lbs-body">
           <div class="lbs-name-row">
@@ -4422,7 +4435,7 @@
         </div>
       </div>
     
-      <div class="lbs-row tier-out" data-rank="30" data-player="idlee23">
+      <div class="lbs-row tier-bubble" data-rank="30" data-player="idlee23">
         <div class="lbs-rank">30</div>
         <div class="lbs-body">
           <div class="lbs-name-row">
@@ -4444,7 +4457,7 @@
         </div>
       </div>
     
-      <div class="lbs-row tier-out" data-rank="31" data-player="dedsdraft35">
+      <div class="lbs-row tier-bubble" data-rank="31" data-player="dedsdraft35">
         <div class="lbs-rank">31</div>
         <div class="lbs-body">
           <div class="lbs-name-row">
@@ -4467,7 +4480,7 @@
       </div>
     
     <div class="lbs-foot">
-      <span>31 players · 18 in · 13 chasing</span>
+      <span>31 players · 18 in · 13 eliminated</span>
       <span>Slate · The Stack</span>
     </div>
   </div>
@@ -4592,14 +4605,14 @@
             <td class="seg-pts" style="color:var(--masters-muted)">167</td>
           </tr></tbody></table>
       </div>
-      <div class="seg-card active">
-        <div class="seg-card-header" style="background:rgba(201,168,76,0.10)" onclick="toggleSegCard(this)">
+      <div class="seg-card final mobile-collapsed">
+        <div class="seg-card-header" style="background:rgba(0,103,71,0.06)" onclick="toggleSegCard(this)">
           <div>
-            <div class="seg-card-title" style="color:var(--masters-gold2)">Segment 3</div>
+            <div class="seg-card-title" style="color:var(--masters-green)">Segment 3</div>
             <div class="seg-card-weeks">10 weeks · Charles Schwab, Memorial, RBC Canada, U.S. Open, Travelers, John Deere, Scottish Open, The Open, 3M, Rocket Classic</div>
           </div>
           <div style="display:flex;align-items:center;gap:4px">
-            <span class="seg-status-badge" style="color:var(--masters-gold2);background:rgba(201,168,76,0.10);border:1px solid var(--masters-gold2)44">● Live</span>
+            <span class="seg-status-badge" style="color:var(--masters-green);background:rgba(0,103,71,0.10);border:1px solid var(--masters-green)44">✓ Final</span>
             <span class="seg-card-chevron">▼</span>
           </div>
         </div>
@@ -6570,8 +6583,7 @@ function renderSlateStack() {
     if (rank === 2) return 'tier-silver';
     if (rank === 3) return 'tier-bronze';
     if (rank >= 15 && rank <= CUTLINE_RANK) return 'tier-edge';   // safe but close
-    if (rank > CUTLINE_RANK && rank <= CUTLINE_RANK + 4) return 'tier-bubble';
-    if (rank > CUTLINE_RANK + 4) return 'tier-out';
+    if (rank > CUTLINE_RANK) return 'tier-bubble';
     return 'tier-safe';
   }
 
@@ -6667,7 +6679,7 @@ function renderSlateStack() {
         <div class="lbs-cutline-glyph">▼ ▼ ▼</div>
         <div class="lbs-cutline-title">Playoff Cut</div>
         <div class="lbs-cutline-sub">
-          Top ${CUTLINE_RANK} &middot; <span class="lbs-cutline-pts">${cutlinePts}</span> pts &middot; ${cutPlayer.player}
+          The following players failed to make the playoffs &middot; <span class="lbs-cutline-pts">${cutlinePts}</span> pts
         </div>
       </div>
       <div class="lbs-cutline-line-r"></div>
@@ -6679,7 +6691,7 @@ function renderSlateStack() {
   const belowCount = sorted.length - aboveCount;
   const footHtml = `
     <div class="lbs-foot">
-      <span>${sorted.length} players · ${aboveCount} in · ${belowCount} chasing</span>
+      <span>${sorted.length} players · ${aboveCount} in · ${belowCount} eliminated</span>
       <span>Slate · The Stack</span>
     </div>
   `;
@@ -6802,6 +6814,11 @@ function renderHistory() {
   });
 
   grid.innerHTML = html;
+}
+
+function toggleSegBarGroup(seg) {
+  const group = document.getElementById('seg-bar-group-' + seg);
+  if (group) group.classList.toggle('seg-bar-collapsed');
 }
 
 function toggleSegGroup(seg) {
@@ -7387,7 +7404,7 @@ function renderSegments() {
     const segWeeks = weekHistory.filter(w => (w.segment || 1) === seg);
     const hasData  = segWeeks.length > 0;
     const isCurrent = seg === activeSeg && seg <= 3;
-    const isFinal   = hasData && seg < activeSeg;
+    const isFinal   = hasData;
     const status    = !hasData ? 'upcoming' : isFinal ? 'final' : 'active';
 
     // Calculate segment points per player
@@ -7471,8 +7488,10 @@ function renderSeasonBar() {
     const remLabel  = remaining > 0
       ? `<span class="seg-bar-chip seg-bar-chip-active">${remaining} Remaining</span>`
       : `<span class="seg-bar-chip seg-bar-chip-done">Complete</span>`;
-    html += `<div class="seg-bar-group">`;
-    html += `<div class="seg-bar-label" style="display:flex;align-items:center">Segment ${seg}${remLabel}</div>`;
+    const isDone = remaining === 0;
+    const collapsedClass = isDone ? ' seg-bar-collapsed' : '';
+    html += `<div class="seg-bar-group${collapsedClass}" id="seg-bar-group-${seg}">`;
+    html += `<div class="seg-bar-label" style="display:flex;align-items:center" onclick="toggleSegBarGroup(${seg})"><span>Segment ${seg}${remLabel}</span><span class="seg-bar-chevron">▼</span></div>`;
     html += `<div class="seg-bar-row">`;
     segGroups[seg].forEach(w => {
       html += `<div class="seg-item done">${w.event}</div>`;
