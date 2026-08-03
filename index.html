@@ -2012,12 +2012,22 @@
     overflow: hidden;
     margin-top: 18px;
   }
+  .cut-drama.collapsed .cut-drama-body { display: none; }
+  .cut-drama-toggle {
+    font-size: 10px;
+    color: var(--rf-faint);
+    transition: transform 0.22s ease;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+  .cut-drama.collapsed .cut-drama-toggle { transform: rotate(-90deg); }
   .cut-drama-header {
     background: var(--rf-elev-2);
     border-bottom: 1px solid var(--rf-border);
     padding: 14px 18px;
     display: flex;
     align-items: baseline;
+    cursor: pointer;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 6px 16px;
@@ -6381,6 +6391,8 @@ function renderSeg2Race() {
     </div>`;
 }
 
+const PLAYOFF_DASHBOARD_URL = ''; // ← paste playoff dashboard link here
+
 // ============================================================
 // RENDER PLAYOFF BUBBLE / CUTLINE DRAMA
 // — shows players bracketing the top-18 cutline so people
@@ -6390,7 +6402,7 @@ function renderCutlineDrama() {
   const container = document.getElementById('cutline-drama-section');
   if (!container) return;
 
-  const CUTLINE_RANK = 18;          // top 18 advance
+  const CUTLINE_RANK = 18;
   const WINDOW_ABOVE = 4;           // players to show above cutline
   const WINDOW_BELOW = 5;           // players to show below cutline
   const MAX_PER_WEEK = 40;          // approximate max points scored per week
@@ -6505,13 +6517,15 @@ function renderCutlineDrama() {
     return above ? (above.points - cutlinePts).toFixed(1) : '—';
   })();
 
+  const dramaCollapsed = (window.__cutDramaCollapsed !== undefined) ? window.__cutDramaCollapsed : (seg3WeeksLeft === 0);
   container.innerHTML = `
-    <div class="cut-drama">
-      <div class="cut-drama-header">
+    <div class="cut-drama${dramaCollapsed ? ' collapsed' : ''}" id="cut-drama-card">
+      <div class="cut-drama-header" onclick="toggleCutDrama()">
         <div class="cut-drama-title">
           <span class="cd-dot"></span>Playoff Bubble
         </div>
         <div class="cut-drama-meta">${metaLine}</div>
+        <span class="cut-drama-toggle">&#9660;</span>
       </div>
       <div class="cut-drama-body">
         <div class="cut-drama-axis"></div>
@@ -6814,6 +6828,13 @@ function renderHistory() {
   });
 
   grid.innerHTML = html;
+}
+
+function toggleCutDrama() {
+  const card = document.getElementById('cut-drama-card');
+  if (!card) return;
+  card.classList.toggle('collapsed');
+  window.__cutDramaCollapsed = card.classList.contains('collapsed');
 }
 
 function toggleSegBarGroup(seg) {
@@ -7630,6 +7651,7 @@ function renderStats() {
     },
     {
       label: 'Playoff Cutline',
+      _playoffLink: true,
       value: eventsPlayed === 0 ? '—' : (cutlinePlayer?.points ?? '—'),
       sub:   eventsPlayed === 0 ? '18th safe spot' : `${cutlinePlayer?.player} · 18th safe spot`
     }
@@ -7678,9 +7700,31 @@ function renderStats() {
   `;
   }
 
+  // Determine if all 3 regular season segments are complete
+  const allSegsDone = [1,2,3].every(s => {
+    const SEG_TOTAL_CHECK = {1:9, 2:9, 3:10};
+    const played = weekHistory.filter(w => (w.segment||1) === s).length;
+    return played >= SEG_TOTAL_CHECK[s];
+  });
+
   grid.innerHTML = cards.map((c, i) => {
     if(c.money) return renderMoneyCard(c, i);
     if(c._hotHand) return renderHotHandCard(c, i);
+    if(c._playoffLink && allSegsDone) {
+      const href = PLAYOFF_DASHBOARD_URL || '#';
+      const linkAttr = PLAYOFF_DASHBOARD_URL ? `href="${PLAYOFF_DASHBOARD_URL}" target="_blank"` : '';
+      return `
+      <div class="stat-card" style="animation-delay:${i * 0.05 + 0.05}s">
+        <div class="stat-label">Playoff Dashboard</div>
+        <div class="stat-value" style="font-size:16px;line-height:1.3;margin-top:4px">🏆 Playoffs</div>
+        <div class="stat-sub" style="margin-top:8px">
+          ${PLAYOFF_DASHBOARD_URL
+            ? `<a ${linkAttr} style="color:var(--masters-gold);text-decoration:none;font-weight:600;letter-spacing:0.4px">Click here to visit →</a>`
+            : `<span style="color:var(--rf-muted);font-style:italic">Link coming soon</span>`
+          }
+        </div>
+      </div>`;
+    }
     return `
     <div class="stat-card" style="animation-delay:${i * 0.05 + 0.05}s">
       <div class="stat-label">${c.label}</div>
